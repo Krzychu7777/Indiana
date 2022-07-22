@@ -1,0 +1,113 @@
+//colors
+
+$white: white;
+$light-blue: #F9FAFB;
+$hover-color: #F0F9FF;
+$blue: #178BCA;
+$dark-blue: #1D2939;
+$dark-headers-typo: #101828;
+$gray-typo: #667085;
+$gray-border-color: #EAECF0;
+
+$xxl: 1450px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$min-phone: 450px;
+
+$font-sequel: 'Sequel', sans-serif, Helvetica;
+$font-inter: 'Inter', sans-serif, Helvetica;
+
+$font-bold: 700;
+$font-medium: 500;
+$font-regular: 400;
+
+//class helpers
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-container {
+    max-width: 1216px;
+    margin: 0 auto 0;
+}
+
+@media (max-width: $xxl) {
+    .main-container {
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+.image-responsive {
+    width: 100%;
+    height: auto;
+}
+
+//components
+
+.btn-style {
+    font-family: $font-inter;
+    font-weight: $font-medium;
+    font-size: 1rem;
+    line-height: 24px;
+    height: 52px;
+    border: none;
+    color: white;
+    background-color: $blue;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #0BA5EC;
+    }
+}
+
+.arrow-style {
+    @extend .flex-center;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    border: 1px solid $gray-border-color;
+}
+
+.headers-typo-style {
+    margin: 0;
+    font-family: $font-sequel;
+    font-weight: $font-regular;
+    color: $dark-headers-typo;
+    font-size: 2.2rem;
+    line-height: 46px;
+    letter-spacing: -2%;
+}
+

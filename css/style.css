@@ -1,0 +1,355 @@
+.flex {
+  display: flex;
+}
+
+.flex-row, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .mobile-nav .nav-bar-mobile-container, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav a, .desktop-nav .first-rectangle-container .first-rectangle-nav, .arrow-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between, .mobile-nav .nav-bar-mobile-container, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.main-container {
+  max-width: 1216px;
+  margin: 0 auto 0;
+}
+
+@media (max-width: 1450px) {
+  .main-container {
+    width: auto;
+    padding: 0 16px;
+  }
+}
+.image-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.btn-style, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner button, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner button, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner button {
+  font-family: "Inter", sans-serif, Helvetica;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 24px;
+  height: 52px;
+  border: none;
+  color: white;
+  background-color: #178BCA;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.btn-style:hover, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner button:hover, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner button:hover, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner button:hover {
+  background-color: #0BA5EC;
+}
+
+.arrow-style {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #EAECF0;
+}
+
+.headers-typo-style, .desktop-nav .nav-bar-desktop-container .menu-card-second .nav-menu-title h2, .desktop-nav .nav-bar-desktop-container .bikes .nav-menu-title h2, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .text-image h3, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .text-image h3, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .text-image h3, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav h2, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav h2, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav h2 {
+  margin: 0;
+  font-family: "Sequel", sans-serif, Helvetica;
+  font-weight: 400;
+  color: #101828;
+  font-size: 2.2rem;
+  line-height: 46px;
+  letter-spacing: -2%;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Inter", sans-serif, Helvetica;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: gray;
+}
+
+.desktop-nav .first-rectangle-container {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(270deg, #F9FAFB 0%, #FFFFFF 100%);
+}
+.desktop-nav .first-rectangle-container .first-rectangle-nav {
+  height: 40px;
+  justify-content: flex-end;
+  gap: 24px;
+}
+.desktop-nav .first-rectangle-container .first-rectangle-nav a {
+  text-decoration: none;
+  color: #667085;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 24px;
+  transition: 0.3s ease-in-out;
+}
+.desktop-nav .first-rectangle-container .first-rectangle-nav a:hover {
+  color: #101828;
+}
+.desktop-nav .nav-bar-desktop-container {
+  position: -webkit-sticky;
+  position: sticky;
+  height: 80px;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+.desktop-nav .nav-bar-desktop-container .nav-bar-desktop {
+  box-sizing: border-box;
+  align-items: center;
+  height: 80px;
+}
+.desktop-nav .nav-bar-desktop-container .nav-bar-desktop .logo-nav {
+  display: flex;
+  align-self: flex-start;
+  margin: 5px 0 0;
+}
+.desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop {
+  gap: 37px;
+  margin: 0;
+}
+.desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li {
+  list-style-type: none;
+}
+.desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a {
+  text-decoration: none;
+  margin: 0;
+  font-family: "Sequel", sans-serif, Helvetica;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #667085;
+  line-height: 24px;
+  gap: 13px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container, .desktop-nav .nav-bar-desktop-container .menu-card-second, .desktop-nav .nav-bar-desktop-container .bikes {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  background-color: white;
+  padding: 64px 0 74px;
+  box-sizing: border-box;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card {
+  align-items: center;
+  height: auto;
+  gap: 24px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav {
+  flex-basis: 50%;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav h2, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav h2, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav h2 {
+  line-height: 58px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container {
+  margin: 32px 0 0;
+  padding: 0;
+  gap: 8px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li {
+  list-style-type: none;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li a {
+  font-family: "Inter", sans-serif, Helvetica;
+  padding: 24px;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: #101828;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 24px;
+  transition: 0.1s ease-in-out;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li:hover, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li:hover, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li:hover {
+  background-color: #F0F9FF;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav {
+  position: relative;
+  max-width: 596px;
+  max-height: 392px;
+  flex-basis: 50%;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .text-image, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .text-image, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .text-image {
+  position: absolute;
+  padding: 64px;
+  bottom: 0;
+  color: white;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .text-image h3, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .text-image h3, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .text-image h3 {
+  line-height: 58px;
+  color: white;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .text-image p, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .text-image p, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .text-image p {
+  margin: 0;
+  font-family: "Inter", sans-serif, Helvetica;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 28px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second, .desktop-nav .nav-bar-desktop-container .bikes {
+  padding: 64px 0 64px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .nav-menu-title h2, .desktop-nav .nav-bar-desktop-container .bikes .nav-menu-title h2 {
+  line-height: 58px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card {
+  margin-top: 32px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav {
+  height: auto;
+  align-self: flex-start;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container {
+  margin: 0;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav {
+  width: 596px;
+  height: 392px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #F0F9FF;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner, .desktop-nav .nav-bar-desktop-container .menu-card-second .bikes .menu-card .right-panel-nav .bike-image .text-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card-second .menu-card .right-panel-nav .bike-image .text-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 34px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner h2, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner h2, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner h3, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner h3, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner h3 {
+  margin: 4px 0 0;
+  font-family: "Sequel", sans-serif, Helvetica;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 22px;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner p, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner p, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner p {
+  margin: 24px 0 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 28px;
+  letter-spacing: -1%;
+  color: #178BCA;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner button, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner button, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner button {
+  width: 116px;
+  margin: 24px 0 0;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li {
+  box-sizing: border-box;
+  max-height: 72px;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle {
+  margin: 24px 0 0;
+  gap: 14px;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div:first-child {
+  color: white;
+  background-color: #178BCA;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div:nth-child(2) {
+  background-color: black;
+}
+
+.mobile-nav {
+  display: none;
+  position: -webkit-sticky;
+  position: sticky;
+  height: 80px;
+  top: 0;
+  background-color: white;
+}
+.mobile-nav .nav-bar-mobile-container {
+  height: 80px;
+  box-sizing: border-box;
+  align-items: center;
+}
+.mobile-nav .nav-bar-mobile-container .nav-links-mobile {
+  gap: 37px;
+}
+.mobile-nav .nav-bar-mobile-container .nav-links-mobile svg {
+  width: 30px;
+  height: 30px;
+}
+.mobile-nav .menu-card-mobile {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #F9FAFB;
+}
+
+@media (max-width: 1024px) {
+  .nav-bar-desktop-container {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .mobile-nav .nav-bar-mobile-container .logo-mobile svg {
+    max-width: 136px;
+  }
+  .mobile-nav .nav-bar-mobile-container .nav-links-mobile {
+    gap: 24px;
+  }
+  .mobile-nav .nav-bar-mobile-container .nav-links-mobile svg {
+    width: auto;
+    height: auto;
+  }
+}/*# sourceMappingURL=style.css.map */
