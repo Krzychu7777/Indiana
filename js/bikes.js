@@ -99,7 +99,20 @@ const removeFilter = e => {
     actualBtnIndex = [...removeButtons].indexOf(currentItem),
     allDisplayFilter = document.querySelectorAll('.category-filter');
 
+
     if(currentItem.tagName === "IMG") {
+
+        bikeCategoryButtons.forEach((button) => {
+            if(currentItem.parentNode.parentNode.dataset.name === `Rowery ${button.dataset.bikes}`) {
+               const currentIndex =  actualFilters.indexOf(currentItem.parentNode.parentNode.dataset.name),
+                    bikeFilterItem = actualFilters[currentIndex].split(" ");
+
+                if(bikeFilterItem[1] === button.dataset.bikes) {
+                    button.classList.remove('bicycle-category--active');
+                }
+            }    
+        });
+
         actualFilters = actualFilters.filter((item, index) => {
                 return index !== actualBtnIndex;
         });
