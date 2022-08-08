@@ -337,6 +337,9 @@ header {
                         @extend .scooters-image;
 
                         img {
+                            width: 100%;
+                            max-width: 298px;
+                            height: auto;
                             position: absolute;
                             top: 50%;
                             transform: translateY(-50%);
