@@ -34,8 +34,6 @@ sliderArrows.forEach((item) => {
     });
 });
 
-
-
 //product card choose
 
 const chooseSize = e => {
@@ -125,6 +123,21 @@ bookmarkButtons.forEach((item) => {
     });
 });
 
+//sticky button
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+        if(currentScroll < 550) {
+            form.classList.add('product-fixed');
+            
+        } else {
+            if(form.classList.contains('product-fixed')) {
+                form.classList.remove('product-fixed');
+            }
+        }
+    
+});
 
 //splide 
 

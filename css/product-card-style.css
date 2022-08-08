@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.flex-center, .products-container .product-item .product-button, .products-container .more-products-arrows, .product-home-container .product-right-panel .product-card .bottom-panel .product-links-container .product-link, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-group, .product-home-container .product-right-panel .product-card .middle-panel .inf-items-container .circle-items-container .circle, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-container .circle-items-container .circle, .product-home-container .product-right-panel .product-card .middle-panel .inf-items-container .circle-items-container .circle-color, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-container .circle-items-container .circle-color, .product-home-container .product-right-panel .product-card .middle-panel .inf-items-container .circle-items-container, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-container .circle-items-container, .product-home-container .product-left-panel .product-slider-home-container .main-product-image-container, .product-home-container .product-left-panel .product-slider-home-container .product-image-slider-container .image-square, .product-card-style .bottom-product-panel .product-price, .products-container .product-item .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .products-container .product-item .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .products-container .product-item .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .products-container .product-item .top-product-panel, .product-card-style .compare-checkbox, .products-container .product-item .compare-checkbox, .product-card-style, .products-container .product-item, .checkbox-style, .product-home-container .product-right-panel .product-card .bottom-panel .product-links-container .product-link input, .options-list-style li input, .product-card-style .compare-checkbox input, .products-container .product-item .compare-checkbox input, .nav-link-style, .arrow-style, .products-container .more-products-arrows button, .product-home-container .product-left-panel .product-slider-home-container .product-image-slider-container .slider-products-arrows button {
+.flex-center, .products-container .product-item .product-button, .products-container .more-products-arrows, .product-home-container .product-right-panel .product-card .bottom-panel .product-links-container .product-link, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-group, .product-home-container .product-right-panel .product-card .middle-panel .inf-items-container .circle-items-container .circle, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-container .circle-items-container .circle, .product-home-container .product-right-panel .product-card .middle-panel .inf-items-container .circle-items-container .circle-color, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-container .circle-items-container .circle-color, .product-home-container .product-right-panel .product-card .middle-panel .inf-items-container .circle-items-container, .product-home-container .product-right-panel .product-card .middle-panel-mobile .inf-items-container .circle-items-container, .product-home-container .product-right-panel .mobile-image-container, .product-home-container .product-left-panel .product-slider-home-container .main-product-image-container, .product-home-container .product-left-panel .product-slider-home-container .product-image-slider-container .image-square, .product-card-style .bottom-product-panel .product-price, .products-container .product-item .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .products-container .product-item .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .products-container .product-item .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .products-container .product-item .top-product-panel, .product-card-style .compare-checkbox, .products-container .product-item .compare-checkbox, .product-card-style, .products-container .product-item, .checkbox-style, .product-home-container .product-right-panel .product-card .bottom-panel .product-links-container .product-link input, .options-list-style li input, .product-card-style .compare-checkbox input, .products-container .product-item .compare-checkbox input, .nav-link-style, .arrow-style, .products-container .more-products-arrows button, .product-home-container .product-left-panel .product-slider-home-container .product-image-slider-container .slider-products-arrows button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -563,6 +563,10 @@ body {
 .product-home-container .product-right-panel .mobile-card-container, .product-home-container .product-right-panel .mobile-product-card-pag {
   display: none;
 }
+.product-home-container .product-right-panel .mobile-image-container {
+  margin: 0 auto 0;
+  width: 80%;
+}
 .product-home-container .product-right-panel .scroll-wrapper-product-card {
   height: 100%;
   width: 100%;
@@ -921,6 +925,11 @@ body {
   .product-home-container .product-right-panel .product-card .middle-panel-mobile {
     display: flex;
   }
+  .product-home-container .product-right-panel .product-card .bottom-panel {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+  }
   .product-home-container .product-right-panel .product-card .bottom-panel .product-links-container {
     padding: 0 16px;
     gap: 24px;
@@ -932,6 +941,12 @@ body {
 @media (max-height: 640px) and (max-width: 992px) {
   .product-home-container .product-right-panel .product-card {
     padding: 16px 16px 52px;
+  }
+}
+@media (max-width: 576px) {
+  .product-home-container .product-right-panel .mobile-image-container {
+    margin: 0 auto 0;
+    width: 100%;
   }
 }
 @media (max-width: 1150px) {
@@ -1044,5 +1059,17 @@ body {
   }
   .products-container .more-products-pag {
     display: block;
+  }
+}
+@media (max-width: 875px) {
+  .product-fixed {
+    position: fixed;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px;
+    box-shadow: 0px -100px 40px rgba(0, 0, 0, 0.07);
+    z-index: 9999;
   }
 }/*# sourceMappingURL=product-card-style.css.map */
