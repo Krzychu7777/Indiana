@@ -175,14 +175,14 @@ bikeCategoryButtons.forEach((item) => {
 
 main.addEventListener('click', (e) => {
     const currentItem = e.target;
-    
-    if(currentItem.contains(sortingInput) && currentItem !== sortingInput) {
+
+    if(!sortingInput.contains(currentItem)) {
         sortingList.classList.remove('sorting-list--active');
         sortingInput.classList.remove('sorting-input--active');
     }
 
     selectFilterInput.forEach((item, index) => {
-        if(currentItem.contains(item) && currentItem !== item) {
+        if(!item.contains(currentItem)) {
             item.classList.remove('filter-input--active');
             selectFilterList[index].classList.remove('filters-list--active');
         }
