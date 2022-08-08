@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="nouislider/nouislider.min.css">
     <link rel="stylesheet" href="splide/splide-core.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Indiana</title>
+    <link rel="stylesheet" href="css/product-card-style.css">
+    <title>Indiana - Karta produktu</title>
     <style>
         @font-face {
             font-family: "Sequel";
@@ -759,323 +759,386 @@
             </ul>
         </div>
     </section>
-    <section id="home-page" class="splide home-section">
-        <div class="line-container home-lines">
-            <div class="page-line1"></div>
-            <div class="page-line2"></div>
-            <div class="page-line3">
-                <div class="border-line-mobile"></div>
-                <div class="border-line-mobile1"></div>
+    <section id="product-card-home" class="home-product-section">
+    <div class="line-container">
+        <div class="page-line1"></div>
+        <div class="page-line2"></div>
+        <div class="page-line3"></div>
+        <div class="page-line4"></div>
+    </div>
+    <div class="main-container product-home-container">
+        <div class="home-product-breadcrumbs">
+            <div class="breadcrumbs">
+                <a href="#">
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 18.3333V9.99996H11.5V18.3333M1.5 7.49996L9 1.66663L16.5 7.49996V16.6666C16.5 17.1087 16.3244 17.5326 16.0118 17.8451C15.6993 18.1577 15.2754 18.3333 14.8333 18.3333H3.16667C2.72464 18.3333 2.30072 18.1577 1.98816 17.8451C1.67559 17.5326 1.5 17.1087 1.5 16.6666V7.49996Z" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                                                
+                </a>
+                <div>
+                    <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 9L5 5L1 1" stroke="#D0D5DD" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>                        
+                </div>
+                <a href="#">Rowery</a>
             </div>
-            <div class="page-line4"></div>
         </div>
-        <div class="splide__arrows home-arrows">
+        <section class="product-left-panel">
+            <div id="desktop-product-slider" class="splide product-slider-home-container">
+                <div class="product-image-slider-container">
+                    <div class="splide__arrows slider-products-arrows">
+                        <button class="splide__arrow splide__arrow--prev main-slider-arrow">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button class="splide__arrow splide__arrow--next main-slider-arrow">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                    <div class="image-square">
+                                    <a data-fslightbox="main-slider" href="img/main-image-product.png">
+                                        <div class="image-square-hover">
+                                            <div class="bg-hover"></div>
+                                            <svg fill="white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="90px" height="90px"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/></svg>
+                                        </div>
+                                        <img src="img/main-image-product.png" alt="">
+                                    </a>
+                                    </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="image-square">
+                                    <a data-fslightbox="main-slider" href="img/product-card-slider.png">
+                                        <div class="image-square-hover">
+                                            <div class="bg-hover"></div>
+                                            <svg fill="white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="90px" height="90px"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/></svg>
+                                        </div>
+                                    <img src="img/product-card-slider.png" alt="">
+                                </a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="image-square">
+                                    <a data-fslightbox="main-slider" href="img/product_card_slider_2.jpg">
+                                        <div class="image-square-hover">
+                                            <div class="bg-hover"></div>
+                                            <svg fill="white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="90px" height="90px"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/></svg>
+                                        </div>
+                                    <img src="img/product_card_slider_2.jpg" alt="">
+                                </a>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="image-square">
+                                    <a data-fslightbox="main-slider" href="img/product-card-slider3.png">
+                                        <div class="image-square-hover">
+                                            <div class="bg-hover"></div>
+                                            <svg fill="white" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="90px" height="90px"><path d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"/></svg>
+                                        </div>
+                                    <img src="img/product-card-slider3.png" alt="">
+                                </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-product-image-container">
+                <a data-fslightbox="main-slider" href="img/main-image-product.png" id="main-image-lightbox">
+                    <img src="img/main-image-product.png" alt="">
+                </a>
+                </div>
+            </div>
+            <div class="page-bookmarks-container">
+                <div class="bookmarks-container">
+                    <div class="bookmark bookmark--active" data-bookmark="description">
+                        <p>Opis produktu</p>
+                    </div>
+                    <div class="bookmark" data-bookmark="specification">
+                        <p>Specyfikacja</p>
+                    </div>
+                </div>
+                <div class="page-column-border"></div>
+            </div>
+            <div class="product-descriptions-container product-inf-section" data-section="description" style="order: 0;">
+                    <div class="description-column">
+                        <h2>Rower Cross</h2>
+                       <div class="description">
+                            <p>Rower X-Cross 4.0 marki Indiana przeznaczony dla użytkowników którzy preferują długie trasy. Kształt ramy roweru Cross podobny do mtb wymusza pochyloną pozycję ciała w kierunku kierownicy, dzięki czemu mamy większą kontrolę nad rowerem co czyni nas bardziej bezpiecznymi w ruchu ulicznym.</p>
+                            <p>Kształt opony dostosowany do wysokiej skuteczności na drogach asfaltowych, dzięki czemu wykorzystasz w pełni energię swoich nóg na przemieszczanie się oraz zdołasz osiągnąć większą prędkość. Oprócz dróg asfaltowych rower Cross również poradzi sobie z drogą kamienistą, tak więc posiadanie roweru X-Cross 4.0 nie wyklucza Cię z przejażdżek rodzinnych po utwardzonej drodze w parku czy lesie.</p>
+                            <p>Przystosowany do zamontowania niezbędnych akcesoriów takich jak błotniki, sakwy, podpórki, bagażniki, foteliki dziecięce.</p>
+                       </div>
+                        <img src="img/bike-description.jpg" alt="rower cross" class="image-responsive" width="799" height="551">
+                    </div>
+                    <div class="description-column">
+                        <h2>Rama</h2>
+                       <div class="description">
+                            <p>Aluminiowa rama sprawia, że rower jest lżejszy, dzięki czemu łatwiej się go prowadzi. Jazda jest bardziej płynna a Ty bardziej możesz skupić się na podziwianiu widoków niż na manewrowaniu rowerem. Pamiętaj, żeby dopasować rozmiar ramy do swojego wzrostu oraz długości wewnętrznej nogi.</p>
+                            <p>Nie zawsze dopasowanie ramy tylko do wzrostu będzie wystarczające ze względu na to, że mamy różną długość nóg. Jeśli chcemy czuć się na swoim rowerze komfortowo, przede wszystkim musimy zacząć od dopasowania długości ramy. Dzięki temu rower będzie się dużo łatwiej prowadzić!</p>
+                            <p>Rama 19 cali przeznaczona jest do roweru Cross dla osób o wzroście 180 - 185 cm .</p>
+                       </div>
+                        <img src="img/frame-description.jpg" alt="rama cross" class="image-responsive" width="799" height="423">
+                    </div>
+                    <div class="description-column">
+                        <h2>Koła</h2>
+                       <div class="description">
+                            <p>Rozmiar koła 28 cali w rowerze Indiana X-Cross 4.0 znacznie zwiększa komfort jazdy, ponieważ większe koło dużo lepiej sobie radzi z zagłębieniami i nierównościami terenu. Do tego ich dwukomorowa aluminiowa konstrukcja zwiększająca wytrzymałość pokona różne niespodziewane przeszkody!</p>
+                       </div>
+                        <img src="img/wheel-description.jpg" alt="koło cross" class="image-responsive" width="799" height="423">
+                    </div>
+                    <div class="description-column">
+                        <h2>Hamulce tarczowe hydrauliczne</h2>
+                       <div class="description">
+                            <p>Skuteczne hamowanie to podstawa bezpieczeństwa. W tym modelu wykorzystaliśmy przednie i tylne hamulce tarczowe hydrauliczne renomowanej marki Shimano. Masz pewność, ze będą działać już przy lekkim naciśnięciu w każdych warunkach pogodowych! Nie musisz się też obawiać długiego zjazdu, na pewno będą cały czas tak samo skuteczne!</p>
+                       </div>
+                        <img src="img/brakes-description.jpg" alt="hamulce cross" class="image-responsive" width="799" height="423">
+                    </div>
+                    <div class="description-column">
+                        <h2>Przerzutka przednia - Shimano Altus, Tylna - Shimano Alivio</h2>
+                       <div class="description">
+                            <p>Przerzutka przednia Shimano Altus zapewnia płynne przerzucanie oraz niezawodną jazdę. Przerzutka tylna Shimano Alivio sprawia, że rower ma lepszą aerodynamikę.</p>
+                            <p>Dwadzieścia siedem biegów pozwala pokonać każde wzniesienie.</p>
+                       </div>
+                        <img src="img/throughput.jpg" alt="przerzutka cross" class="image-responsive" width="799" height="423">
+                    </div>
+                    <div class="description-column">
+                        <h2>Amortyzator przedni</h2>
+                       <div class="description">
+                            <p>Przedni amortyzator marki Suntour to doskonałe rozwiązanie, dzięki któremu Twoje nadgarstki są bezpieczne! Nawet po długiej trasie czy spotkaniu bliskiego stopnia z niewysokim krawężnikiem nie będziesz odczuwać żadnych dolegliwości.</p>
+                       </div>
+                        <img src="img/damper-description.jpg" alt="amortyzator cross" class="image-responsive" width="799" height="423">
+                    </div>
+                    <div class="description-column">
+                        <h2>Amortyzowana sztyca</h2>
+                       <div class="description">
+                            <p>Sztyca marki ZOOM zapewni komfort nawet podczas długiej jazdy. Sztyca amortyzowana w rowerze Indiana X-Cross 4.0 zapewni Ci komfort nawet w dalekiej podróży, ponieważ nie przenosi drgań na kręgosłup i nadgarstki. Jest to szczególnie istotne, jeśli unikasz obciążeń kręgosłupa i cenisz sobie wygodę.</p>
+                            <p>Dzięki niej zmęczenie nie będzie odczuwalne, a nierówności terenu nie będą problemem. Trzeba również podkreślić, że sztyca wykonana jest z aluminium, co ma wpływ na mniejszą masę całkowitą roweru.</p>
+                       </div>
+                        <img src="img/sztyca-description.jpg" alt="sztyca cross" class="image-responsive" width="799" height="423">
+                    </div>
+                    <div class="description-column">
+                        <h2>5 letnia gwarancja</h2>
+                       <div class="description">
+                            <p>Rama objęta jest 5 letnią gwarancją, co zapewni Ci poczucie bezpieczeństwa na długo. Najważniejsza część Twojego roweru jest najwyższej jakości i nie zawiedzie Cię niezależnie od liczby przejechanych kilometrów.</p>
+                       </div>
+                        <img src="img/sztyca-description.jpg" alt="sztyca cross" class="image-responsive" width="799" height="423">
+                    </div>
+            </div>
+            <div class="product-specifications-container product-inf-section" data-section="specification" style="order: 1;">
+                <div class="bg-siema"></div>
+                <h2>Specyfikacja</h2>
+                <div class="specification-items-container">
+                    <div class="specification-item">
+                        <p>Kolor</p>
+                        <p>Czarny</p>
+                    </div>
+                    <div class="specification-item">
+                        <p>Kolory dostępne w ofercie producenta</p>
+                        <p>Czarny</p>
+                    </div>
+                    <div class="specification-item">
+                        <p>Rocznik</p>
+                        <p>2021</p>
+                    </div>
+                    <div class="specification-item">
+                        <p>Gwarancja na ramę</p>
+                        <p>5 lat</p>
+                    </div>
+                    <div class="specification-item">
+                        <p>Wyposażenie</p>
+                        <p>Dzwonek, Instrukcja obsługi i montażu, Karta gwarancyjna</p>
+                    </div>
+                    <div class="specification-item">
+                        <p>Typ roweru</p>
+                        <p>Cross</p>
+                    </div>
+                    <div class="specification-item">
+                        <p>Gwarancja</p>
+                        <p>24 miesiące</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="product-right-panel">
+            <div id="mobile-product-slider" class="splide mobile-card-container">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                       <li class="splide__slide">
+                            <div class="mobile-image-container">
+                                <img src="img/main-image-product.png" alt="rower cross" class="image-responsive">
+                            </div>
+                       </li>
+                       <li class="splide__slide">
+                            <div class="mobile-image-container">
+                                <img src="img/main-image-product.png" alt="rower cross" class="image-responsive">
+                            </div>
+                       </li>
+                       <li class="splide__slide">
+                            <div class="mobile-image-container">
+                                <img src="img/main-image-product.png" alt="rower cross" class="image-responsive">
+                            </div>
+                       </li>
+                    </ul>
+                </div>
+                <div class="global-pagination-container mobile-product-card-pag">
+                    <div class="splide__pagination"></div>
+                </div>
+            </div>
+               <div class="scroll-wrapper-product-card">
+                   <div class="product-card">
+                        <div class="top-panel">
+                                        <p>INDIANA</p>
+                                        <h1>Rower Cross X-CROSS 4.0 M 28 2020 Koła 28″ Rama 19″ Czarny</h1>
+                                        <h2>2499.99 PLN</h2>
+                            </div>
+                        <div class="card-border"></div>
+                        <div class="middle-panel">
+                            <div class="inf-items-container">
+                                <p>Wybierz rozmiar koła</p>
+                                <div class="circle-items-container">
+                                    <div class="circle circle-wheel-size" data-wheel="28"><p>28”</p></div>
+                                    <div class="circle circle-wheel-size" data-wheel="29"><p>29”</p></div>
+                                </div>
+                            </div>
+                            <div class="inf-items-container">
+                                <p>Wybierz ramę</p>
+                                <div class="circle-items-container">
+                                    <div class="circle circle-frame-size" data-frame="19"><p>19”</p></div>
+                                    <div class="circle circle-frame-size" data-frame="21"><p>21”</p></div>
+                                    <div class="circle circle-frame-size" data-frame="23"><p>23”</p></div>
+                                </div>
+                                <a href="#">Jaki jest mój rozmiar?</a>
+                            </div>
+                            <div class="inf-items-container">
+                                <p>Wybierz kolor</p>
+                                <div class="circle-items-container">
+                                    <div class="circle-color circle-color--black" data-color="Black"></div>
+                                    <div class="circle-color circle-color--white" data-color="White"></div>
+                                    <div class="circle-color circle-color--green" data-color="Green"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="middle-panel-mobile">
+                            <div class="inf-items-group">
+                                <div class="inf-items-container">
+                                    <p>Wybierz rozmiar koła</p>
+                                    <div class="circle-items-container">
+                                        <div class="circle circle--active"><p>28”</p></div>
+                                                <div class="circle"><p>28”</p></div>
+                                        </div>
+                                </div>
+                                <div class="inf-items-container">
+                                    <p>Wybierz ramę</p>
+                                    <div class="circle-items-container">
+                                        <div class="circle circle--active"><p>19”</p></div>
+                                            <div class="circle"><p>21”</p></div>
+                                                <div class="circle"><p>23”</p></div>
+                                            </div>
+                                    </div>
+                            </div>
+                                <div class="find-size"><a href="#">Jaki jest mój rozmiar?</a></div>
+                                <div class="inf-items-container">
+                                    <p>Wybierz kolor</p>
+                                    <div class="circle-items-container">
+                                        <div class="circle-color circle-color--black circle-color--active"></div>
+                                        <div class="circle-color circle-color--white"></div>
+                                        <div class="circle-color circle-color--green"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <div class="card-border"></div>
+                        <div class="bottom-panel">
+                            <form action="" method="">
+                                <input type="text" name="wheel-size" id="wheel" value="" style="display: none;">
+                                <input type="text" name="frame-size" id="frame" value="" style="display: none;">
+                                <input type="text" name="color-type" id="color" value="" style="display: none;">
+                                <button>Kup online</button>
+                            </form>
+                            <div class="product-links-container">
+                                <div class="product-link">
+                                    <input type="checkbox" id="compare-product">
+                                    <label for="compare-product">Porównaj</label>
+                                </div>
+                                    <a href="#" class="product-link">
+                                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 9.58435C19 4.33764 14.7467 0.0843506 9.5 0.0843506C4.25329 0.0843506 0 4.33764 0 9.58435C0 14.326 3.47399 18.2563 8.01562 18.9689V12.3304H5.60352V9.58435H8.01562V7.49138C8.01562 5.11044 9.43395 3.79529 11.6039 3.79529C12.643 3.79529 13.7305 3.98083 13.7305 3.98083V6.31873H12.5326C11.3525 6.31873 10.9844 7.05108 10.9844 7.8031V9.58435H13.6191L13.1979 12.3304H10.9844V18.9689C15.526 18.2563 19 14.326 19 9.58435Z" fill="#98A2B3"/>
+                                        </svg>        
+                                        <p>Udostępnij</p>                        
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+        </section>
+    </div>
+    </section>
+    <!-- <section id="specification" class="specification-section">
+    <div class="main-container specyfication-layout">
+        <div class="product-specifications-container">
+            <h2>Specyfikacja</h2>
+            <div class="specification-items-container">
+                <div class="specification-item">
+                    <p>Kolor</p>
+                    <p>Czarny</p>
+                </div>
+                <div class="specification-item">
+                    <p>Kolory dostępne w ofercie producenta</p>
+                    <p>Czarny</p>
+                </div>
+                <div class="specification-item">
+                    <p>Rocznik</p>
+                    <p>2021</p>
+                </div>
+                <div class="specification-item">
+                    <p>Gwarancja na ramę</p>
+                    <p>5 lat</p>
+                </div>
+                <div class="specification-item">
+                    <p>Wyposażenie</p>
+                    <p>Dzwonek, Instrukcja obsługi i montażu, Karta gwarancyjna</p>
+                </div>
+                <div class="specification-item">
+                    <p>Typ roweru</p>
+                    <p>Cross</p>
+                </div>
+                <div class="specification-item">
+                    <p>Gwarancja</p>
+                    <p>24 miesiące</p>
+                </div>
+            </div>
+        </div>
+        <div class="empty-panel"></div>
+    </div>
+</section> -->
+    <section id="more-products" class="splide more-products-section">
+    <div class="line-container">
+        <div class="page-line1"></div>
+        <div class="page-line2"></div>
+        <div class="page-line3"></div>
+        <div class="page-line4"></div>
+    </div>
+    <div class="main-container more-products-container">
+        <h2>Zobacz także</h2>
+        <div class="products-container">
+        <div class="splide__arrows more-products-arrows">
             <button class="splide__arrow splide__arrow--prev">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                </button>
+            </button>
             <button class="splide__arrow splide__arrow--next">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>                    
+                </svg>
             </button>
         </div>
         <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide">
-                    <div class="home-text-background"><p>x-cross</p></div>
-                    <div class="main-container home-container">
-                        <div class="left-img-panel">
-                            <img src="img/INDIANA-X-Cross-4-0-M19-home.png" alt="x cross" class="image-responsive" width="830" height="722">
-                        </div>
-                        <div class="right-home-panel">
-                            <div class="main-title">
-                                <p>Indiana</p>
-                                <h1>X-CROSS 4.0</h1>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide">
-                    <div class="home-text-background"><p>X-COMFORT</p></div>
-                    <div class="main-container home-container">
-                        <div class="left-img-panel">
-                            <img src="img/citybike.png" alt="city bike" class="image-responsive" width="830" height="722">
-                        </div>
-                        <div class="right-home-panel">
-                            <div class="main-title">
-                                <p>Indiana</p>
-                                <h1>X-COMFORT</h1>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide">
-                    <div class="home-text-background"><p>X-ROAD</p></div>
-                    <div class="main-container home-container">
-                        <div class="left-img-panel">
-                            <img src="img/Rower-trekkingowy-INDIANA-X-Road-5.png" alt="x road" class="image-responsive" width="830" height="722">
-                        </div>
-                        <div class="right-home-panel">
-                            <div class="main-title">
-                                <p>Indiana</p>
-                                <h1>X-ROAD 5</h1>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="splide__slide">
-                    <div class="home-text-background"><p>E-CITY</p></div>
-                    <div class="main-container home-container">
-                        <div class="left-img-panel">
-                            <img src="img/INDIANA-E-City-D17-28-cali-Czarny-bok 1.png" alt="e city" class="image-responsive" width="830" height="722">
-                        </div>
-                        <div class="right-home-panel">
-                            <div class="main-title">
-                                <p>Indiana</p>
-                                <h1>E-CITY</h1>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="main-container pag-slider">
-                <ul class="pagination-container splide__pagination">
-                </ul>
-        </div>
-    </section>
-    <section id="bikes" class="splide bikes-section">
-        <div class="line-container bikes-lines">
-            <div class="page-line1"></div>
-            <div class="page-line2">
-                <div class="border-line"></div>
-            </div>
-            <div class="page-line3">
-                <div class="border-line2"></div>
-            </div>
-            <div class="page-line4"></div>
-        </div>
-        <div class="main-container bikes-header">
-                <h2>Rowery</h2>
-                <button>Zobacz wszystkie</button>
-        </div>
-        <div class="slider-container">
-            <div class="splide__arrows slider-bikes-arrows">
-                <button class="splide__arrow splide__arrow--prev">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <button class="splide__arrow splide__arrow--next">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="splide__track slider-bikes-container">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="bikes-item-container">
-                            <div class="bike-item">
-                                <div class="top-panel">
-                                    <img src="img/INDIANA-Moody-26-1-Rower-miejski-removebg-preview.png" alt="indiana moody" class="image-responsive" width="336" height="275">
-                                </div>
-                                <div class="bottom-panel">
-                                    <h3>Miejskie</h3>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="global-pagination-container">
-                <div class="splide__pagination"></div>
-            </div>
-            <div class="mobile-bikes-button">
-                <button>Zobacz wszystkie</button>
-            </div>
-        </div>
-    </section>
-    <section id="guides" class="splide guides-section">
-        <div class="line-container guides-line">
-            <div class="page-line1">
-                <div class="border-line"></div>
-            </div>
-            <div class="page-line2">
-                <div class="border-line-mobile"></div>
-            </div>
-            <div class="page-line3">
-                <div class="border-line2"></div>
-            </div>
-            <div class="page-line4"></div>
-        </div>
-        <div class="main-container guides-container">
-            <div class="guides-header">
-                <h2>Poradniki rowerowe</h2>
-                <button>Zobacz wszystkie</button>
-            </div>
-            <div class="splide__track guides-items-container">
-                    <ul class="splide__list">
-                       <li class="splide__slide">
-                            <div class="guide-item">
-                                <img src="img/guide_rectangle1.jpg" alt="Co warto mieć przy sobie" width="">
-                                <div class="item-text-container">
-                                    <h3>Co warto mieć przy sobie</h3>
-                                    <p>Oto 6 narzędzi i części zamiennych, 
-                                        które warto zabierać ze sobą na rowerowe przejażdżki. 
-                                        Zajmują niewiele miejsca, a pomogą...</p>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                       </li>
-                        <li class="splide__slide">
-                            <div class="guide-item">
-                                <img src="img/guide_rectangle2.png" alt="Jak wybrac właściwy rower">
-                                <div class="item-text-container">
-                                    <h3>Jak wybrać właściwy rower</h3>
-                                    <p>Zanim kupisz rower musisz zastanowić się do czego on ci będzie przeważnie służył. 
-                                        Czy wykorzystywać go będziesz głównie do rekreacji...</p>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="guide-item">
-                                <img src="img/guide_rectangle3.png" alt="Jak prawidłowo dobrać ramę">
-                                <div class="item-text-container">
-                                    <h3>Jak prawidłowo dobrać ramę</h3>
-                                    <p>Bikefitting to cała dziedzina wiedzy na pograniczu anatomii i technologii. 
-                                        Bikefitting to proces dopasowania roweru do kolarza...</p>
-                                    <button>Zobacz więcej</button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-            </div>
-            <div class="global-pagination-container guides-pag">
-                <div class="splide__pagination"></div>
-            </div>
-            <div class="mobile-bikes-button">
-                <button>Zobacz wszystkie</button>
-            </div>
-        </div>
-    </section>
-    <section id="news" class="splide news-section">
-         <div class="line-container news-line-container">
-            <div class="page-line1"></div>
-            <div class="page-line2">
-                <div class="border-line-mobile"></div>
-            </div>
-            <div class="page-line3">
-                <div class="border-line-mobile1"></div>
-            </div>
-            <div class="page-line4"></div>
-        </div>
-        <div class="main-container news-container">
-            <div class="news-header">
-                <h2>Nowości</h2>
-            </div>
-            <div class="splide__arrows slider-news-arrows">
-                <button class="splide__arrow splide__arrow--prev">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-                <button class="splide__arrow splide__arrow--next">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="news-item-container splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="new-product">
+                <div class="splide__list">
+                    <div aria-label class="splide__slide">
+                        <div class="product-item">
                             <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-1">
                                 <label for="compare-product-1">Porównaj</label>
@@ -1099,274 +1162,81 @@
                                     <button>Sprawdź</button>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="new-product">
-                            <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-2" class="image-responsive" width="320" height="194">
-                                <label for="compare-product-2">Porównaj</label>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
                             </div>
-                            <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0">
-                            </div>
-                            <div class="bottom-product-panel">
-                                <p>INDIANA</p>
-                                <h3>X-CROSS 5.0</h3>
-                                <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
-                                </div>
-                                <div class="product-color">
-                                    <div></div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>2499.99 PLN</h4>
-                                    <button>Sprawdź</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="new-product">
-                            <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-3" class="image-responsive" width="320" height="194">
-                                <label for="compare-product-3">Porównaj</label>
-                            </div>
-                            <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0">
-                            </div>
-                            <div class="bottom-product-panel">
-                                <p>INDIANA</p>
-                                <h3>X-CROSS 6.0</h3>
-                                <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
-                                </div>
-                                <div class="product-color">
-                                    <div></div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>2499.99 PLN</h4>
-                                    <button>Sprawdź</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="new-product">
-                            <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-3" class="image-responsive" width="320" height="194">
-                                <label for="compare-product-3">Porównaj</label>
-                            </div>
-                            <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0">
-                            </div>
-                            <div class="bottom-product-panel">
-                                <p>INDIANA</p>
-                                <h3>X-CROSS 7.0</h3>
-                                <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
-                                </div>
-                                <div class="product-color">
-                                    <div></div>
-                                </div>
-                                <div class="product-price">
-                                    <h4>2499.99 PLN</h4>
-                                    <button>Sprawdź</button>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="global-pagination-container news-pag">
-                <div class="splide__pagination"></div>
-            </div>
-        </div>
-    </section>
-    <section id="scooters" class="splide scooters-section">
-        <div class="line-container scooters-line">
-            <div class="page-line1"></div>
-            <div class="page-line2">
-                <div class="border-line"></div>
-                <div class="border-line2"></div>
-            </div>
-            <div class="page-line3">
-                <div class="border-line3"></div>
-                <div class="border-line-mobile"></div>
-                <div class="border-line-mobile1"></div>
-            </div>
-            <div class="page-line4"></div>
-        </div>
-        <div class="main-container scooters-container">
-            <div class="scooters-header">
-                <h2>Hulajnogi</h2>
-            </div>
-            <div class="splide__track scooters-item-container">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <div class="product-card">
-                            <div class="scooter-top-panel">
-                                <img src="img/scooter-traditional.png" alt="">
-                            </div>
-                            <div class="scooter-bottom-panel">
-                                <h3>Tradycyjne</h3>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="product-card">
-                            <div class="scooter-top-panel">
-                                <img src="img/scooter-electric.png" alt="">
-                            </div>
-                            <div class="scooter-bottom-panel">
-                                <h3>Elektryczne</h3>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="splide__slide">
-                        <div class="product-card">
-                            <div class="scooter-top-panel">
-                                <img src="img/stunt-scooter.png" alt="">
-                            </div>
-                            <div class="scooter-bottom-panel">
-                                <h3>Wyczynowe</h3>
-                                <button>Zobacz więcej</button>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="global-pagination-container scooters-pag">
-                <div class="splide__pagination"></div>
-            </div>
-        </div>
-    </section>
-    <section id="technology" class="technology-section">
-        <div class="line-container technology-line">
-            <div class="page-line1"></div>
-            <div class="page-line2">
-                <div class="border-line-mobile1"></div>
-            </div>
-            <div class="page-line3">
-                <div class="border-line-mobile"></div>
-            </div>
-            <div class="page-line4"></div>
-        </div>
-        <div class="main-container technology-container">
-            <div class="left-panel">
-                <img src="img/technology_image.png" alt="Technologie" width="720" height="780" loading="lazy">
-            </div>
-            <div class="right-panel">
-                <h2>Technologie</h2>
-                <p>Komfort i bezpieczeństwo użytkowania gwarantuje między innymi osprzęt japońskiego SHIMANO, czy zastosowane w rowerach precyzyjne hamulce tarczowe - również hydrauliczne. Nowością są widelce amerykańskiego koncernu ROCK SHOX i SR SUNTOUR, 
-                    które powszechnie wykorzystuje się w profesjonalnych rowerach MTB. Opony Schwalbe słyną zaś z precyzji wykonania i są cenione przez użytkowników.</p>
-                <button>Zobacz więcej</button>
-            </div>
-        </div>
-    </section>
-    <section id="choice" class="choice-section">
-        <div class="line-container choice-line">
-            <div class="page-line1">
-                <div class="border-line2"></div>
-            </div>
-            <div class="page-line2">
-                <div class="border-line-mobile"></div>
-            </div>
-            <div class="page-line3">
-                <div class="border-line-mobile1"></div>
-            </div>
-            <div class="page-line4">
-                <div class="border-line"></div>
-            </div>
-        </div>
-        <div class="main-container choice-container">
-            <div class="choice-header">
-                <h2>Jak dobrać ramę</h2>
-                <p>Dobór ramy ma ogromny wpływ na komfort jazdy jednak nie jest on taki prosty w przypadku, gdy nie możemy na niego usiąść i po prostu wypróbować.</p>
-            </div>
-            <div class="choice-column-container">
-                <div class="left-col">
-                    <img src="img/leg-length-image.png" alt="długość nogi">
-                </div>
-                <div class="middle-col">
-                   <div class="select-option-container">
-                        <h3>Wybierz typ roweru</h3>
-                        <div class="options-select">
-                            <p>Dowolny</p>
-                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <ul class="option-list">
-                                <li>
-                                    <label for="option-1">Opcja #1</label>
-                                    <input type="checkbox" name="option1" id="option-1">
-                                </li>
-                                <li>
-                                    <label for="option-2">Opcja #2</label>
-                                    <input type="checkbox" name="option2" id="option-2">
-                                </li>
-                                <li>
-                                    <label for="option-3">Opcja #3</label>
-                                    <input type="checkbox" name="option3" id="option-3">
-                                </li>
-                                <li>
-                                    <label for="option-4">Opcja #4</label>
-                                    <input type="checkbox" name="option4" id="option-4">
-                                </li>
-                                <li>
-                                    <label for="option-5">Opcja #5</label>
-                                    <input type="checkbox" name="option5" id="option-5">
-                                </li>
-                            </ul>                      
-                        </div>
-                   </div>
-                   <div class="select-option-container">
-                    <h3>Wybierz płeć</h3>
-                    <div class="gender">
-                        <input type="text" name="gender-type-value" value="" style="display: none;">
-                        <div class="men gender-type-item" data-gender="men">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M43.0114 0H32.0364V5.98641H37.7813L28.4585 15.3092C20.353 9.54122 9.10628 11.436 3.3382 19.5415C-2.42988 27.647 -0.534961 38.8937 7.57052 44.6618C15.676 50.4298 26.9227 48.535 32.6908 40.4295C37.1398 34.1775 37.1398 25.7936 32.6908 19.5416L42.0136 10.2188V15.9637H48V4.98866C48.0001 2.23354 45.7666 0 43.0114 0ZM18.0681 41.9047C11.4557 41.9047 6.09538 36.5443 6.09538 29.932C6.09538 23.3196 11.4558 17.9592 18.0681 17.9592C24.6804 17.9592 30.0409 23.3196 30.0409 29.932C30.0343 36.5416 24.6778 41.8981 18.0681 41.9047Z" fill="#008AD2"/>
-                            </svg>
-                            <p>Mężczyzna</p>
-                        </div>
-                        <div class="woman gender-type-item" data-gender="woman">
-                            <svg width="32" height="49" viewBox="0 0 32 49" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M32 16.0083C32.0016 12.9718 31.139 9.99759 29.5132 7.43307C27.8874 4.86855 25.5654 2.81962 22.8185 1.52561C20.0716 0.231612 17.0131 -0.254023 14.0005 0.125439C10.9878 0.504902 8.14537 1.7338 5.80513 3.66856C3.46489 5.60332 1.72352 8.16407 0.784425 11.0517C-0.154665 13.9392 -0.252692 17.0344 0.501797 19.9757C1.25629 22.9169 2.83214 25.5827 5.04526 27.6617C7.25838 29.7406 10.0174 31.1469 13 31.7163V38.0083H8V44.0083H13V48.0083H19V44.0083H24V38.0083H19V31.7163C22.6538 31.0149 25.9495 29.0637 28.3216 26.1974C30.6937 23.3312 31.9942 19.7287 32 16.0083ZM6 16.0083C6 14.0304 6.58649 12.097 7.6853 10.4525C8.78411 8.80805 10.3459 7.52633 12.1732 6.76945C14.0004 6.01257 16.0111 5.81454 17.9509 6.20039C19.8907 6.58625 21.6725 7.53865 23.0711 8.93718C24.4696 10.3357 25.422 12.1175 25.8078 14.0573C26.1937 15.9972 25.9957 18.0078 25.2388 19.8351C24.4819 21.6623 23.2002 23.2241 21.5557 24.323C19.9112 25.4218 17.9778 26.0083 16 26.0083C13.3488 26.0051 10.8071 24.9505 8.93244 23.0758C7.05776 21.2011 6.00317 18.6594 6 16.0083Z" fill="#C9118A"/>
-                            </svg>
-                            <p>Kobieta</p>
                         </div>
                     </div>
-                   </div>
-                   <div class="select-option-container">
-                    <h3>Podaj długość nogi</h3>
-                    <input type="text" name="leg-length-value" value="" style="display: none;">
-                    <div id="slider"></div>
-                   </div>
-                </div>
-                <div class="right-col">
-                    <div class="product-card">
-                        <h4>Idealny rower dla Ciebie</h4>
-                        <div class="frame-size-container">
-                            <p>Rozmiar ramy</p>
-                            <p id="frame-size">18”</p>
+                    <div class="splide__slide">
+                        <div class="product-item">
+                            <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-1">
+                                <label for="compare-product-1">Porównaj</label>
+                            </div>
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div><p>19”</p></div>
+                                    <div><p>21”</p></div>
+                                    <div><p>23”</></div>
+                                </div>
+                                <div class="product-color">
+                                    <div></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
                         </div>
-                        <div class="middle-image">
-                            <img src="img/new_product1.png" alt="idealny rower" class="image-responsive" width="288" height="175" load="lazy">
+                    </div>
+                    <div class="splide__slide">
+                        <div class="product-item">
+                            <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-1">
+                                <label for="compare-product-1">Porównaj</label>
+                            </div>
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div><p>19”</p></div>
+                                    <div><p>21”</p></div>
+                                    <div><p>23”</></div>
+                                </div>
+                                <div class="product-color">
+                                    <div></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
                         </div>
-                        <button>Sprawdź</button>
                     </div>
                 </div>
-            </div>
         </div>
+        <div class="global-pagination-container more-products-pag">
+            <div class="splide__pagination"></div>
+        </div>
+        </div>
+    </div>
     </section>
 </main>
 <footer>
@@ -1472,10 +1342,10 @@
         </div>
     </div>
 </footer>
-
-    <script src="splide/splide.min.js"></script>
-    <script src="nouislider/nouislider.js"></script>
+    
     <script src="js/menu.js"></script>
-    <script src="js/main.js"></script>
+    <script src="splide/splide.min.js"></script>
+    <script src="js/fslightbox.js"></script>
+    <script src="js/product-card.js"></script>
 </body>
 </html>

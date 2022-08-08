@@ -8,9 +8,10 @@ $dark-blue: #1D2939;
 $dark-headers-typo: #101828;
 $gray-typo: #667085;
 $gray-border-color: #EAECF0;
+$blue-button-color: #1E94D2;
 
 $xxl: 1450px;
-$xl: 1200px;
+$xl: 1220px;
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
@@ -22,6 +23,7 @@ $font-inter: 'Inter', sans-serif, Helvetica;
 $font-bold: 700;
 $font-medium: 500;
 $font-regular: 400;
+$font-light: 300;
 
 //class helpers
 
@@ -62,7 +64,7 @@ $font-regular: 400;
     margin: 0 auto 0;
 }
 
-@media (max-width: $xxl) {
+@media (max-width: $xl) {
     .main-container {
         width: auto;
         padding: 0 16px;
@@ -72,6 +74,10 @@ $font-regular: 400;
 .image-responsive {
     width: 100%;
     height: auto;
+}
+
+.product-main-container {
+    max-width: 799px;
 }
 
 //components
@@ -98,7 +104,15 @@ $font-regular: 400;
     position: relative;
     width: 56px;
     height: 56px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
     border: 1px solid $gray-border-color;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: $light-blue;
+    }
 }
 
 .headers-typo-style {
@@ -111,3 +125,270 @@ $font-regular: 400;
     letter-spacing: -2%;
 }
 
+@media (max-width: $sm) {
+    .headers-typo-style {
+        font-size: 1.5rem;
+        line-height: 24px;
+    }
+}
+
+.page-line-style {
+    position: absolute;
+    background-color: #E5E5E5;
+    width: 1px;
+    height: 100%;
+    bottom: 0;
+    z-index: 99;
+}
+
+.nav-link-style {
+    @extend .flex-row, .flex-center;
+    text-decoration: none;
+    margin: 0;
+    font-family: $font-sequel;
+    font-weight: $font-regular;
+    font-size: 1rem;
+    color: $gray-typo;
+    line-height: 24px;
+    // gap: 13px;
+}
+
+.checkbox-style {
+    @extend .flex-center;
+    appearance: none;
+    background: transparent;
+    position: relative;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #D0D5DD;
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        transform: scale(0);
+        transition: 0.1s ease-in-out;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 13px;
+        background-image: url("../img/checkmark.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scale(0) rotate(90deg);
+        transition: 0.1s ease-in-out;
+    }
+
+    &:checked::before {
+        transform: scale(1);
+    }
+    &:checked::after {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.product-card-style {
+    @extend .flex-col, .flex-center;
+    position: relative;
+    box-sizing: border-box;
+    width: 384px;
+    height: 580px;
+    padding: 32px;
+
+    .compare-checkbox {
+        @extend .flex-row, .flex-center;
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        max-width: 114px;
+        background-color: $light-blue;
+        padding: 14px;
+        gap: 8px;
+
+        input {
+            @extend .checkbox-style;
+            width: 16px;
+            height: 16px;
+
+            &::before {
+                width: 18px;
+                height: 18px;
+                background-color: $light-blue;
+            }
+
+            &::after {
+                left: -3px;
+            }
+        }
+
+        label {
+            cursor: pointer;
+            user-select: none;
+        }
+    }
+
+    .top-product-panel {
+        @extend .flex-center;
+        width: 100%;
+        height: 320px;
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .bottom-product-panel {
+        text-align: center;
+        p {
+            margin: 0;
+            color: #7A7A7A;
+            font-weight: $font-medium;
+            font-size: 0.75rem;
+            line-height: 20px;
+            letter-spacing: -1.2%;
+        }
+
+        h3 {
+            margin: 4px 0 0;
+            color: #1A1A1A;
+            font-family: $font-sequel;
+            font-weight: $font-regular;
+            font-size: 1.5rem;
+            line-height: 22px;
+            letter-spacing: -1.2%;
+        }
+
+        .sizes-info {
+            @extend .flex-row, .flex-center;
+            margin: 24px 0 0;
+            gap: 14px;
+            
+            div {
+                @extend .flex-center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: $blue;
+
+                p {
+                    color: white;
+                    font-size: 0.9rem;
+                }
+
+                &:nth-child(2), &:nth-child(3) {
+                    background-color: $hover-color;
+                    P {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+        .product-color {
+            margin: 14px auto 0;
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            border: 4px solid $blue;
+            border-radius: 50%;
+        }
+        
+        .product-price {
+            @extend .flex-row, .flex-center;
+            margin: 24px 0 0;
+            gap: 14px;
+
+            h4 {
+                margin: 0;
+                color: $blue;
+                font-weight: $font-bold;
+                font-size: 1.1rem;
+                line-height: 28px;
+                letter-spacing: -1%;
+            }
+
+            button {
+                display: none;
+                @extend .btn-style;
+                width: 116px;
+            }
+        }
+    }
+
+}
+
+.filter-input-style {
+    @extend .flex-row, .flex-between;
+    box-sizing: border-box;
+    height: 48px;
+    width: 100%;
+    padding: 0 14px;
+    background-color: white;
+    border: 2px solid #D0D5DD;
+    cursor: pointer;
+}
+
+.options-list-style {
+    @extend .flex-col;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 0;
+    top: 46px;
+    left: 0;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: max-height 0.1s ease-in-out;
+
+    li {
+        @extend .flex-row, .flex-between;
+        list-style-type: none;
+        padding: 12px 14px;
+
+        &:hover {
+            background-color: $blue;
+
+            label {
+                color: white;
+            }
+
+            input {
+                &::before {
+                    background-color: $blue;
+                }
+
+                &::after {
+                    background-image: url("../img/white_checkboxmark.svg");
+                }
+            }
+        }
+
+        label {
+            margin: 0;
+            color: $gray-typo;
+            font-weight: $font-regular;
+            font-size: 1rem;
+            cursor: pointer;
+            user-select: none;
+            line-height: 24px;
+        }
+
+        input {
+            @extend .checkbox-style;
+            background-color: white;
+            border: 1px solid #D0D5DD;
+        }
+    }
+}
