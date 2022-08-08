@@ -87,11 +87,20 @@ menuToggler.addEventListener('click', () => {
 
 //hover banner menu
 
-const changeBanner = (item, classes) => {
-    classes.forEach((banner) => {
-        banner.style.display = "none";
+// const changeBanner1 = (item, classes) => {
+//     classes.forEach((banner) => {
+//         banner.style.display = "none";
+//         if(item.dataset.link === banner.dataset.banner) {
+//             banner.style.display = "block";
+//         }
+//     });
+// };
+
+const changeBanner = (item, array, activeClass) => {
+    array.forEach((banner) => {
+        banner.classList.remove(activeClass);
         if(item.dataset.link === banner.dataset.banner) {
-            banner.style.display = "block";
+            banner.classList.add(activeClass);
         }
     });
 };
@@ -114,11 +123,11 @@ menuCardLinks.forEach((item) => {
         // }
 
 
-        if (item.classList.contains('support-item')) changeBanner(item, supportBanner);
+        if (item.classList.contains('support-item')) changeBanner(item, supportBanner, 'support-banner--active');
 
-        if (item.classList.contains('scooter-item')) changeBanner(item, scooterBanner);
+        if (item.classList.contains('scooter-item')) changeBanner(item, scooterBanner, 'scooters-image--active');
 
-        if(item.classList.contains('bike-items')) changeBanner(item, bikeBanner);
+        if(item.classList.contains('bike-items')) changeBanner(item, bikeBanner, 'bike-image--active');
 
     });
 });

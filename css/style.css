@@ -491,14 +491,24 @@ header {
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav {
   position: relative;
-  max-width: 596px;
-  max-height: 392px;
+  width: 596px;
+  height: 392px;
   flex-basis: 50%;
   background-color: #1A1A1A;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .item-image-nav img, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .item-image-nav img, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .item-image-nav img {
   max-height: 392px;
   opacity: 0.7;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .support-banner, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .support-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .support-banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .support-banner--active, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .support-banner--active, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .support-banner--active {
+  opacity: 1;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav .text-image, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .text-image, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .text-image {
   position: absolute;
@@ -531,14 +541,21 @@ header {
   margin: 0;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav {
+  position: relative;
   width: 596px;
   height: 392px;
+  background-color: white;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: #F0F9FF;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image--active, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image--active {
+  opacity: 1;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner, .desktop-nav .nav-bar-desktop-container .menu-card-second .bikes .menu-card .right-panel-nav .bike-image .text-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card-second .menu-card .right-panel-nav .bike-image .text-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner {
   position: absolute;
@@ -579,6 +596,18 @@ header {
 .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li {
   box-sizing: border-box;
   max-height: 72px;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav {
+  position: relative;
+  background-color: white;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image {
+  position: absolute;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+}
+.desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image--active {
+  opacity: 1;
 }
 .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image img {
   width: 100%;
