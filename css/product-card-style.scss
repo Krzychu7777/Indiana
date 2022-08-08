@@ -440,6 +440,7 @@ body {
                             @extend .circle;
                             border: 1px solid #D0D5DD;
                             user-select: none;
+                            box-sizing: border-box;
                             
                             &--black {
                                 background-color: #000000;
@@ -1016,7 +1017,6 @@ body {
         }
     }
 }
-
 
 @media (max-width: 875px) {
     .product-fixed {
