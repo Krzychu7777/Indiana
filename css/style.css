@@ -823,25 +823,25 @@ header {
     height: auto;
   }
   .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger-menu {
-    width: 25px;
+    width: 20px;
     height: 10px;
   }
   .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger-bars {
     height: 2px;
   }
   .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger-bars::before {
-    top: -8px;
+    top: -7px;
     height: 2px;
   }
   .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger-bars::after {
-    top: 8px;
+    top: 7px;
     height: 2px;
   }
   .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger--active .hamburger-bars::before {
-    transform: translateY(8px) rotate(-45deg);
+    transform: translateY(7px) rotate(-45deg);
   }
   .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger--active .hamburger-bars::after {
-    transform: translateY(-8px) rotate(45deg);
+    transform: translateY(-7px) rotate(45deg);
   }
 }
 .home-section {
