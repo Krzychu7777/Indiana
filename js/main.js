@@ -79,9 +79,11 @@ var splide = new Splide( '#home-page', {
     rewind: true,
     autoplay: true,
     interval: 5000,
+    drag: false,
     breakpoints: {
         992: {
             arrows: false,
+            drag: true,
         }
     }
 
@@ -92,7 +94,7 @@ var splide = new Splide( '#home-page', {
     var splide = new Splide( '#bikes', {
     type   : 'loop',
     perPage: 4,
-    gap: -335,
+    gap: -336,
     pagination: false,
     speed: 1000,
     breakpoints: {

@@ -103,25 +103,25 @@ form.addEventListener('submit', (e) => {
 
 //bookmarks
 
-bookmarkButtons.forEach((item) => {
-    item.addEventListener('click', () => {
-        const productSections = document.querySelectorAll('.product-inf-section');
+// bookmarkButtons.forEach((item) => {
+//     item.addEventListener('click', () => {
+//         const productSections = document.querySelectorAll('.product-inf-section');
 
-        productSections.forEach((section) => {
-            section.style.order = "1";
+//         productSections.forEach((section) => {
+//             section.style.order = "1";
 
-            if(item.dataset.bookmark === section.dataset.section) {
-                section.style.order = "0";
-            }
-        });
+//             if(item.dataset.bookmark === section.dataset.section) {
+//                 section.style.order = "0";
+//             }
+//         });
 
-        bookmarkButtons.forEach((button) => {
-            button.classList.remove('bookmark--active');
-        });
+//         bookmarkButtons.forEach((button) => {
+//             button.classList.remove('bookmark--active');
+//         });
 
-        item.classList.add('bookmark--active');
-    });
-});
+//         item.classList.add('bookmark--active');
+//     });
+// });
 
 //sticky button
 
@@ -142,9 +142,9 @@ window.addEventListener('scroll', () => {
 //splide 
 
 var splide = new Splide( '#more-products', {
-    type: "loop",
     gap: 32,
     perPage: 3,
+    perMove: 1,
     rewind : true,
     pagination: false,
     drag: false,

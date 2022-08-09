@@ -1,0 +1,101 @@
+@import 'helpers';
+
+.technologies-home-section {
+    min-height: auto;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../img/technologies-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.technologies-container {
+    position: relative;
+    min-height: auto;
+    padding: 263px 0;
+
+    .home-text-content {
+        width: 65%;
+        color: white;
+        h1 {
+            margin: 0;
+            font-family: $font-sequel;
+            font-weight: $font-regular;
+            font-size: 3rem;
+            line-height: 58px;
+            letter-spacing: -2%;
+        }
+
+        h2 {
+            margin: 32px 0 0;
+            font-weight: $font-regular;
+            font-size: 1.1rem;
+            line-height: 28px;
+        }
+    }
+}
+
+.technologies-breadcrumbs {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    
+    .breadcrumbs {
+        @extend .flex-row;
+        overflow: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        gap: 18px;
+    
+        a {
+            text-decoration: none;
+            color: white;
+            font-weight: $font-medium;
+            font-size: 0.9rem;
+            line-height: 20px;
+        }
+    }
+}
+
+@media (max-width: $xl) {
+    .technologies-container {
+        padding: 263px 16px;
+    }
+    
+    .technologies-breadcrumbs {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: $lg) {
+    .technologies-container {
+        .home-text-content {
+            width: 80%;
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .technologies-container {
+        padding: 162px 16px 234px;
+
+        .home-text-content {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .technologies-container {
+        .home-text-content {
+            h1 {
+                font-size: 2.25rem;
+                line-height: 46px;
+            }
+
+            h2 {
+                margin: 20px 0 0;
+            }
+        }
+    }
+}

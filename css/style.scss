@@ -3,6 +3,7 @@
 html {
     font-size: 16px;
     font-family: $font-inter;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -197,6 +198,14 @@ header {
 
                             &:hover {
                                 background-color: $hover-color;
+                            }
+                        }
+
+                        .scooter-item, .bike-items {
+                            a {
+                                padding: 0 12px;
+                                gap: 16px;
+                                height: 72px;
                             }
                         }
                     }
@@ -716,6 +725,10 @@ header {
     min-height: auto;
     background-color: #F5F5F5;
     z-index: 99;
+
+    .splide__track {
+        z-index: 9;
+    }
 }
 
 .home-lines {
@@ -832,18 +845,30 @@ header {
     background-color: white;
     bottom: 0;
     right: 0;
-    gap: 2.6px;
+    gap: 3px;
 
     li {
         @extend .flex-center;
         width: 100%;
         
         .splide__pagination__page {
+            position: relative;
             width: 100%;
             height: 2px;
             border: none;
             background-color: #F2F2F2;
             cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -50%;
+                transform: translateY(50%);
+                width: 100%;
+                height: 70px;
+                background: transparent;
+            }
             }
 
         .is-active {
@@ -1028,7 +1053,7 @@ header {
         width: 186px;
 
         &:hover {
-            background-color: white;
+            color: white
         }
     }
 }
@@ -1047,7 +1072,7 @@ header {
 }
 
 .slider-bikes-container {
-    width: 2000px;
+    width: 1999px;
 }
 
 .line-container {
@@ -1102,7 +1127,7 @@ header {
 .bike-item {
     @extend .flex-col;
     background-color: $light-blue;
-    width: 384px;
+    width: 386px;
     height: 513px;
     padding: 48px 0;
     box-sizing: border-box;
@@ -1359,11 +1384,16 @@ header {
         height: 667px;
         padding: 64px 32px;
         overflow: hidden;
+        background-image: url("../img/guide_rectangle2.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     
         img {
             position: absolute;
             top: 0;
             left: 0;
+            height: 100%;
         }
     
         .item-text-container {
@@ -1379,7 +1409,7 @@ header {
             }
     
             p {
-                margin: 12px 0;
+                margin: 12px 0 0;
                 font-weight: $font-light;
                 font-size: 1rem;
                 line-height: 24px;
@@ -1409,7 +1439,6 @@ header {
 
 .guides-header {
     @extend .flex-row, .flex-between;
-    padding: 0 2px;
     position: relative;
     z-index: 99;
 
@@ -1424,7 +1453,7 @@ header {
         color: $gray-typo;
         
         &:hover {
-            background-color: $light-blue;
+            color: white;
         }
     }
 }
@@ -1691,6 +1720,7 @@ header {
             img {
                 width: 100%;
                 max-height: 274px;
+                max-width: 320px;
                 height: auto;
             }
         }
@@ -1827,6 +1857,9 @@ header {
     }
 
     .right-panel {
+        position: relative;
+        z-index: 99;
+        
         h2 {
             @extend .headers-typo-style;
         }

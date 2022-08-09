@@ -324,6 +324,7 @@
 html {
   font-size: 16px;
   font-family: "Inter", sans-serif, Helvetica;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -488,6 +489,11 @@ header {
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li:hover, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li:hover, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li:hover {
   background-color: #F0F9FF;
+}
+.desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container .scooter-item a, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container .scooter-item a, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container .scooter-item a, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container .bike-items a, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container .bike-items a, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container .bike-items a {
+  padding: 0 12px;
+  gap: 16px;
+  height: 72px;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav {
   position: relative;
@@ -879,6 +885,9 @@ header {
   background-color: #F5F5F5;
   z-index: 99;
 }
+.home-section .splide__track {
+  z-index: 9;
+}
 
 .home-lines {
   display: none;
@@ -979,17 +988,28 @@ header {
   background-color: white;
   bottom: 0;
   right: 0;
-  gap: 2.6px;
+  gap: 3px;
 }
 .pag-slider .splide__pagination li {
   width: 100%;
 }
 .pag-slider .splide__pagination li .splide__pagination__page {
+  position: relative;
   width: 100%;
   height: 2px;
   border: none;
   background-color: #F2F2F2;
   cursor: pointer;
+}
+.pag-slider .splide__pagination li .splide__pagination__page::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  transform: translateY(50%);
+  width: 100%;
+  height: 70px;
+  background: transparent;
 }
 .pag-slider .splide__pagination li .is-active {
   background-color: #1E94D2;
@@ -1132,7 +1152,7 @@ header {
   width: 186px;
 }
 .bikes-header button:hover {
-  background-color: white;
+  color: white;
 }
 
 .bikes-item-container {
@@ -1148,7 +1168,7 @@ header {
 }
 
 .slider-bikes-container {
-  width: 2000px;
+  width: 1999px;
 }
 
 .line-container {
@@ -1194,7 +1214,7 @@ header {
 
 .bike-item {
   background-color: #F9FAFB;
-  width: 384px;
+  width: 386px;
   height: 513px;
   padding: 48px 0;
   box-sizing: border-box;
@@ -1403,11 +1423,16 @@ header {
   height: 667px;
   padding: 64px 32px;
   overflow: hidden;
+  background-image: url("../img/guide_rectangle2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .guides-items-container .guide-item img {
   position: absolute;
   top: 0;
   left: 0;
+  height: 100%;
 }
 .guides-items-container .guide-item .item-text-container {
   color: white;
@@ -1421,7 +1446,7 @@ header {
   line-height: 32px;
 }
 .guides-items-container .guide-item .item-text-container p {
-  margin: 12px 0;
+  margin: 12px 0 0;
   font-weight: 300;
   font-size: 1rem;
   line-height: 24px;
@@ -1445,7 +1470,6 @@ header {
 }
 
 .guides-header {
-  padding: 0 2px;
   position: relative;
   z-index: 99;
 }
@@ -1455,7 +1479,7 @@ header {
   color: #667085;
 }
 .guides-header button:hover {
-  background-color: #F9FAFB;
+  color: white;
 }
 
 .guides-container .mobile-bikes-button button {
@@ -1646,6 +1670,7 @@ header {
 .scooters-item-container .product-card .scooter-top-panel img {
   width: 100%;
   max-height: 274px;
+  max-width: 320px;
   height: auto;
 }
 .scooters-item-container .product-card .scooter-bottom-panel h3 {
@@ -1752,6 +1777,10 @@ header {
   margin: 96px 0 0 -112px;
   max-width: 720px;
   max-height: 780px;
+}
+.technology-container .right-panel {
+  position: relative;
+  z-index: 99;
 }
 .technology-container .right-panel p {
   margin: 16px 0 0;

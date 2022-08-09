@@ -760,12 +760,6 @@
         </div>
     </section>
     <section id="product-card-home" class="home-product-section">
-    <div class="line-container">
-        <div class="page-line1"></div>
-        <div class="page-line2"></div>
-        <div class="page-line3"></div>
-        <div class="page-line4"></div>
-    </div>
     <div class="main-container product-home-container">
         <div class="home-product-breadcrumbs">
             <div class="breadcrumbs">
@@ -854,16 +848,16 @@
             </div>
             <div class="page-bookmarks-container">
                 <div class="bookmarks-container">
-                    <div class="bookmark bookmark--active" data-bookmark="description">
+                    <a href="#product-description" class="bookmark bookmark--active" data-bookmark="description">
                         <p>Opis produktu</p>
-                    </div>
-                    <div class="bookmark" data-bookmark="specification">
+                    </a>
+                    <a href="#specification" class="bookmark" data-bookmark="specification">
                         <p>Specyfikacja</p>
-                    </div>
+                    </a>
                 </div>
                 <div class="page-column-border"></div>
             </div>
-            <div class="product-descriptions-container product-inf-section" data-section="description" style="order: 0;">
+            <div id="product-description" class="product-descriptions-container">
                     <div class="description-column">
                         <h2>Rower Cross</h2>
                        <div class="description">
@@ -926,40 +920,6 @@
                        </div>
                         <img src="img/guarantee.jpg" alt="gwarancja" class="image-responsive" width="799" height="423" loading="lazy">
                     </div>
-            </div>
-            <div class="product-specifications-container product-inf-section" data-section="specification" style="order: 1;">
-                <div class="bg-siema"></div>
-                <h2>Specyfikacja</h2>
-                <div class="specification-items-container">
-                    <div class="specification-item">
-                        <p>Kolor</p>
-                        <p>Czarny</p>
-                    </div>
-                    <div class="specification-item">
-                        <p>Kolory dostępne w ofercie producenta</p>
-                        <p>Czarny</p>
-                    </div>
-                    <div class="specification-item">
-                        <p>Rocznik</p>
-                        <p>2021</p>
-                    </div>
-                    <div class="specification-item">
-                        <p>Gwarancja na ramę</p>
-                        <p>5 lat</p>
-                    </div>
-                    <div class="specification-item">
-                        <p>Wyposażenie</p>
-                        <p>Dzwonek, Instrukcja obsługi i montażu, Karta gwarancyjna</p>
-                    </div>
-                    <div class="specification-item">
-                        <p>Typ roweru</p>
-                        <p>Cross</p>
-                    </div>
-                    <div class="specification-item">
-                        <p>Gwarancja</p>
-                        <p>24 miesiące</p>
-                    </div>
-                </div>
             </div>
         </section>
         <section class="product-right-panel">
@@ -1080,7 +1040,7 @@
         </section>
     </div>
     </section>
-    <!-- <section id="specification" class="specification-section">
+    <section id="specification" class="specification-section">
     <div class="main-container specyfication-layout">
         <div class="product-specifications-container">
             <h2>Specyfikacja</h2>
@@ -1117,131 +1077,218 @@
         </div>
         <div class="empty-panel"></div>
     </div>
-</section> -->
+    </section>
     <section id="more-products" class="splide more-products-section">
-    <div class="line-container">
-        <div class="page-line1"></div>
-        <div class="page-line2"></div>
-        <div class="page-line3"></div>
-        <div class="page-line4"></div>
-    </div>
     <div class="main-container more-products-container">
         <h2>Zobacz także</h2>
         <div class="products-container">
-        <div class="splide__arrows more-products-arrows">
-            <button class="splide__arrow splide__arrow--prev">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            <button class="splide__arrow splide__arrow--next">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-        </div>
-        <div class="splide__track">
-                <div class="splide__list">
-                    <div class="splide__slide">
-                        <div class="product-item">
-                            <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-1">
-                                <label for="compare-product-1">Porównaj</label>
-                            </div>
-                            <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
-                            </div>
-                            <div class="bottom-product-panel">
-                                <p>INDIANA</p>
-                                <h3>X-CROSS 4.0</h3>
-                                <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+            <div class="splide__arrows more-products-arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 8H1M1 8L8 15M1 8L8 1" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 8H15M15 8L8 1M15 8L8 15" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="splide__track">
+                    <div class="splide__list">
+                        <div class="splide__slide">
+                            <div class="product-item">
+                                <div class="compare-checkbox">
+                                    <input type="checkbox" name="compare-product" id="compare-product-1">
+                                    <label for="compare-product-1">Porównaj</label>
                                 </div>
-                                <div class="product-color">
-                                    <div></div>
+                                <div class="top-product-panel">
+                                    <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
                                 </div>
-                                <div class="product-price">
-                                    <h4>2499.99 PLN</h4>
+                                <div class="bottom-product-panel">
+                                    <p>INDIANA</p>
+                                    <h3>X-CROSS 4.0</h3>
+                                    <div class="sizes-info">
+                                        <div><p>19”</p></div>
+                                        <div><p>21”</p></div>
+                                        <div><p>23”</></div>
+                                    </div>
+                                    <div class="product-color">
+                                        <div></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>2499.99 PLN</h4>
+                                        <button>Sprawdź</button>
+                                    </div>
+                                </div>
+                                <div class="bg-product"></div>
+                                <div class="product-button">
                                     <button>Sprawdź</button>
                                 </div>
                             </div>
-                            <div class="bg-product"></div>
-                            <div class="product-button">
-                                <button>Sprawdź</button>
-                            </div>
                         </div>
-                    </div>
-                    <div class="splide__slide">
-                        <div class="product-item">
-                            <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-1">
-                                <label for="compare-product-1">Porównaj</label>
-                            </div>
-                            <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
-                            </div>
-                            <div class="bottom-product-panel">
-                                <p>INDIANA</p>
-                                <h3>X-CROSS 4.0</h3>
-                                <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                        <div class="splide__slide">
+                            <div class="product-item">
+                                <div class="compare-checkbox">
+                                    <input type="checkbox" name="compare-product" id="compare-product-2">
+                                    <label for="compare-product-2">Porównaj</label>
                                 </div>
-                                <div class="product-color">
-                                    <div></div>
+                                <div class="top-product-panel">
+                                    <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
                                 </div>
-                                <div class="product-price">
-                                    <h4>2499.99 PLN</h4>
+                                <div class="bottom-product-panel">
+                                    <p>INDIANA</p>
+                                    <h3>X-CROSS 4.0</h3>
+                                    <div class="sizes-info">
+                                        <div><p>19”</p></div>
+                                        <div><p>21”</p></div>
+                                        <div><p>23”</></div>
+                                    </div>
+                                    <div class="product-color">
+                                        <div></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>2499.99 PLN</h4>
+                                        <button>Sprawdź</button>
+                                    </div>
+                                </div>
+                                <div class="bg-product"></div>
+                                <div class="product-button">
                                     <button>Sprawdź</button>
                                 </div>
                             </div>
-                            <div class="bg-product"></div>
-                            <div class="product-button">
-                                <button>Sprawdź</button>
-                            </div>
                         </div>
-                    </div>
-                    <div class="splide__slide">
-                        <div class="product-item">
-                            <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-1">
-                                <label for="compare-product-1">Porównaj</label>
-                            </div>
-                            <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
-                            </div>
-                            <div class="bottom-product-panel">
-                                <p>INDIANA</p>
-                                <h3>X-CROSS 4.0</h3>
-                                <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                        <div class="splide__slide">
+                            <div class="product-item">
+                                <div class="compare-checkbox">
+                                    <input type="checkbox" name="compare-product" id="compare-product-3">
+                                    <label for="compare-product-3">Porównaj</label>
                                 </div>
-                                <div class="product-color">
-                                    <div></div>
+                                <div class="top-product-panel">
+                                    <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
                                 </div>
-                                <div class="product-price">
-                                    <h4>2499.99 PLN</h4>
+                                <div class="bottom-product-panel">
+                                    <p>INDIANA</p>
+                                    <h3>X-CROSS 4.0</h3>
+                                    <div class="sizes-info">
+                                        <div><p>19”</p></div>
+                                        <div><p>21”</p></div>
+                                        <div><p>23”</></div>
+                                    </div>
+                                    <div class="product-color">
+                                        <div></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>2499.99 PLN</h4>
+                                        <button>Sprawdź</button>
+                                    </div>
+                                </div>
+                                <div class="bg-product"></div>
+                                <div class="product-button">
                                     <button>Sprawdź</button>
                                 </div>
                             </div>
-                            <div class="bg-product"></div>
-                            <div class="product-button">
-                                <button>Sprawdź</button>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="product-item">
+                                <div class="compare-checkbox">
+                                    <input type="checkbox" name="compare-product" id="compare-product-4">
+                                    <label for="compare-product-4">Porównaj</label>
+                                </div>
+                                <div class="top-product-panel">
+                                    <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                </div>
+                                <div class="bottom-product-panel">
+                                    <p>INDIANA</p>
+                                    <h3>X-CROSS 4.0</h3>
+                                    <div class="sizes-info">
+                                        <div><p>19”</p></div>
+                                        <div><p>21”</p></div>
+                                        <div><p>23”</></div>
+                                    </div>
+                                    <div class="product-color">
+                                        <div></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>2499.99 PLN</h4>
+                                        <button>Sprawdź</button>
+                                    </div>
+                                </div>
+                                <div class="bg-product"></div>
+                                <div class="product-button">
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="product-item">
+                                <div class="compare-checkbox">
+                                    <input type="checkbox" name="compare-product" id="compare-product-5">
+                                    <label for="compare-product-5">Porównaj</label>
+                                </div>
+                                <div class="top-product-panel">
+                                    <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                </div>
+                                <div class="bottom-product-panel">
+                                    <p>INDIANA</p>
+                                    <h3>X-CROSS 4.0</h3>
+                                    <div class="sizes-info">
+                                        <div><p>19”</p></div>
+                                        <div><p>21”</p></div>
+                                        <div><p>23”</></div>
+                                    </div>
+                                    <div class="product-color">
+                                        <div></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>2499.99 PLN</h4>
+                                        <button>Sprawdź</button>
+                                    </div>
+                                </div>
+                                <div class="bg-product"></div>
+                                <div class="product-button">
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="product-item">
+                                <div class="compare-checkbox">
+                                    <input type="checkbox" name="compare-product" id="compare-product-6">
+                                    <label for="compare-product-6">Porównaj</label>
+                                </div>
+                                <div class="top-product-panel">
+                                    <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                </div>
+                                <div class="bottom-product-panel">
+                                    <p>INDIANA</p>
+                                    <h3>X-CROSS 4.0</h3>
+                                    <div class="sizes-info">
+                                        <div><p>19”</p></div>
+                                        <div><p>21”</p></div>
+                                        <div><p>23”</></div>
+                                    </div>
+                                    <div class="product-color">
+                                        <div></div>
+                                    </div>
+                                    <div class="product-price">
+                                        <h4>2499.99 PLN</h4>
+                                        <button>Sprawdź</button>
+                                    </div>
+                                </div>
+                                <div class="bg-product"></div>
+                                <div class="product-button">
+                                    <button>Sprawdź</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+            </div>
+            <div class="global-pagination-container more-products-pag">
+                <div class="splide__pagination"></div>
+            </div>
         </div>
-        <div class="global-pagination-container more-products-pag">
-            <div class="splide__pagination"></div>
         </div>
-        </div>
-    </div>
     </section>
 </main>
 <footer>

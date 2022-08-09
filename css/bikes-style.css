@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.flex-row, .products-pagination-container, .bike-cards-container, .bike-products-header .products-amount-container, .bike-products-header, .filters-info-container .category-filter-container .category-filter, .filters-info-container .category-filter-container, .filters-info-container, .filters-input-container .filter-input .color-list label, .filters-input-container, .bikes-category-container, .bikes-home-container .left-panel-home .breadcrumbs, .bikes-home-container, .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li, .filter-input-style, .bike-products-header .sorting-input, .filters-input-container .filter-input, .product-card-style .bottom-product-panel .product-price, .bike-cards-container .bike-product-card .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .bike-cards-container .bike-product-card .compare-checkbox, .nav-link-style {
+.flex-row, .products-pagination-container, .bike-products-header .products-amount-container, .bike-products-header, .filters-info-container .category-filter-container .category-filter, .filters-info-container .category-filter-container, .filters-info-container, .filters-input-container .filter-input .color-list label, .filters-input-container, .bikes-category-container, .bikes-home-container .left-panel-home .breadcrumbs, .bikes-home-container, .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li, .filter-input-style, .bike-products-header .sorting-input, .filters-input-container .filter-input, .product-card-style .bottom-product-panel .product-price, .bike-cards-container .bike-product-card .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .bike-cards-container .bike-product-card .compare-checkbox, .nav-link-style {
   display: flex;
   flex-direction: row;
 }
@@ -381,13 +381,13 @@ body {
 }
 
 @media (max-width: 1220px) {
-  .breadcrumbs-container .breadcrumbs {
-    padding: 0 16px;
+  .bikes-home-container {
+    padding: 0;
   }
   .bikes-home-container .left-panel-home {
     flex-basis: 45%;
     width: 60%;
-    padding: 0 0 100px;
+    padding: 0 0 100px 16px;
   }
   .bikes-home-container .right-panel-home {
     justify-self: flex-end;
@@ -407,9 +407,10 @@ body {
     gap: 20px;
   }
   .bikes-home-container .left-panel-home {
+    box-sizing: border-box;
     gap: 64px;
     width: 100%;
-    padding: 0;
+    padding: 0 16px;
     text-align: center;
   }
   .bikes-home-container .right-panel-home img {
@@ -491,7 +492,19 @@ body {
 .filters-input-container .filter-input {
   position: relative;
   color: #667085;
-  z-index: 999;
+  z-index: 99;
+}
+.filters-input-container .filter-input:first-child {
+  z-index: 4;
+}
+.filters-input-container .filter-input:nth-child(2) {
+  z-index: 3;
+}
+.filters-input-container .filter-input:nth-child(3) {
+  z-index: 2;
+}
+.filters-input-container .filter-input:nth-child(4) {
+  z-index: 1;
 }
 .filters-input-container .filter-input p {
   -webkit-user-select: none;
@@ -704,10 +717,13 @@ body {
 }
 
 .bike-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 32px 0 0;
   gap: 32px;
 }
 .bike-cards-container .bike-product-card {
+  width: 100%;
   position: relative;
   background-color: white;
   z-index: 9;
@@ -797,8 +813,9 @@ body {
   color: white;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
   .bike-cards-container {
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
   .bike-cards-container .bike-product-card .top-product-panel {
@@ -807,8 +824,7 @@ body {
 }
 @media (max-width: 900px) {
   .bike-cards-container {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
   }
   .bike-cards-container .bike-product-card {
     width: 100%;

@@ -74,17 +74,13 @@ body {
 }
 
 @media (max-width: $xl) {
-    .breadcrumbs-container {
-       .breadcrumbs {
-        padding: 0 16px;
-       }
-    }
-
     .bikes-home-container {
+        padding: 0;
+
         .left-panel-home {
             flex-basis: 45%;
             width: 60%;
-            padding: 0 0 100px;
+            padding: 0 0 100px 16px;
         }
         .right-panel-home {
             justify-self: flex-end;
@@ -105,9 +101,10 @@ body {
         flex-direction: column;
         gap: 20px;
         .left-panel-home {
+            box-sizing: border-box;
             gap: 64px;
             width: 100%;
-            padding: 0;
+            padding: 0 16px;
             text-align: center;
         }
         .right-panel-home {
@@ -220,7 +217,23 @@ body {
         @extend .filter-input-style;
         position: relative;
         color: $gray-typo;
-        z-index: 999;
+        z-index: 99;
+
+        &:first-child {
+           z-index: 4;
+        }
+
+        &:nth-child(2) {
+            z-index: 3;
+        }
+
+        &:nth-child(3) {
+            z-index: 2;
+        }
+
+        &:nth-child(4) {
+            z-index: 1;
+        }
 
         p {
             user-select: none;
@@ -480,12 +493,14 @@ body {
 }
 
 .bike-cards-container {
-    @extend .flex-row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 32px 0 0;
     gap: 32px;
 
     .bike-product-card {
         @extend .product-card-style;
+        width: 100%;
         position: relative;
         background-color: white;
         z-index: 9;
@@ -594,8 +609,9 @@ body {
     }
 }
 
-@media (max-width: $lg) {
+@media (max-width: 1100px) {
     .bike-cards-container{
+        grid-template-columns: 1fr 1fr;
         gap: 16px;
         .bike-product-card {
             .top-product-panel {
@@ -607,8 +623,7 @@ body {
 
 @media (max-width: 900px) {
     .bike-cards-container {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
 
         .bike-product-card {
             width: 100%;
