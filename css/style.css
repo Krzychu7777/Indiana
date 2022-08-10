@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.flex-center, .search-container .search-input .left-panel, #slider .noUi-tooltip, .choice-column-container .right-col .product-card .middle-image, .choice-column-container .middle-col .select-option-container .gender .men, .choice-column-container .middle-col .select-option-container .gender .woman, .choice-column-container .middle-col .select-option-container .gender, .choice-column-container .middle-col, .choice-column-container, .technology-container, .mobile-bikes-button, .global-pagination-container .splide__pagination li, .global-pagination-container .splide__pagination, .pag-slider .splide__pagination li, .pag-slider .splide__pagination, .mobile-nav .menu-card-mobile .fb-icon-mobile, .mobile-nav .menu-mobile-category .fb-icon-mobile, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav a, .desktop-nav .first-rectangle-container .first-rectangle-nav, .product-card-style .bottom-product-panel .product-price, .news-item-container .new-product .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .news-item-container .new-product .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .news-item-container .new-product .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .news-item-container .new-product .top-product-panel, .product-card-style .compare-checkbox, .news-item-container .new-product .compare-checkbox, .product-card-style, .news-item-container .new-product, .checkbox-style, .options-list-style li input, .choice-column-container .middle-col .select-option-container .options-select .option-list li input, .product-card-style .compare-checkbox input, .news-item-container .new-product .compare-checkbox input, .nav-link-style, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop .drop-down-btn, .arrow-style, .slider-bikes-arrows button, .slider-news-arrows button, .home-arrows button {
+.flex-center, .search-container .search-input .left-panel, #slider .noUi-tooltip, .choice-column-container .right-col .product-card .middle-image, .choice-column-container .middle-col .select-option-container .gender .men, .choice-column-container .middle-col .select-option-container .gender .woman, .choice-column-container .middle-col .select-option-container .gender, .choice-column-container .middle-col, .choice-column-container, .technology-container, .scooters-item-container .product-card .scooter-top-panel, .mobile-bikes-button, .global-pagination-container .splide__pagination li, .global-pagination-container .splide__pagination, .pag-slider .splide__pagination li, .pag-slider .splide__pagination, .mobile-nav .menu-card-mobile .fb-icon-mobile, .mobile-nav .menu-mobile-category .fb-icon-mobile, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav a, .desktop-nav .first-rectangle-container .first-rectangle-nav, .product-card-style .bottom-product-panel .product-price, .news-item-container .new-product .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .news-item-container .new-product .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .news-item-container .new-product .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .news-item-container .new-product .top-product-panel, .product-card-style .compare-checkbox, .news-item-container .new-product .compare-checkbox, .product-card-style, .news-item-container .new-product, .checkbox-style, .options-list-style li input, .choice-column-container .middle-col .select-option-container .options-select .option-list li input, .product-card-style .compare-checkbox input, .news-item-container .new-product .compare-checkbox input, .nav-link-style, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop .drop-down-btn, .arrow-style, .slider-bikes-arrows button, .slider-news-arrows button, .home-arrows button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -436,7 +436,7 @@ header {
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container, .desktop-nav .nav-bar-desktop-container .menu-card-second, .desktop-nav .nav-bar-desktop-container .bikes {
   position: fixed;
-  top: 120px;
+  top: -100%;
   left: 0;
   width: 100%;
   height: auto;
@@ -444,16 +444,13 @@ header {
   padding: 0;
   box-sizing: border-box;
   display: block;
-  max-height: 0;
-  overflow: hidden;
+  padding: 64px 0 74px;
   box-shadow: 0px 50px 80px rgba(0, 0, 0, 0.07);
-  transition: 0.2s ease-in-out;
+  transition: 0.4s cubic-bezier(0.35, 0.01, 0.08, 1);
   z-index: -1;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container--active {
-  display: block;
-  max-height: 100%;
-  padding: 64px 0 74px;
+  top: 120px;
 }
 .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card {
   align-items: center;
@@ -648,6 +645,10 @@ header {
   top: 0;
   background-color: white;
 }
+.mobile-nav .mbolie-menu-scroll-wrapper {
+  position: relative;
+  padding: 100px;
+}
 .mobile-nav .category-nav-bar {
   position: fixed;
   top: 0;
@@ -666,8 +667,8 @@ header {
   color: #667085;
 }
 .mobile-nav .category-nav-bar svg {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
 }
 .mobile-nav .nav-bar-mobile-container {
   position: -webkit-sticky;
@@ -682,13 +683,12 @@ header {
   gap: 37px;
 }
 .mobile-nav .nav-bar-mobile-container .nav-links-mobile svg {
-  width: 30px;
-  height: 30px;
+  width: 21px;
+  height: auto;
 }
 .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger-menu {
   position: relative;
-  width: 35px;
-  height: 30px;
+  width: 28px;
   cursor: pointer;
   transition: 0.3s 0.1s ease-in-out;
   background: transparent;
@@ -700,7 +700,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #344054;
   transition: background-color 90ms ease-in-out;
   border-radius: 10px;
@@ -709,9 +709,9 @@ header {
   content: "";
   position: absolute;
   left: 0;
-  top: -10px;
+  top: -9px;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #344054;
   transition: transform 0.3s 0.13ms ease-in-out;
   border-radius: 10px;
@@ -724,9 +724,9 @@ header {
   content: "";
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 9px;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background: #344054;
   transition: transform 0.3s 0.13ms ease-in-out;
   border-radius: 10px;
@@ -735,10 +735,10 @@ header {
   background-color: transparent;
 }
 .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger--active .hamburger-bars::before {
-  transform: translateY(10px) rotate(-45deg);
+  transform: translateY(9px) rotate(-45deg);
 }
 .mobile-nav .nav-bar-mobile-container .nav-links-mobile .hamburger--active .hamburger-bars::after {
-  transform: translateY(-10px) rotate(45deg);
+  transform: translateY(-9px) rotate(45deg);
 }
 .mobile-nav .menu-card-mobile, .mobile-nav .menu-mobile-category {
   position: fixed;
@@ -1276,14 +1276,30 @@ header {
   gap: 16px;
 }
 .global-pagination-container .splide__pagination li {
+  max-width: 74px;
   width: 100%;
 }
 .global-pagination-container .splide__pagination li .splide__pagination__page {
+  position: relative;
   width: 100%;
   height: 2px;
   border: none;
   background-color: #F2F2F2;
   cursor: pointer;
+}
+.global-pagination-container .splide__pagination li .splide__pagination__page::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  transform: translateY(50%);
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .global-pagination-container .splide__pagination li .is-active {
   background-color: #1E94D2;
@@ -1299,7 +1315,8 @@ header {
   width: 186px;
 }
 .mobile-bikes-button button:hover {
-  background-color: white;
+  background-color: #0BA5EC;
+  color: white;
 }
 
 @media (max-width: 1250px) {
@@ -1482,13 +1499,18 @@ header {
   color: white;
 }
 
+.guides-container {
+  position: relative;
+  z-index: 99;
+}
 .guides-container .mobile-bikes-button button {
   position: relative;
   background-color: white;
   z-index: 99;
 }
 .guides-container .mobile-bikes-button button:hover {
-  background-color: #F9FAFB;
+  color: white;
+  background-color: #0BA5EC;
 }
 .guides-container .global-pagination-container {
   padding: 0;
@@ -1574,9 +1596,10 @@ header {
 .news-item-container .splide__slide {
   background-color: white;
 }
-.news-item-container .is-active {
+.news-item-container .new-product:hover {
   background: linear-gradient(90deg, #F5F5F5 0%, #FFFFFF 100%);
 }
+
 .news-container {
   position: relative;
 }
@@ -2049,7 +2072,7 @@ header {
   .choice-section {
     padding: 96px 0;
   }
-  .page-line1, .page-line2, .page-line3, .page-line4 {
+  .choice-line .page-line1, .choice-line .page-line2, .choice-line .page-line3, .choice-line .page-line4 {
     top: -96px;
   }
 }

@@ -139,7 +139,7 @@ header {
         }
         .menu-card-container {
             position: fixed;
-            top: 120px;
+            top: -100%;
             left: 0;
             width: 100%;
             height: auto;
@@ -147,16 +147,17 @@ header {
             padding: 0;
             box-sizing: border-box;
             display: block;
-            max-height: 0;
-            overflow: hidden;
+            // max-height: 0;
+            // overflow: hidden;
+            padding: 64px 0 74px;
             box-shadow: (0px 50px 80px rgba(0, 0, 0, 0.07));
-            transition: 0.2s ease-in-out;
+            transition: 0.4s cubic-bezier(0.35, 0.01, 0.08, 1);
             z-index: -1;
 
             &--active {
-                display: block;
-                max-height: 100%;
-                padding: 64px 0 74px
+                top: 120px;
+                // max-height: 100%;
+                // padding: 64px 0 74px;
             }
 
             .menu-card {
@@ -417,6 +418,11 @@ header {
     top: 0;
     background-color: white;
 
+    .mbolie-menu-scroll-wrapper {
+        position: relative;
+        padding: 100px
+    }
+
     .category-nav-bar {
         @extend .flex-row, .flex-between;
         position: fixed;
@@ -437,8 +443,8 @@ header {
         }
 
         svg {
-                width: 20px;
-                height: 20px;
+                width: 17px;
+                height: 17px;
         }
     }
 
@@ -456,14 +462,13 @@ header {
             gap: 37px;
 
             svg {
-                width: 30px;
-                height: 30px;
+                width: 21px;
+                height: auto;
             }
 
             .hamburger-menu {
                 position: relative;
-                width: 35px;
-                height: 30px;
+                width: 28px;
                 cursor: pointer;
                 transition: .3s .1s ease-in-out;
                 background: transparent;
@@ -476,7 +481,7 @@ header {
                 top: 50%;
                 transform: translateY(-50%);
                 width: 100%;
-                height: 3px;
+                height: 2px;
                 background: #344054;
                 transition: background-color 90ms ease-in-out;
                 border-radius: 10px;
@@ -485,9 +490,9 @@ header {
                     content: '';
                     position: absolute;
                     left: 0;
-                    top: -10px;
+                    top: -9px;
                     width: 100%;
-                    height: 3px;
+                    height: 2px;
                     background: #344054;
                     transition: transform .3s .130ms ease-in-out;
                     border-radius: 10px;
@@ -498,9 +503,9 @@ header {
                     content: '';
                     position: absolute;
                     left: 0;
-                    top: 10px;
+                    top: 9px;
                     width: 100%;
-                    height: 3px;
+                    height: 2px;
                     background: #344054;
                     transition: transform .3s .130ms ease-in-out;
                     border-radius: 10px;
@@ -514,11 +519,11 @@ header {
                     }
 
                     .hamburger-bars::before {
-                        transform: translateY(10px)  rotate(-45deg);
+                        transform: translateY(9px)  rotate(-45deg);
                     }
 
                     .hamburger-bars::after {
-                        transform: translateY(-10px) rotate(45deg);
+                        transform: translateY(-9px) rotate(45deg);
                     }
                 }
             }
@@ -1201,14 +1206,28 @@ header {
 
         li {
             @extend .flex-center;
+            max-width: 74px;
             width: 100%;
 
             .splide__pagination__page {
+                position: relative;
                 width: 100%;
                 height: 2px;
                 border: none;
                 background-color: #F2F2F2;
                 cursor: pointer;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -50%;
+                    transform: translateY(50%);
+                    width: 100%;
+                    height: 50px;
+                    background: transparent;
+                    user-select: none;
+                }
             }
             .is-active {
                 background-color: #1E94D2;
@@ -1230,7 +1249,8 @@ header {
         width: 186px;
 
         &:hover {
-            background-color: white;
+            background-color: $main-button-hover-color;
+            color: white;
         }
     }
 
@@ -1459,6 +1479,9 @@ header {
 }
 
 .guides-container {
+    position: relative;
+    z-index: 99;
+    
     .mobile-bikes-button {
         button {
             position: relative;
@@ -1466,7 +1489,8 @@ header {
             z-index: 99;
 
             &:hover {
-                background-color: $light-blue;
+                color: white;
+                background-color: $main-button-hover-color;
             }
         }
     }
@@ -1579,12 +1603,12 @@ header {
         background-color: white;
     }
 
-    .is-active {
-        background: linear-gradient(90deg, #F5F5F5 0%, #FFFFFF 100%);
-    }
-
     .new-product {
         @extend .product-card-style;
+
+        &:hover {
+            background: linear-gradient(90deg, #F5F5F5 0%, #FFFFFF 100%);
+        }
     }
 }
 
@@ -1715,6 +1739,7 @@ header {
         }
 
         .scooter-top-panel {
+            @extend .flex-center;
             width: 100%;
 
             img {
@@ -2199,8 +2224,11 @@ header {
     .choice-section {
         padding: 96px 0;
     }
-    .page-line1, .page-line2, .page-line3, .page-line4 {
-        top: -96px;
+
+    .choice-line {
+        .page-line1, .page-line2, .page-line3, .page-line4 {
+            top: -96px;
+        }
     }
 }
 

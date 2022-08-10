@@ -9,6 +9,7 @@ $dark-headers-typo: #101828;
 $gray-typo: #667085;
 $gray-border-color: #EAECF0;
 $blue-button-color: #1E94D2;
+$main-button-hover-color: #0BA5EC;
 
 $xxl: 1450px;
 $xl: 1220px;
@@ -95,7 +96,7 @@ $font-light: 300;
     transition: 0.2s ease-in-out;
 
     &:hover {
-        background-color: #0BA5EC;
+        background-color: $main-button-hover-color;
     }
 }
 

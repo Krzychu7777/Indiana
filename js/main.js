@@ -1,6 +1,10 @@
-const selectList = document.querySelector('.option-list');
-const gender = document.querySelectorAll('.gender-type-item');
-const selectionItem = document.querySelector('.options-select');
+const selectList = document.querySelector('.option-list'),
+gender = document.querySelectorAll('.gender-type-item'),
+selectionItem = document.querySelector('.options-select'),
+line1 = document.querySelectorAll('.page-line2'),
+line2 = document.querySelectorAll('.page-line3'),
+homePagination = document.querySelector('.pag-slider .pagination-container'),
+productCard = document.querySelector('.news-item-container .new-product');
 
 
 //select options
@@ -70,6 +74,28 @@ slider.addEventListener('click', () => {
             
     legLengthInput.value = sliderRangeValue;
 });
+
+//dynamic position
+
+const changeItemsProperty = (left, right, width) => {
+    line1.forEach((item, index) => {
+        item.style.left = left;
+        line2[index].style.right = right;
+    });
+
+    homePagination.style.width = width;
+}
+
+ window.addEventListener('resize', () => {
+    const actualDisplayWidth = window.innerWidth;
+    const itemwidth = productCard.clientWidth;
+
+    if(actualDisplayWidth < 1220 && actualDisplayWidth > 992) changeItemsProperty(`${itemwidth + 16}px`, `${itemwidth + 46}px`, `${itemwidth + 46}px`);
+    
+    if (actualDisplayWidth > 1220) changeItemsProperty("385px", "415px", "415px");
+
+    if (actualDisplayWidth < 992) changeItemsProperty("100px", "100px", "100%");
+ });
 
 
 //splide
@@ -143,7 +169,6 @@ var splide = new Splide( '#home-page', {
     splide.mount();
 
     var splide = new Splide( '#news', {
-    type   : 'loop',
     perPage: 3,
     perMove: 1,
     pagination: false,
