@@ -50,6 +50,17 @@
   max-width: 799px;
 }
 
+.technologies-page-container {
+  max-width: 800px;
+  margin: 0 auto 0;
+}
+
+@media (max-width: 850px) {
+  .technologies-page-container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
 .btn-style, .choice-column-container .right-col .product-card button, .guides-header button, .mobile-bikes-button button, .bikes-header button, .home-container .right-home-panel .main-title button, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .right-panel-nav .scooters-image .text-banner button, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .scooters-image .text-banner button, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .text-banner button, .product-card-style .bottom-product-panel .product-price button, .news-item-container .new-product .bottom-product-panel .product-price button {
   font-family: "Inter", sans-serif, Helvetica;
   font-weight: 500;

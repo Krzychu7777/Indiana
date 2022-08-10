@@ -50,6 +50,17 @@
   max-width: 799px;
 }
 
+.technologies-page-container {
+  max-width: 800px;
+  margin: 0 auto 0;
+}
+
+@media (max-width: 850px) {
+  .technologies-page-container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+}
 .btn-style, .products-container .product-item .product-button button, .product-home-container .product-right-panel .product-card .bottom-panel button, .product-card-style .bottom-product-panel .product-price button, .products-container .product-item .bottom-product-panel .product-price button {
   font-family: "Inter", sans-serif, Helvetica;
   font-weight: 500;

@@ -81,6 +81,18 @@ $font-light: 300;
     max-width: 799px;
 }
 
+.technologies-page-container {
+    max-width: 800px;
+    margin: 0 auto 0;
+}
+
+@media (max-width: 850px) {
+    .technologies-page-container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}
+
 //components
 
 .btn-style {
