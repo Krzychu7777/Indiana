@@ -1,13 +1,35 @@
 const selectFilterInput = document.querySelectorAll('.filter-input'),
     selectFilterList = document.querySelectorAll('.filters-list'),
-    selectFilterListItem = document.querySelectorAll('.filters-list input[type="checkbox"]'),
+    selectFilterListItem = document.querySelectorAll('.filters-list li'),
+    selectFilterListCheckbox = document.querySelectorAll('.filters-list input[type="checkbox"]'),
     removeFilterButton = document.querySelector('.category-filter-container'),
     sortingInput = document.querySelector('.sorting-input'),
     sortingList = document.querySelector('.sorting-list'),
     sortingListItem = document.querySelectorAll('.sorting-list li'),
     clearFiltersBtn = document.getElementById('clear-filter'),
     bikeCategoryButtons = document.querySelectorAll('.bike-icon-square');
-let actualFilters = ["Rowery Cross"];
+//let actualFilters = ["Rowery Cross"];
+
+let actualFilters = [
+    {
+        filterName: "Rowery Cross",
+        dataFilter: "Cross",
+    },
+];
+let urlFilters = [];
+
+const urlLink = window.location.search;
+const urlParams = new URLSearchParams(urlLink);
+
+const assignUrlFilters = () => {
+    const urlValues = urlParams.values();
+
+    for(const key of urlValues) {
+        urlFilters.push(key);
+    }
+}
+
+assignUrlFilters();
 
 
 const openFiltersList = e => {
@@ -66,8 +88,8 @@ const addFilterBlock = () => {
 
     actualFilters.forEach((filter) => {
         let actualFilterBlock = `
-            <div class="category-filter" data-name="${filter}">
-                <p>${filter}</p>
+            <div class="category-filter" data-name="${filter.dataFilter}">
+                <p>${filter.filterName}</p>
                     <div class="clear-filter-info">
                     <img src="img/remove-button.svg" alt="przycisk usuwania filtru" width="14" height="14"> 
                     </div>                            
@@ -80,17 +102,29 @@ const addFilterBlock = () => {
 const renderFilter = e => {
     const currentItem = e.target,
         newFilterBlock = currentItem.dataset.filter,
-        actualFilterIndex = actualFilters.indexOf(newFilterBlock);
+        actualText = currentItem.parentNode.querySelector('.filter-text-container p');
+
+    const newFilter = {
+        filterName: actualText.textContent,
+        dataFilter: newFilterBlock,
+    };
+
         
     if(currentItem.checked) {
-        actualFilters.push(newFilterBlock);
+        actualFilters.push(newFilter);
     } else {
         actualFilters = actualFilters.filter((el, index) => {
-            return index !== actualFilterIndex;
+            return el.dataFilter !== newFilter.dataFilter;
         });
     }
 
     addFilterBlock();
+
+    if(actualFilters.length === 0) {
+        clearFiltersBtn.style.display = "none";
+    } else {
+        clearFiltersBtn.style.display = "block";
+    }
 }
 
 const removeFilter = e => {
@@ -118,19 +152,23 @@ const removeFilter = e => {
         });
 
         allDisplayFilter.forEach((item) => {
-                selectFilterListItem.forEach((checkbox) => {
+            selectFilterListCheckbox.forEach((checkbox) => {
                     if(currentItem.parentNode.parentNode.dataset.name === checkbox.dataset.filter) {
                         checkbox.checked = false;
                     } 
                 })
         });
+
+        if(actualFilters.length === 0) {
+            clearFiltersBtn.style.display = "none";
+        }
     } 
 
     addFilterBlock();
 };
 
 const clearFilters = () => {
-    const checkedFilters = [...selectFilterListItem].filter((item) => {
+    const checkedFilters = [...selectFilterListCheckbox].filter((item) => {
         return item.checked;
     });
 
@@ -155,9 +193,11 @@ const chooseBikeType = (item) => {
     actualFilters.push(`Rowery ${item.dataset.bikes}`);
 
     addFilterBlock();
+
+    clearFiltersBtn.style.display = "block";
 };
 
-selectFilterListItem.forEach((item) => {
+selectFilterListCheckbox.forEach((item) => {
     item.addEventListener('change', renderFilter);
 });
 
@@ -169,7 +209,10 @@ clearFiltersBtn.addEventListener('click', () => {
     bikeCategoryButtons.forEach((button) => {
         button.classList.remove('bicycle-category--active');
     });
+    
     clearFilters();
+
+    clearFiltersBtn.style.display = "none";
 });
 
 window.addEventListener('load', () => {

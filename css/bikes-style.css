@@ -2,23 +2,23 @@
   display: flex;
 }
 
-.flex-row, .products-pagination-container, .bike-products-header .products-amount-container, .bike-products-header, .filters-info-container .category-filter-container .category-filter, .filters-info-container .category-filter-container, .filters-info-container, .filters-input-container .filter-input .color-list label, .filters-input-container, .bikes-category-container, .bikes-home-container .left-panel-home .breadcrumbs, .bikes-home-container, .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li, .filter-input-style, .bike-products-header .sorting-input, .filters-input-container .filter-input, .product-card-style .bottom-product-panel .product-price, .bike-cards-container .bike-product-card .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .bike-cards-container .bike-product-card .compare-checkbox, .nav-link-style {
+.flex-row, .products-pagination-container, .bike-products-header .products-amount-container, .bike-products-header, .filters-info-container .category-filter-container .category-filter, .filters-info-container .category-filter-container, .filters-info-container, .filters-input-container .filter-input .color-list .filter-text-container, .filters-input-container, .bikes-category-container, .bikes-home-container .left-panel-home .breadcrumbs, .bikes-home-container, .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li, .options-list-style1 li, .filter-input-style, .bike-products-header .sorting-input, .filters-input-container .filter-input, .product-card-style .bottom-product-panel .product-price, .bike-cards-container .bike-product-card .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .bike-cards-container .bike-product-card .compare-checkbox, .nav-link-style {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col, .bikes-category-container .bicycle-type, .bikes-home-container .left-panel-home, .options-list-style, .bike-products-header .sorting-input .sorting-list, .filters-input-container .filter-input .filters-list, .product-card-style, .bike-cards-container .bike-product-card {
+.flex-col, .bikes-category-container .bicycle-type, .bikes-home-container .left-panel-home, .options-list-style, .bike-products-header .sorting-input .sorting-list, .filters-input-container .filter-input .filters-list, .options-list-style1, .product-card-style, .bike-cards-container .bike-product-card {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, .products-pagination-container, .bike-cards-container .bike-product-card .product-button, .filters-info-container .category-filter-container .category-filter, .filters-info-container .category-filter-container, .filters-input-container .filter-input .color-list label, .bikes-category-container .bicycle-type .bike-icon-square, .bikes-category-container, .bikes-home-container, .product-card-style .bottom-product-panel .product-price, .bike-cards-container .bike-product-card .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .bike-cards-container .bike-product-card .top-product-panel, .product-card-style .compare-checkbox, .bike-cards-container .bike-product-card .compare-checkbox, .product-card-style, .bike-cards-container .bike-product-card, .checkbox-style, .options-list-style li input, .bike-products-header .sorting-input .sorting-list li input, .filters-input-container .filter-input .filters-list li input, .product-card-style .compare-checkbox input, .bike-cards-container .bike-product-card .compare-checkbox input, .nav-link-style, .arrow-style {
+.flex-center, .products-pagination-container, .bike-cards-container .bike-product-card .product-button, .filters-info-container .category-filter-container .category-filter, .filters-info-container .category-filter-container, .filters-input-container .filter-input .color-list .filter-text-container, .bikes-category-container .bicycle-type .bike-icon-square, .bikes-category-container, .bikes-home-container, .product-card-style .bottom-product-panel .product-price, .bike-cards-container .bike-product-card .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .bike-cards-container .bike-product-card .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .bike-cards-container .bike-product-card .top-product-panel, .product-card-style .compare-checkbox, .bike-cards-container .bike-product-card .compare-checkbox, .product-card-style, .bike-cards-container .bike-product-card, .checkbox-style, .options-list-style li input, .bike-products-header .sorting-input .sorting-list li input, .filters-input-container .filter-input .filters-list li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .bike-cards-container .bike-product-card .compare-checkbox input, .nav-link-style, .arrow-style {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flex-between, .bike-products-header, .filters-info-container, .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li, .filter-input-style, .bike-products-header .sorting-input, .filters-input-container .filter-input {
+.flex-between, .bike-products-header, .filters-info-container, .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li, .options-list-style1 li, .filter-input-style, .bike-products-header .sorting-input, .filters-input-container .filter-input {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,7 +126,7 @@
   line-height: 24px;
 }
 
-.checkbox-style, .options-list-style li input, .bike-products-header .sorting-input .sorting-list li input, .filters-input-container .filter-input .filters-list li input, .product-card-style .compare-checkbox input, .bike-cards-container .bike-product-card .compare-checkbox input {
+.checkbox-style, .options-list-style li input, .bike-products-header .sorting-input .sorting-list li input, .filters-input-container .filter-input .filters-list li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .bike-cards-container .bike-product-card .compare-checkbox input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -140,7 +140,7 @@
   place-content: center;
   cursor: pointer;
 }
-.checkbox-style::before, .options-list-style li input::before, .bike-products-header .sorting-input .sorting-list li input::before, .filters-input-container .filter-input .filters-list li input::before, .product-card-style .compare-checkbox input::before, .bike-cards-container .bike-product-card .compare-checkbox input::before {
+.checkbox-style::before, .options-list-style li input::before, .bike-products-header .sorting-input .sorting-list li input::before, .filters-input-container .filter-input .filters-list li input::before, .options-list-style1 li input::before, .product-card-style .compare-checkbox input::before, .bike-cards-container .bike-product-card .compare-checkbox input::before {
   content: "";
   width: 20px;
   height: 20px;
@@ -148,7 +148,7 @@
   transform: scale(0);
   transition: 0.1s ease-in-out;
 }
-.checkbox-style::after, .options-list-style li input::after, .bike-products-header .sorting-input .sorting-list li input::after, .filters-input-container .filter-input .filters-list li input::after, .product-card-style .compare-checkbox input::after, .bike-cards-container .bike-product-card .compare-checkbox input::after {
+.checkbox-style::after, .options-list-style li input::after, .bike-products-header .sorting-input .sorting-list li input::after, .filters-input-container .filter-input .filters-list li input::after, .options-list-style1 li input::after, .product-card-style .compare-checkbox input::after, .bike-cards-container .bike-product-card .compare-checkbox input::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -159,10 +159,10 @@
   transform: scale(0) rotate(90deg);
   transition: 0.1s ease-in-out;
 }
-.checkbox-style:checked::before, .options-list-style li input:checked::before, .bike-products-header .sorting-input .sorting-list li input:checked::before, .filters-input-container .filter-input .filters-list li input:checked::before, .product-card-style .compare-checkbox input:checked::before, .bike-cards-container .bike-product-card .compare-checkbox input:checked::before {
+.checkbox-style:checked::before, .options-list-style li input:checked::before, .bike-products-header .sorting-input .sorting-list li input:checked::before, .filters-input-container .filter-input .filters-list li input:checked::before, .options-list-style1 li input:checked::before, .product-card-style .compare-checkbox input:checked::before, .bike-cards-container .bike-product-card .compare-checkbox input:checked::before {
   transform: scale(1);
 }
-.checkbox-style:checked::after, .options-list-style li input:checked::after, .bike-products-header .sorting-input .sorting-list li input:checked::after, .filters-input-container .filter-input .filters-list li input:checked::after, .product-card-style .compare-checkbox input:checked::after, .bike-cards-container .bike-product-card .compare-checkbox input:checked::after {
+.checkbox-style:checked::after, .options-list-style li input:checked::after, .bike-products-header .sorting-input .sorting-list li input:checked::after, .filters-input-container .filter-input .filters-list li input:checked::after, .options-list-style1 li input:checked::after, .product-card-style .compare-checkbox input:checked::after, .bike-cards-container .bike-product-card .compare-checkbox input:checked::after {
   transform: scale(1) rotate(0);
 }
 
@@ -285,6 +285,53 @@
   cursor: pointer;
 }
 
+.options-list-style1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 0;
+  top: 46px;
+  left: 0;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: max-height 0.1s ease-in-out;
+}
+.options-list-style1 li {
+  list-style-type: none;
+  padding: 12px 14px;
+}
+.options-list-style1 li:hover {
+  background-color: #178BCA;
+}
+.options-list-style1 li:hover label {
+  color: white;
+}
+.options-list-style1 li:hover input::before {
+  background-color: #178BCA;
+}
+.options-list-style1 li:hover input::after {
+  background-image: url("../img/white_checkboxmark.svg");
+}
+.options-list-style1 li label {
+  margin: 0;
+  color: #667085;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 24px;
+}
+.options-list-style1 li input {
+  background-color: white;
+  border: 1px solid #D0D5DD;
+}
+
 .options-list-style, .bike-products-header .sorting-input .sorting-list, .filters-input-container .filter-input .filters-list {
   position: absolute;
   box-sizing: border-box;
@@ -300,13 +347,14 @@
   transition: max-height 0.1s ease-in-out;
 }
 .options-list-style li, .bike-products-header .sorting-input .sorting-list li, .filters-input-container .filter-input .filters-list li {
+  position: relative;
   list-style-type: none;
   padding: 12px 14px;
 }
 .options-list-style li:hover, .bike-products-header .sorting-input .sorting-list li:hover, .filters-input-container .filter-input .filters-list li:hover {
   background-color: #178BCA;
 }
-.options-list-style li:hover label, .bike-products-header .sorting-input .sorting-list li:hover label, .filters-input-container .filter-input .filters-list li:hover label {
+.options-list-style li:hover .filter-text-container p, .bike-products-header .sorting-input .sorting-list li:hover .filter-text-container p, .filters-input-container .filter-input .filters-list li:hover .filter-text-container p {
   color: white;
 }
 .options-list-style li:hover input::before, .bike-products-header .sorting-input .sorting-list li:hover input::before, .filters-input-container .filter-input .filters-list li:hover input::before {
@@ -316,6 +364,14 @@
   background-image: url("../img/white_checkboxmark.svg");
 }
 .options-list-style li label, .bike-products-header .sorting-input .sorting-list li label, .filters-input-container .filter-input .filters-list li label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+.options-list-style li .filter-text-container p, .bike-products-header .sorting-input .sorting-list li .filter-text-container p, .filters-input-container .filter-input .filters-list li .filter-text-container p {
   margin: 0;
   color: #667085;
   font-weight: 400;
@@ -538,10 +594,10 @@ body {
 .filters-input-container .filter-input .filters-list--active {
   max-height: 280px;
 }
-.filters-input-container .filter-input .color-list label {
+.filters-input-container .filter-input .color-list .filter-text-container {
   gap: 8px;
 }
-.filters-input-container .filter-input .color-list label .color-circle {
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle {
   box-sizing: border-box;
   width: 20px;
   height: 20px;
@@ -549,16 +605,16 @@ body {
   border-radius: 50%;
   border: 1px solid #D0D5DD;
 }
-.filters-input-container .filter-input .color-list label .color-circle--white {
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle--white {
   background-color: white;
 }
-.filters-input-container .filter-input .color-list label .color-circle--green {
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle--green {
   background-color: #00BE50;
 }
-.filters-input-container .filter-input .color-list label .color-circle--pink {
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle--pink {
   background-color: #FF71B7;
 }
-.filters-input-container .filter-input .color-list label .color-circle--black {
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle--black {
   background-color: black;
 }
 

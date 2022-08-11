@@ -2,23 +2,23 @@
   display: flex;
 }
 
-.flex-row, .search-container .search-input .left-panel, .search-container .search-input, .footer-items-container .items-link, .footer-items-container, .choice-column-container .right-col .product-card .frame-size-container, .choice-column-container .middle-col .select-option-container .gender, .choice-column-container .middle-col .select-option-container .options-select, .choice-column-container, .technology-container, .guides-header, .global-pagination-container .splide__pagination, .slider-bikes-arrows, .slider-news-arrows, .bikes-item-container, .bikes-header, .pag-slider .splide__pagination, .home-container, .home-arrows, .mobile-nav .menu-card-mobile ul li a, .mobile-nav .menu-mobile-category ul li a, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .mobile-nav .nav-bar-mobile-container, .mobile-nav .category-nav-bar, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav, .options-list-style li, .choice-column-container .middle-col .select-option-container .options-select .option-list li, .filter-input-style, .product-card-style .bottom-product-panel .product-price, .news-item-container .new-product .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .news-item-container .new-product .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .news-item-container .new-product .compare-checkbox, .nav-link-style, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop .drop-down-btn {
+.flex-row, .search-container .search-input .left-panel, .search-container .search-input, .footer-items-container .items-link, .footer-items-container, .choice-column-container .right-col .product-card .frame-size-container, .choice-column-container .middle-col .select-option-container .gender, .choice-column-container .middle-col .select-option-container .options-select, .choice-column-container, .technology-container, .guides-header, .global-pagination-container .splide__pagination, .slider-bikes-arrows, .slider-news-arrows, .bikes-item-container, .bikes-header, .pag-slider .splide__pagination, .home-container, .home-arrows, .mobile-nav .menu-card-mobile ul li a, .mobile-nav .menu-mobile-category ul li a, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .mobile-nav .nav-bar-mobile-container, .mobile-nav .category-nav-bar, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container li a, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav, .options-list-style li, .choice-column-container .middle-col .select-option-container .options-select .option-list li, .options-list-style1 li, .filter-input-style, .product-card-style .bottom-product-panel .product-price, .news-item-container .new-product .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .news-item-container .new-product .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .news-item-container .new-product .compare-checkbox, .nav-link-style, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop .drop-down-btn {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col, .footer-items-container .footer-column .item-list-col, .footer-items-container .footer-column:first-child, .footer-items-container .footer-column, .choice-column-container .middle-col .select-option-container .gender .men, .choice-column-container .middle-col .select-option-container .gender .woman, .choice-column-container .middle-col .select-option-container, .choice-column-container .middle-col, .scooters-item-container .product-card, .guides-items-container .guide-item, .bike-item, .home-container .right-home-panel, .mobile-nav .menu-card-mobile .second-nav-links, .mobile-nav .menu-mobile-category .second-nav-links, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container, .options-list-style, .choice-column-container .middle-col .select-option-container .options-select .option-list, .product-card-style, .news-item-container .new-product {
+.flex-col, .footer-items-container .footer-column .item-list-col, .footer-items-container .footer-column:first-child, .footer-items-container .footer-column, .choice-column-container .middle-col .select-option-container .gender .men, .choice-column-container .middle-col .select-option-container .gender .woman, .choice-column-container .middle-col .select-option-container, .choice-column-container .middle-col, .scooters-item-container .product-card, .guides-items-container .guide-item, .bike-item, .home-container .right-home-panel, .mobile-nav .menu-card-mobile .second-nav-links, .mobile-nav .menu-mobile-category .second-nav-links, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card .left-panel-nav .card-items-container, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .left-panel-nav .card-items-container, .options-list-style, .choice-column-container .middle-col .select-option-container .options-select .option-list, .options-list-style1, .product-card-style, .news-item-container .new-product {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, .search-container .search-input .left-panel, #slider .noUi-tooltip, .choice-column-container .right-col .product-card .middle-image, .choice-column-container .middle-col .select-option-container .gender .men, .choice-column-container .middle-col .select-option-container .gender .woman, .choice-column-container .middle-col .select-option-container .gender, .choice-column-container .middle-col, .choice-column-container, .technology-container, .scooters-item-container .product-card .scooter-top-panel, .mobile-bikes-button, .global-pagination-container .splide__pagination li, .global-pagination-container .splide__pagination, .pag-slider .splide__pagination li, .pag-slider .splide__pagination, .mobile-nav .menu-card-mobile .fb-icon-mobile, .mobile-nav .menu-mobile-category .fb-icon-mobile, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav a, .desktop-nav .first-rectangle-container .first-rectangle-nav, .product-card-style .bottom-product-panel .product-price, .news-item-container .new-product .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .news-item-container .new-product .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .news-item-container .new-product .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .news-item-container .new-product .top-product-panel, .product-card-style .compare-checkbox, .news-item-container .new-product .compare-checkbox, .product-card-style, .news-item-container .new-product, .checkbox-style, .options-list-style li input, .choice-column-container .middle-col .select-option-container .options-select .option-list li input, .product-card-style .compare-checkbox input, .news-item-container .new-product .compare-checkbox input, .nav-link-style, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop .drop-down-btn, .arrow-style, .slider-bikes-arrows button, .slider-news-arrows button, .home-arrows button {
+.flex-center, .search-container .search-input .left-panel, #slider .noUi-tooltip, .choice-column-container .right-col .product-card .middle-image, .choice-column-container .middle-col .select-option-container .gender .men, .choice-column-container .middle-col .select-option-container .gender .woman, .choice-column-container .middle-col .select-option-container .gender, .choice-column-container .middle-col, .choice-column-container, .technology-container, .scooters-item-container .product-card .scooter-top-panel, .mobile-bikes-button, .global-pagination-container .splide__pagination li, .global-pagination-container .splide__pagination, .pag-slider .splide__pagination li, .pag-slider .splide__pagination, .mobile-nav .menu-card-mobile .fb-icon-mobile, .mobile-nav .menu-mobile-category .fb-icon-mobile, .mobile-nav .nav-bar-mobile-container .nav-links-mobile, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle div, .desktop-nav .nav-bar-desktop-container .bikes .menu-card .right-panel-nav .bike-image .color-circle, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop, .desktop-nav .first-rectangle-container .first-rectangle-nav a, .desktop-nav .first-rectangle-container .first-rectangle-nav, .product-card-style .bottom-product-panel .product-price, .news-item-container .new-product .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .news-item-container .new-product .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .news-item-container .new-product .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .news-item-container .new-product .top-product-panel, .product-card-style .compare-checkbox, .news-item-container .new-product .compare-checkbox, .product-card-style, .news-item-container .new-product, .checkbox-style, .options-list-style li input, .choice-column-container .middle-col .select-option-container .options-select .option-list li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .news-item-container .new-product .compare-checkbox input, .nav-link-style, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop li a, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop .links-nav-desktop .drop-down-btn, .arrow-style, .slider-bikes-arrows button, .slider-news-arrows button, .home-arrows button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flex-between, .search-container .search-input, .footer-items-container, .choice-column-container .right-col .product-card .frame-size-container, .choice-column-container .middle-col .select-option-container .options-select, .guides-header, .bikes-header, .home-container, .mobile-nav .menu-card-mobile ul li a, .mobile-nav .menu-mobile-category ul li a, .mobile-nav .nav-bar-mobile-container, .mobile-nav .category-nav-bar, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop, .options-list-style li, .choice-column-container .middle-col .select-option-container .options-select .option-list li, .filter-input-style {
+.flex-between, .search-container .search-input, .footer-items-container, .choice-column-container .right-col .product-card .frame-size-container, .choice-column-container .middle-col .select-option-container .options-select, .guides-header, .bikes-header, .home-container, .mobile-nav .menu-card-mobile ul li a, .mobile-nav .menu-mobile-category ul li a, .mobile-nav .nav-bar-mobile-container, .mobile-nav .category-nav-bar, .desktop-nav .nav-bar-desktop-container .menu-card-container .menu-card, .desktop-nav .nav-bar-desktop-container .menu-card-second .menu-card, .desktop-nav .nav-bar-desktop-container .bikes .menu-card, .desktop-nav .nav-bar-desktop-container .nav-bar-desktop, .options-list-style li, .choice-column-container .middle-col .select-option-container .options-select .option-list li, .options-list-style1 li, .filter-input-style {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,7 +126,7 @@
   line-height: 24px;
 }
 
-.checkbox-style, .options-list-style li input, .choice-column-container .middle-col .select-option-container .options-select .option-list li input, .product-card-style .compare-checkbox input, .news-item-container .new-product .compare-checkbox input {
+.checkbox-style, .options-list-style li input, .choice-column-container .middle-col .select-option-container .options-select .option-list li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .news-item-container .new-product .compare-checkbox input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -140,7 +140,7 @@
   place-content: center;
   cursor: pointer;
 }
-.checkbox-style::before, .options-list-style li input::before, .choice-column-container .middle-col .select-option-container .options-select .option-list li input::before, .product-card-style .compare-checkbox input::before, .news-item-container .new-product .compare-checkbox input::before {
+.checkbox-style::before, .options-list-style li input::before, .choice-column-container .middle-col .select-option-container .options-select .option-list li input::before, .options-list-style1 li input::before, .product-card-style .compare-checkbox input::before, .news-item-container .new-product .compare-checkbox input::before {
   content: "";
   width: 20px;
   height: 20px;
@@ -148,7 +148,7 @@
   transform: scale(0);
   transition: 0.1s ease-in-out;
 }
-.checkbox-style::after, .options-list-style li input::after, .choice-column-container .middle-col .select-option-container .options-select .option-list li input::after, .product-card-style .compare-checkbox input::after, .news-item-container .new-product .compare-checkbox input::after {
+.checkbox-style::after, .options-list-style li input::after, .choice-column-container .middle-col .select-option-container .options-select .option-list li input::after, .options-list-style1 li input::after, .product-card-style .compare-checkbox input::after, .news-item-container .new-product .compare-checkbox input::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -159,10 +159,10 @@
   transform: scale(0) rotate(90deg);
   transition: 0.1s ease-in-out;
 }
-.checkbox-style:checked::before, .options-list-style li input:checked::before, .choice-column-container .middle-col .select-option-container .options-select .option-list li input:checked::before, .product-card-style .compare-checkbox input:checked::before, .news-item-container .new-product .compare-checkbox input:checked::before {
+.checkbox-style:checked::before, .options-list-style li input:checked::before, .choice-column-container .middle-col .select-option-container .options-select .option-list li input:checked::before, .options-list-style1 li input:checked::before, .product-card-style .compare-checkbox input:checked::before, .news-item-container .new-product .compare-checkbox input:checked::before {
   transform: scale(1);
 }
-.checkbox-style:checked::after, .options-list-style li input:checked::after, .choice-column-container .middle-col .select-option-container .options-select .option-list li input:checked::after, .product-card-style .compare-checkbox input:checked::after, .news-item-container .new-product .compare-checkbox input:checked::after {
+.checkbox-style:checked::after, .options-list-style li input:checked::after, .choice-column-container .middle-col .select-option-container .options-select .option-list li input:checked::after, .options-list-style1 li input:checked::after, .product-card-style .compare-checkbox input:checked::after, .news-item-container .new-product .compare-checkbox input:checked::after {
   transform: scale(1) rotate(0);
 }
 
@@ -285,6 +285,53 @@
   cursor: pointer;
 }
 
+.options-list-style1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 0;
+  top: 46px;
+  left: 0;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: max-height 0.1s ease-in-out;
+}
+.options-list-style1 li {
+  list-style-type: none;
+  padding: 12px 14px;
+}
+.options-list-style1 li:hover {
+  background-color: #178BCA;
+}
+.options-list-style1 li:hover label {
+  color: white;
+}
+.options-list-style1 li:hover input::before {
+  background-color: #178BCA;
+}
+.options-list-style1 li:hover input::after {
+  background-image: url("../img/white_checkboxmark.svg");
+}
+.options-list-style1 li label {
+  margin: 0;
+  color: #667085;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 24px;
+}
+.options-list-style1 li input {
+  background-color: white;
+  border: 1px solid #D0D5DD;
+}
+
 .options-list-style, .choice-column-container .middle-col .select-option-container .options-select .option-list {
   position: absolute;
   box-sizing: border-box;
@@ -300,13 +347,14 @@
   transition: max-height 0.1s ease-in-out;
 }
 .options-list-style li, .choice-column-container .middle-col .select-option-container .options-select .option-list li {
+  position: relative;
   list-style-type: none;
   padding: 12px 14px;
 }
 .options-list-style li:hover, .choice-column-container .middle-col .select-option-container .options-select .option-list li:hover {
   background-color: #178BCA;
 }
-.options-list-style li:hover label, .choice-column-container .middle-col .select-option-container .options-select .option-list li:hover label {
+.options-list-style li:hover .filter-text-container p, .choice-column-container .middle-col .select-option-container .options-select .option-list li:hover .filter-text-container p {
   color: white;
 }
 .options-list-style li:hover input::before, .choice-column-container .middle-col .select-option-container .options-select .option-list li:hover input::before {
@@ -316,6 +364,14 @@
   background-image: url("../img/white_checkboxmark.svg");
 }
 .options-list-style li label, .choice-column-container .middle-col .select-option-container .options-select .option-list li label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+.options-list-style li .filter-text-container p, .choice-column-container .middle-col .select-option-container .options-select .option-list li .filter-text-container p {
   margin: 0;
   color: #667085;
   font-weight: 400;

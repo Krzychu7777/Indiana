@@ -261,7 +261,7 @@ body {
         }
 
         .color-list {
-            label {
+            .filter-text-container {
                 @extend .flex-row, .flex-center;
                 gap: 8px;
 

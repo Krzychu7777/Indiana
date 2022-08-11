@@ -2,23 +2,23 @@
   display: flex;
 }
 
-.flex-row, .rating-items-container .rating-item .rating-stars-container, .mobile-rating-items-container .rating-item .rating-stars-container, .rating-items-container, .mobile-rating-items-container, .derailleurs-container, .companies-container .company-item, .technologies-breadcrumbs .breadcrumbs, .options-list-style li, .filter-input-style, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .nav-link-style {
+.flex-row, .rating-items-container .rating-item .rating-stars-container, .mobile-rating-items-container .rating-item .rating-stars-container, .rating-items-container, .mobile-rating-items-container, .derailleurs-container, .companies-container .company-item, .technologies-breadcrumbs .breadcrumbs, .options-list-style li, .options-list-style1 li, .filter-input-style, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .nav-link-style {
   display: flex;
   flex-direction: row;
 }
 
-.flex-col, .companies-container, .rating-items-container .rating-item, .mobile-rating-items-container .rating-item, .comfort-container, .options-list-style, .product-card-style {
+.flex-col, .companies-container, .rating-items-container .rating-item, .mobile-rating-items-container .rating-item, .comfort-container, .options-list-style, .options-list-style1, .product-card-style {
   display: flex;
   flex-direction: column;
 }
 
-.flex-center, .rating-items-container .rating-item, .mobile-rating-items-container .rating-item, .derailleurs-container .right-panel .img-square, .companies-container .company-item .right-panel .img-square, .derailleurs-container .left-panel .company-logo-square, .companies-container .company-item .left-panel .company-logo-square, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .product-card-style .compare-checkbox, .product-card-style, .checkbox-style, .options-list-style li input, .product-card-style .compare-checkbox input, .nav-link-style, .arrow-style {
+.flex-center, .rating-items-container .rating-item, .mobile-rating-items-container .rating-item, .derailleurs-container .right-panel .img-square, .companies-container .company-item .right-panel .img-square, .derailleurs-container .left-panel .company-logo-square, .companies-container .company-item .left-panel .company-logo-square, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .product-card-style .compare-checkbox, .product-card-style, .checkbox-style, .options-list-style li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .nav-link-style, .arrow-style {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.flex-between, .derailleurs-container, .companies-container .company-item, .options-list-style li, .filter-input-style {
+.flex-between, .derailleurs-container, .companies-container .company-item, .options-list-style li, .options-list-style1 li, .filter-input-style {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -126,7 +126,7 @@
   line-height: 24px;
 }
 
-.checkbox-style, .options-list-style li input, .product-card-style .compare-checkbox input {
+.checkbox-style, .options-list-style li input, .options-list-style1 li input, .product-card-style .compare-checkbox input {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -140,7 +140,7 @@
   place-content: center;
   cursor: pointer;
 }
-.checkbox-style::before, .options-list-style li input::before, .product-card-style .compare-checkbox input::before {
+.checkbox-style::before, .options-list-style li input::before, .options-list-style1 li input::before, .product-card-style .compare-checkbox input::before {
   content: "";
   width: 20px;
   height: 20px;
@@ -148,7 +148,7 @@
   transform: scale(0);
   transition: 0.1s ease-in-out;
 }
-.checkbox-style::after, .options-list-style li input::after, .product-card-style .compare-checkbox input::after {
+.checkbox-style::after, .options-list-style li input::after, .options-list-style1 li input::after, .product-card-style .compare-checkbox input::after {
   content: "";
   position: absolute;
   width: 18px;
@@ -159,10 +159,10 @@
   transform: scale(0) rotate(90deg);
   transition: 0.1s ease-in-out;
 }
-.checkbox-style:checked::before, .options-list-style li input:checked::before, .product-card-style .compare-checkbox input:checked::before {
+.checkbox-style:checked::before, .options-list-style li input:checked::before, .options-list-style1 li input:checked::before, .product-card-style .compare-checkbox input:checked::before {
   transform: scale(1);
 }
-.checkbox-style:checked::after, .options-list-style li input:checked::after, .product-card-style .compare-checkbox input:checked::after {
+.checkbox-style:checked::after, .options-list-style li input:checked::after, .options-list-style1 li input:checked::after, .product-card-style .compare-checkbox input:checked::after {
   transform: scale(1) rotate(0);
 }
 
@@ -285,6 +285,53 @@
   cursor: pointer;
 }
 
+.options-list-style1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: 0;
+  top: 46px;
+  left: 0;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  transition: max-height 0.1s ease-in-out;
+}
+.options-list-style1 li {
+  list-style-type: none;
+  padding: 12px 14px;
+}
+.options-list-style1 li:hover {
+  background-color: #178BCA;
+}
+.options-list-style1 li:hover label {
+  color: white;
+}
+.options-list-style1 li:hover input::before {
+  background-color: #178BCA;
+}
+.options-list-style1 li:hover input::after {
+  background-image: url("../img/white_checkboxmark.svg");
+}
+.options-list-style1 li label {
+  margin: 0;
+  color: #667085;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  line-height: 24px;
+}
+.options-list-style1 li input {
+  background-color: white;
+  border: 1px solid #D0D5DD;
+}
+
 .options-list-style {
   position: absolute;
   box-sizing: border-box;
@@ -300,13 +347,14 @@
   transition: max-height 0.1s ease-in-out;
 }
 .options-list-style li {
+  position: relative;
   list-style-type: none;
   padding: 12px 14px;
 }
 .options-list-style li:hover {
   background-color: #178BCA;
 }
-.options-list-style li:hover label {
+.options-list-style li:hover .filter-text-container p {
   color: white;
 }
 .options-list-style li:hover input::before {
@@ -316,6 +364,14 @@
   background-image: url("../img/white_checkboxmark.svg");
 }
 .options-list-style li label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+.options-list-style li .filter-text-container p {
   margin: 0;
   color: #667085;
   font-weight: 400;

@@ -350,7 +350,7 @@ $font-light: 300;
     cursor: pointer;
 }
 
-.options-list-style {
+.options-list-style1 {
     @extend .flex-col;
     position: absolute;
     box-sizing: border-box;
@@ -396,6 +396,76 @@ $font-light: 300;
             cursor: pointer;
             user-select: none;
             line-height: 24px;
+        }
+
+        input {
+            @extend .checkbox-style;
+            background-color: white;
+            border: 1px solid #D0D5DD;
+        }
+    }
+}
+
+.options-list-style {
+    @extend .flex-col;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 0;
+    top: 46px;
+    left: 0;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07);
+    overflow: hidden;
+    transition: max-height 0.1s ease-in-out;
+
+    li {
+        @extend .flex-row, .flex-between;
+        position: relative;
+        list-style-type: none;
+        padding: 12px 14px;
+
+        &:hover {
+            background-color: $blue;
+
+            .filter-text-container {
+                p {
+                    color: white;
+                }
+            }
+
+            input {
+                &::before {
+                    background-color: $blue;
+                }
+
+                &::after {
+                    background-image: url("../img/white_checkboxmark.svg");
+                }
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            cursor: pointer;
+        }
+
+        .filter-text-container {
+            p {
+                margin: 0;
+                color: $gray-typo;
+                font-weight: $font-regular;
+                font-size: 1rem;
+                cursor: pointer;
+                user-select: none;
+                line-height: 24px;
+            }
         }
 
         input {
