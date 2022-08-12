@@ -109,7 +109,7 @@ const renderFilter = e => {
         filterName: actualText.textContent,
         dataFilter: newFilterBlock,
     }
-        
+
     if(currentItem.checked) {
         actualFilters.push(newFilter);
 
@@ -124,7 +124,19 @@ const renderFilter = e => {
 
         newUrl.searchParams.delete(currentItem.name);
         window.history.pushState(null, null, decodeURI(newUrl));
-    }
+
+    //     const currentUrl = window.location.search.toString();
+    //     const siema = currentUrl.split('&');
+
+    //     siema.forEach((siema) => {
+    //         const halo = siema.split('=');
+
+    //         console.log(halo[1]);
+
+    //         if(halo[1] === newFilterBlock) {}
+    // });
+    // }
+
 
     addFilterBlock();
 
