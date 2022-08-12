@@ -7,8 +7,9 @@ const selectFilterInput = document.querySelectorAll('.filter-input'),
     sortingList = document.querySelector('.sorting-list'),
     sortingListItem = document.querySelectorAll('.sorting-list li'),
     clearFiltersBtn = document.getElementById('clear-filter'),
-    bikeCategoryButtons = document.querySelectorAll('.bike-icon-square');
-//let actualFilters = ["Rowery Cross"];
+    bikeCategoryButtons = document.querySelectorAll('.bike-icon-square'),
+    urlLink = window.location.search,
+    urlParams = new URLSearchParams(urlLink);
 
 let actualFilters = [
     {
@@ -16,21 +17,20 @@ let actualFilters = [
         dataFilter: "Cross",
     },
 ];
-let urlFilters = [];
-
-const urlLink = window.location.search;
-const urlParams = new URLSearchParams(urlLink);
 
 const assignUrlFilters = () => {
-    const urlValues = urlParams.values();
+    const urlValues = urlParams.entries();
 
     for(const key of urlValues) {
-        urlFilters.push(key);
+        selectFilterListCheckbox.forEach((checkbox) => {
+                if(checkbox.name.toLowerCase() === key[0].toLowerCase() && checkbox.dataset.filter.toLowerCase() === key[1].toLowerCase()) {
+                    checkbox.checked = true;
+                }
+            });
     }
 }
 
-assignUrlFilters();
-
+//open select rectangle
 
 const openFiltersList = e => {
     const currentSelect = e.currentTarget,
@@ -102,20 +102,28 @@ const addFilterBlock = () => {
 const renderFilter = e => {
     const currentItem = e.target,
         newFilterBlock = currentItem.dataset.filter,
-        actualText = currentItem.parentNode.querySelector('.filter-text-container p');
+        actualText = currentItem.parentNode.querySelector('.filter-text-container p'),
+        newUrl = new URL(window.location.href);
 
     const newFilter = {
         filterName: actualText.textContent,
         dataFilter: newFilterBlock,
-    };
-
+    }
         
     if(currentItem.checked) {
         actualFilters.push(newFilter);
+
+        newUrl.searchParams.append(currentItem.name, newFilterBlock);
+        window.history.pushState(null, null, decodeURI(newUrl));
+
     } else {
+        // window.history.pushState(null, document.title, 'bikes.html?');
         actualFilters = actualFilters.filter((el, index) => {
             return el.dataFilter !== newFilter.dataFilter;
         });
+
+        newUrl.searchParams.delete(currentItem.name);
+        window.history.pushState(null, null, decodeURI(newUrl));
     }
 
     addFilterBlock();
@@ -184,27 +192,32 @@ const chooseBikeType = (item) => {
         button.classList.remove('bicycle-category--active');
 
         actualFilters = actualFilters.filter((item) => {
-            return item !== `Rowery ${button.dataset.bikes}`;
+            return item.dataFilter !== button.dataset.bikes;
         });
     });
 
     item.classList.add('bicycle-category--active');
 
-    actualFilters.push(`Rowery ${item.dataset.bikes}`);
+    const newCategory = {
+        filterName: `Rowery ${item.dataset.bikes}`,
+        dataFilter: item.dataset.bikes,
+    }
+
+    actualFilters.push(newCategory);
+
+    console.log(actualFilters);
 
     addFilterBlock();
 
     clearFiltersBtn.style.display = "block";
 };
 
-selectFilterListCheckbox.forEach((item) => {
-    item.addEventListener('change', renderFilter);
-});
-
 removeFilterButton.addEventListener('click', removeFilter);
 
 clearFiltersBtn.addEventListener('click', () => {
     actualFilters = [];
+
+    window.history.pushState(null, document.title, 'bikes.html?');
 
     bikeCategoryButtons.forEach((button) => {
         button.classList.remove('bicycle-category--active');
@@ -225,6 +238,32 @@ bikeCategoryButtons.forEach((item) => {
         chooseBikeType(item);
     });
 });
+
+//checked url checkbox
+
+window.addEventListener('load', () => {
+    assignUrlFilters();
+
+    selectFilterListCheckbox.forEach((item) => {
+        const currentCheckboxText = item.parentNode.querySelector('.filter-text-container p');
+
+        if(item.checked) {
+            const newFilter = {
+                filterName: currentCheckboxText.textContent,
+                dataFilter: item.dataset.filter,
+            };
+    
+            actualFilters.push(newFilter);
+        }
+    });
+
+    addFilterBlock();
+});
+
+selectFilterListCheckbox.forEach((item) => {
+    item.addEventListener('change', renderFilter);
+});
+
 
 
 //close by body 

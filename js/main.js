@@ -6,6 +6,13 @@ line2 = document.querySelectorAll('.page-line3'),
 homePagination = document.querySelector('.pag-slider .pagination-container'),
 productCard = document.querySelector('.news-item-container .new-product');
 
+const url = window.location.search;
+const urlParam = new URLSearchParams(url);
+
+window.addEventListener('load', () => {
+    urlParam.set('siema', '1');
+    console.log(window.location)
+});
 
 //select options
 
@@ -39,7 +46,6 @@ gender.forEach((item) => {
         chooseGender(e, item);
     });
 });
-
 
 //main section
 
