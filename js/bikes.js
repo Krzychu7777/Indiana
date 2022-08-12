@@ -136,6 +136,7 @@ const renderFilter = e => {
     //         if(halo[1] === newFilterBlock) {}
     // });
     // }
+    }
 
 
     addFilterBlock();
@@ -294,4 +295,4 @@ main.addEventListener('click', (e) => {
             selectFilterList[index].classList.remove('filters-list--active');
         }
     });
-})
+});
