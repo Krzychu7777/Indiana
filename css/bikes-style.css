@@ -620,11 +620,12 @@ body {
 
 .filters-info-container {
   margin: 33px 0 0;
+  gap: 10px;
   z-index: 99;
 }
 .filters-info-container .category-filter-container {
   gap: 16px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: flex-start;
 }
 .filters-info-container .category-filter-container .category-filter {
@@ -644,7 +645,10 @@ body {
 .filters-info-container .category-filter-container .category-filter .clear-filter-info {
   cursor: pointer;
 }
-.filters-info-container #clear-filter {
+.filters-info-container .clear-button-container {
+  width: 100px;
+}
+.filters-info-container .clear-button-container #clear-filter {
   background: transparent;
   border: none;
   color: #333333;
@@ -652,31 +656,25 @@ body {
   font-weight: 500;
   font-size: 0.9rem;
   line-height: 20px;
+  white-space: nowrap;
   cursor: pointer;
-}
-
-.scroll-filter-info-wrapper {
-  width: 800px;
-  overflow: auto;
-  padding: 0 0 10px;
-  scrollbar-color: #178BCA transparent;
-  scrollbar-width: thin;
-}
-.scroll-filter-info-wrapper::-webkit-scrollbar {
-  height: 6px;
-}
-.scroll-filter-info-wrapper::-webkit-scrollbar-thumb {
-  background-color: #178BCA;
-  cursor: pointer;
-}
-.scroll-filter-info-wrapper::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 @media (max-width: 1220px) {
   .scroll-wrapper {
     width: 100%;
     overflow: auto;
+    padding: 0 0 10px;
+    scroll-snap-align: center;
+  }
+  .scroll-wrapper::-webkit-scrollbar {
+    height: 5px;
+  }
+  .scroll-wrapper::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scroll-wrapper::-webkit-scrollbar-thumb {
+    background-color: #178BCA;
   }
   .bikes-category-container {
     padding: 0 624px 10px;
@@ -688,14 +686,20 @@ body {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 768px) {
+  .filters-info-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .clear-button-container {
+    margin: 16px 0 0;
+  }
+}
 @media (max-width: 576px) {
   .filters-input-container {
     display: grid;
     grid-template-columns: 1fr;
     margin: 32px 0 0;
-  }
-  .filters-info-container {
-    display: none;
   }
 }
 .bikes-page-line {
@@ -781,6 +785,9 @@ body {
 }
 .bike-products-header .sorting-input .sorting-list li:hover p {
   color: white;
+}
+.bike-products-header .sorting-input .sorting-list .current-sort-type {
+  color: #178BCA;
 }
 
 .bike-cards-container {

@@ -297,12 +297,13 @@ body {
 .filters-info-container {
     @extend .flex-row, .flex-between;
     margin: 33px 0 0;
+    gap: 10px;
     z-index: 99;
 
     .category-filter-container {
         @extend .flex-row, .flex-center;
         gap: 16px;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: flex-start;
 
         .category-filter {
@@ -327,36 +328,21 @@ body {
         }
     }
 
-    #clear-filter {
-        background: transparent;
-        border: none;
-        color: #333333;
-        font-family: $font-inter;
-        font-weight: $font-medium;
-        font-size: 0.9rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-}
+    .clear-button-container {
+        width: 100px;
 
-.scroll-filter-info-wrapper {
-    width: 800px;
-    overflow: auto;
-    padding: 0 0 10px;
-    scrollbar-color: $blue transparent;
-    scrollbar-width: thin;
 
-    &::-webkit-scrollbar {
-        height: 6px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: $blue;
-        cursor: pointer;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: transparent;
+        #clear-filter {
+            background: transparent;
+            border: none;
+            color: #333333;
+            font-family: $font-inter;
+            font-weight: $font-medium;
+            font-size: 0.9rem;
+            line-height: 20px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
     }
 }
 
@@ -364,6 +350,20 @@ body {
     .scroll-wrapper {
         width: 100%;
         overflow: auto;
+        padding: 0 0 10px;
+        scroll-snap-align: center;
+        
+        &::-webkit-scrollbar {
+            height: 5px;
+          }
+          
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }      
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: $blue;
+        }
     }
 
     .bikes-category-container {
@@ -378,15 +378,22 @@ body {
     }
 }
 
+@media (max-width: $md) {
+    .filters-info-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .clear-button-container {
+        margin: 16px 0 0;
+    }
+}
+
 @media (max-width: $sm) {
     .filters-input-container {
         display: grid;
         grid-template-columns: 1fr;
         margin: 32px 0 0;
-    }
-
-    .filters-info-container {
-        display: none;
     }
 }
 
@@ -487,6 +494,10 @@ body {
                         color: white;
                     }
                 }
+            }
+
+            .current-sort-type {
+                color: $blue;
             }
         }
     }

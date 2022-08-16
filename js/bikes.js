@@ -8,6 +8,9 @@ const selectFilterInput = document.querySelectorAll('.filter-input'),
     sortingListItem = document.querySelectorAll('.sorting-list li'),
     clearFiltersBtn = document.getElementById('clear-filter'),
     bikeCategoryButtons = document.querySelectorAll('.bike-icon-square'),
+    sortText = document.getElementById('sort-type'),
+    sortValue = document.getElementById('sort-type-value'),
+    sortItemText = document.querySelectorAll('.sorting-list li p'),
     urlLink = window.location.search,
     urlParams = new URLSearchParams(urlLink);
 
@@ -27,6 +30,17 @@ const assignUrlFilters = () => {
                     checkbox.checked = true;
                 }
             });
+
+        sortingListItem.forEach((item) => {
+            if(changeCharacters(key[0].toLowerCase()) === 'sort' && changeCharacters(key[1].toLowerCase()) === changeCharacters(item.dataset.sort.toLowerCase())) {
+                const currentItemText = item.querySelector('p');
+                
+                sortText.textContent = currentItemText.textContent;
+                sortValue.value = currentItemText.textContent;
+
+                currentItemText.classList.add('current-sort-type');
+            }
+        });
     }
 }
 
@@ -52,40 +66,21 @@ selectFilterInput.forEach((select) => {
     select.addEventListener('click', openFiltersList);
 });
 
-//sorting
-
-const openSortList = () => {
-    selectFilterList.forEach((item, index) => {
-        if(item.classList.contains('filters-list--active')) item.classList.remove('filters-list--active');
-        if(selectFilterInput[index].classList.contains('filter-input--active')) selectFilterInput[index].classList.remove('filter-input--active');
-    });
-
-    sortingList.classList.toggle('sorting-list--active');
-    sortingInput.classList.toggle('sorting-input--active');
-};
-
-const changeSortValue = e => {
-    const currentSortType = e.currentTarget.querySelector('p'),
-        sortText = document.getElementById('sort-type'),
-        sortValue = document.getElementById('sort-type-value');
-
-    sortText.textContent = currentSortType.textContent;
-    sortValue.value = currentSortType.textContent;
-};
-
-sortingInput.addEventListener('click', openSortList);
-
-sortingListItem.forEach((item) => {
-    item.addEventListener('click', changeSortValue);
-});
-
 //change value
 
 const changeUrlValue = () => {
-    window.history.pushState(null, document.title, '?');
+    window.history.replaceState(null, null, window.location.pathname);
 
     const newUrl = new URL(window.location.href);
-        
+       
+    sortItemText.forEach((item) => {
+        if(item.classList.contains('current-sort-type')) {
+                // newUrl.searchParams.append('sort', changeCharacters(item.dataset.sort.toLowerCase()));
+        }
+        console.log(item.classList.contains('current-sort-type'));
+    });
+    
+    
     const checkedFilters = [...selectFilterListCheckbox].filter((checkbox) => {
         return checkbox.checked;
     });
@@ -229,7 +224,7 @@ removeFilterButton.addEventListener('click', (e) => {
 clearFiltersBtn.addEventListener('click', () => {
     actualFilters = [];
 
-    window.history.pushState(null, document.title, 'bikes.html?');
+    window.history.replaceState(null, null, window.location.pathname);
 
     bikeCategoryButtons.forEach((button) => {
         button.classList.remove('bicycle-category--active');
@@ -279,6 +274,40 @@ selectFilterListCheckbox.forEach((item) => {
     });
 });
 
+//sorting
+
+const openSortList = () => {
+    selectFilterList.forEach((item, index) => {
+        if(item.classList.contains('filters-list--active')) item.classList.remove('filters-list--active');
+        if(selectFilterInput[index].classList.contains('filter-input--active')) selectFilterInput[index].classList.remove('filter-input--active');
+    });
+
+    sortingList.classList.toggle('sorting-list--active');
+    sortingInput.classList.toggle('sorting-input--active');
+};
+
+const changeSortValue = e => {
+    const currentSortType = e.currentTarget.querySelector('p');
+
+    sortItemText.forEach((item) => {
+        item.classList.remove('current-sort-type');
+    })
+
+    sortText.textContent = currentSortType.textContent;
+    sortValue.value = currentSortType.textContent;
+
+    currentSortType.classList.add('current-sort-type');
+};
+
+sortingInput.addEventListener('click', openSortList);
+
+sortingListItem.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        changeSortValue(e);
+        changeUrlValue();
+    });
+});
+
 //change characters
 
 function changeCharacters(character) {
@@ -295,6 +324,16 @@ function changeCharacters(character) {
     .replace('+', '');
 }
 
+// const setScrolCenter = () => {
+//     const bikeCategoryScroll = document.querySelector('.scroll-wrapper');
+
+//     const scrollCenterValue = bikeCategoryScroll.offsetLeft + (766 / 4);
+
+//     bikeCategoryScroll.scrollLeft = scrollCenterValue;
+
+//     console.log(scrollCenterValue);
+    
+// }
 
 //close by body 
 
@@ -313,3 +352,6 @@ main.addEventListener('click', (e) => {
         }
     });
 });
+
+
+

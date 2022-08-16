@@ -1,0 +1,137 @@
+@import 'helpers';
+
+.article-home-section {
+    min-height: auto;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/main-image-article.jpg');
+    background-position: 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.article-home-container {
+    position: relative;
+    padding: 186px 0;
+
+    .article-breadcrumbs {
+        position: absolute;
+        top: 32px;
+        left: 0;
+        overflow: auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 0 10px;
+        
+        .breadcrumbs {
+            @extend .flex-row;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            gap: 18px;
+        
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: $font-medium;
+                font-size: 0.9rem;
+                line-height: 20px;
+            }
+        }
+    }
+
+    .article-home-text-container {
+        text-align: center;
+        color: white;
+        width: 768px;
+        margin: 0 auto 0;
+
+        h1 {
+            margin: 0;
+            font-family: $font-sequel;
+            font-weight: $font-regular;
+            font-size: 2.25rem;
+            line-height: 46px;
+            letter-spacing: -2%;
+        }
+
+        h2 {
+            margin: 20px 0 0;
+            font-weight: $font-regular;
+            font-size: 1.1rem;
+            line-height: 28px;
+        }
+    }
+
+    .mobile-arrow-container {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 73px;
+    }
+}
+
+@media (max-width: $xxl) {
+    .article-home-container {
+        .article-breadcrumbs {
+            padding: 0 16px 10px;
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .article-home-container {
+        .article-home-text-container {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .article-home-section {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/main-image-article-mobile.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .article-home-container {
+        padding: 257px 0;
+    }
+}
+
+.article-guide-section {
+    min-height: auto;
+    padding: 96px 0;
+    background-color: $light-blue;
+}
+
+.article-guide-container {
+    @extend .flex-col;
+    gap: 50px;
+
+    .guide-container {
+        gap: 32px;
+
+        h2 {
+            margin: 0;
+            font-family: $font-sequel;
+            font-weight: $font-regular;
+            font-size: 1.5rem;
+            line-height: 38px;
+            color: $dark-headers-typo;
+        }
+
+        p {
+            margin: 0;
+            font-weight: $font-regular;
+            font-size: 1.1rem;
+            line-height: 28px;
+            color: $gray-typo;
+        }
+    }
+}
+
+@media (max-width: $sm) {
+    .article-guide-container {
+        gap: 32px;
+    }
+}
+
