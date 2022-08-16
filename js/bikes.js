@@ -23,7 +23,7 @@ const assignUrlFilters = () => {
 
     for(const key of urlValues) {
         selectFilterListCheckbox.forEach((checkbox) => {
-                if(checkbox.name.toLowerCase() === key[0].toLowerCase() && checkbox.dataset.filter.toLowerCase() === key[1].toLowerCase()) {
+                if(changeCharacters(checkbox.name.toLowerCase()) === changeCharacters(key[0].toLowerCase()) && changeCharacters(checkbox.dataset.filter.toLowerCase()) === changeCharacters(key[1].toLowerCase())) {
                     checkbox.checked = true;
                 }
             });
@@ -79,18 +79,22 @@ sortingListItem.forEach((item) => {
     item.addEventListener('click', changeSortValue);
 });
 
-function changeCharacters(character) {
+//change value
 
-    return character.replace(/ą/g, 'a').replace(/Ą/g, 'A')
-    .replace(/ć/g, 'c').replace(/Ć/g, 'C')
-    .replace(/ę/g, 'e').replace(/Ę/g, 'E')
-    .replace(/ł/g, 'l').replace(/Ł/g, 'L')
-    .replace(/ń/g, 'n').replace(/Ń/g, 'N')
-    .replace(/ó/g, 'o').replace(/Ó/g, 'O')
-    .replace(/ś/g, 's').replace(/Ś/g, 'S')
-    .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
-    .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
-    .replace('+', '');
+const changeUrlValue = () => {
+    window.history.pushState(null, document.title, '?');
+
+    const newUrl = new URL(window.location.href);
+        
+    const checkedFilters = [...selectFilterListCheckbox].filter((checkbox) => {
+        return checkbox.checked;
+    });
+
+    checkedFilters.forEach((checked) => {
+        newUrl.searchParams.append(checked.name, changeCharacters(checked.dataset.filter.toLowerCase()));
+    });
+
+    window.history.pushState(null, null, decodeURI(newUrl));
 }
 
 //add and clear fliter block
@@ -217,7 +221,10 @@ const chooseBikeType = (item) => {
     clearFiltersBtn.style.display = "block";
 };
 
-removeFilterButton.addEventListener('click', removeFilter);
+removeFilterButton.addEventListener('click', (e) => {
+    removeFilter(e);
+    changeUrlValue();
+});
 
 clearFiltersBtn.addEventListener('click', () => {
     actualFilters = [];
@@ -266,27 +273,27 @@ window.addEventListener('load', () => {
 });
 
 selectFilterListCheckbox.forEach((item) => {
-    item.addEventListener('change', renderFilter);
-});
-
-
-selectFilterListCheckbox.forEach((item) => {
-    item.addEventListener('change', () => {
-        window.history.pushState(null, document.title, '?');
-
-        const newUrl = new URL(window.location.href);
-        
-        const checkedFilters = [...selectFilterListCheckbox].filter((checkbox) => {
-            return checkbox.checked;
-        });
-
-        checkedFilters.forEach((checked) => {
-            newUrl.searchParams.append(checked.name, checked.dataset.filter);
-        });
-
-        window.history.pushState(null, null, decodeURI(newUrl));
+    item.addEventListener('change', (e) => {
+        renderFilter(e);
+        changeUrlValue();
     });
 });
+
+//change characters
+
+function changeCharacters(character) {
+
+    return character.replace(/ą/g, 'a').replace(/Ą/g, 'A')
+    .replace(/ć/g, 'c').replace(/Ć/g, 'C')
+    .replace(/ę/g, 'e').replace(/Ę/g, 'E')
+    .replace(/ł/g, 'l').replace(/Ł/g, 'L')
+    .replace(/ń/g, 'n').replace(/Ń/g, 'N')
+    .replace(/ó/g, 'o').replace(/Ó/g, 'O')
+    .replace(/ś/g, 's').replace(/Ś/g, 'S')
+    .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
+    .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
+    .replace('+', '');
+}
 
 
 //close by body 
