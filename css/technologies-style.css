@@ -2,7 +2,7 @@
   display: flex;
 }
 
-.flex-row, .rating-items-container .rating-item .rating-stars-container, .mobile-rating-items-container .rating-item .rating-stars-container, .rating-items-container, .mobile-rating-items-container, .derailleurs-container, .companies-container .company-item, .technologies-breadcrumbs .breadcrumbs, .options-list-style li, .options-list-style1 li, .filter-input-style, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .nav-link-style {
+.flex-row, .rating-items-container .rating-item .rating-stars-container, .mobile-rating-items-container .rating-item .rating-stars-container, .rating-items-container, .mobile-rating-items-container, .derailleurs-container, .companies-container .company-item, .technologies-breadcrumbs .breadcrumbs, .options-list-style li, .options-list-style1 li, .filter-input-style, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .product-color, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .compare-checkbox, .nav-link-style {
   display: flex;
   flex-direction: row;
 }
@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-.flex-center, .rating-items-container .rating-item, .mobile-rating-items-container .rating-item, .derailleurs-container .right-panel .img-square, .companies-container .company-item .right-panel .img-square, .derailleurs-container .left-panel .company-logo-square, .companies-container .company-item .left-panel .company-logo-square, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .product-card-style .compare-checkbox, .product-card-style, .checkbox-style, .options-list-style li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .nav-link-style, .arrow-style {
+.flex-center, .rating-items-container .rating-item, .mobile-rating-items-container .rating-item, .derailleurs-container .right-panel .img-square, .companies-container .company-item .right-panel .img-square, .derailleurs-container .left-panel .company-logo-square, .companies-container .company-item .left-panel .company-logo-square, .product-card-style .bottom-product-panel .product-price, .product-card-style .bottom-product-panel .product-color, .product-card-style .bottom-product-panel .sizes-info div, .product-card-style .bottom-product-panel .sizes-info, .product-card-style .top-product-panel, .product-card-style .compare-checkbox, .product-card-style, .checkbox-style, .options-list-style li input, .options-list-style1 li input, .product-card-style .compare-checkbox input, .nav-link-style, .arrow-style {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,6 +252,9 @@
 }
 .product-card-style .bottom-product-panel .product-color {
   margin: 14px auto 0;
+  gap: 14px;
+}
+.product-card-style .bottom-product-panel .product-color div {
   width: 30px;
   height: 30px;
   background-color: black;

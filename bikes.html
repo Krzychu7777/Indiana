@@ -905,7 +905,8 @@
             </div>
             <div class="filters-input-container">
                 <div class="filter-input">
-                    <p>Kolor</p>
+                    <p class="filter-desc filter--active">Kolor</p>
+                    <p class="filters-count">Wybrano: <span class="count-checkbox">0</span></p>
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -953,7 +954,8 @@
                     </ul>                        
                 </div>
                 <div class="filter-input">
-                    <p>Rodzaj</p>
+                    <p class="filter-desc filter--active">Rodzaj</p>
+                    <p class="filters-count">Wybrano: <span class="count-checkbox">0</span></p>
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -996,7 +998,8 @@
                     </ul>                        
                 </div>
                 <div class="filter-input">
-                    <p>Rozmiar ramy</p>
+                    <p class="filter-desc filter--active">Rozmiar ramy</p>
+                    <p class="filters-count">Wybrano: <span class="count-checkbox">0</span></p>
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -1039,7 +1042,8 @@
                     </ul>                      
                 </div>
                 <div class="filter-input">
-                    <p>Rozmiar koła (cal)</p>
+                    <p class="filter-desc filter--active">Rozmiar koła (cal)</p>
+                    <p class="filters-count">Wybrano: <span class="count-checkbox">0</span></p>
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -1129,25 +1133,31 @@
                     </ul>                        
                 </div>
             </div>
-            <div class="bike-cards-container">
+            <div class="bike-cards-container" id="page-1">
                 <div class="bike-product-card" style="z-index: 9;">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-9">
                                 <label for="compare-product-9">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/product-black-bike.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                                <img src="img/product-red-bike.png" alt="x csross 4.0" class="image-responsive" width="320" height="194" style="display: none;" data-color="red">
+                                <img src="img/product-blue-bike.png" alt="x csross 4.0" class="image-responsive" width="320" height="194" style="display: none;" data-color="blue">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
                                 <h3>X-CROSS 6.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                    <div class="color-circle color-circle--red" data-color="red"></div>
+                                    <div class="color-circle color-circle--blue" data-color="blue"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1164,19 +1174,22 @@
                                 <input type="checkbox" name="compare-product" id="compare-product-8">
                                 <label for="compare-product-8">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/fatbike-czarny.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                                <img src="img/fatbike-czerwony.png" alt="x csross 4.0" class="image-responsive" width="320" height="194" style="display: none;" data-color="red">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
-                                <h3>X-CROSS 5.0</h3>
+                                <h3>FATBIKE 24</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">18”</div>
+                                    <div class="product-size">19”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                    <div class="color-circle color-circle--red" data-color="red"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1193,19 +1206,22 @@
                                 <input type="checkbox" name="compare-product" id="compare-product-7">
                                 <label for="compare-product-7">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/ecity-black.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                                <img src="img/ecity-red.png" alt="x csross 4.0" class="image-responsive" width="320" height="194" style="display: none;" data-color="red">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
-                                <h3>X-CROSS 4.0</h3>
+                                <h3>E-City</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">14”</div>
+                                    <div class="product-size">17”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                    <div class="color-circle color-circle--red" data-color="red"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1222,19 +1238,21 @@
                                 <input type="checkbox" name="compare-product" id="compare-product-6">
                                 <label for="compare-product-6">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
-                                <h3>X-CROSS 9.0</h3>
+                                <h3>X-CROSS 4.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1251,19 +1269,21 @@
                                 <input type="checkbox" name="compare-product" id="compare-product-5">
                                 <label for="compare-product-5">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
                                 <h3>X-CROSS 4.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1280,19 +1300,21 @@
                                 <input type="checkbox" name="compare-product" id="compare-product-4">
                                 <label for="compare-product-4">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
-                                <h3>X-CROSS 7.0</h3>
+                                <h3>X-CROSS 4.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1304,24 +1326,28 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 3;">
+            </div>
+            <div class="bike-cards-container" id="page-2" style="display: none;">
+                <div class="bike-product-card" style="z-index: 9;">
                     <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-3">
-                                <label for="compare-product-3">Porównaj</label>
+                                <input type="checkbox" name="compare-product" id="compare-product-10">
+                                <label for="compare-product-10">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
                                 <h3>X-CROSS 4.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1333,24 +1359,26 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 2;">
+                <div class="bike-product-card" style="z-index: 8;">
                     <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-2">
-                                <label for="compare-product-2">Porównaj</label>
+                                <input type="checkbox" name="compare-product" id="compare-product-11">
+                                <label for="compare-product-11">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
                                 <h3>X-CROSS 4.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1362,24 +1390,245 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 1;">
+                <div class="bike-product-card" style="z-index: 7;">
                     <div class="compare-checkbox">
-                                <input type="checkbox" name="compare-product" id="compare-product-1">
-                                <label for="compare-product-1">Porównaj</label>
+                                <input type="checkbox" name="compare-product" id="compare-product-12">
+                                <label for="compare-product-12">Porównaj</label>
                             </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
                             <div class="top-product-panel">
-                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive" width="320" height="194">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
                             </div>
                             <div class="bottom-product-panel">
                                 <p>INDIANA</p>
                                 <h3>X-CROSS 4.0</h3>
                                 <div class="sizes-info">
-                                    <div><p>19”</p></div>
-                                    <div><p>21”</p></div>
-                                    <div><p>23”</></div>
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
                                 </div>
                                 <div class="product-color">
-                                    <div></div>
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+                <div class="bike-product-card" style="z-index: 6;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-13">
+                                <label for="compare-product-13">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+                <div class="bike-product-card" style="z-index: 5;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-14">
+                                <label for="compare-product-14">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+                <div class="bike-product-card" style="z-index: 4;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-15">
+                                <label for="compare-product-15">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+            </div>
+            <div class="bike-cards-container" id="page-10" style="display: none;">
+                <div class="bike-product-card" style="z-index: 9;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-16">
+                                <label for="compare-product-16">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+                <div class="bike-product-card" style="z-index: 8;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-17">
+                                <label for="compare-product-17">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+                <div class="bike-product-card" style="z-index: 7;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-18">
+                                <label for="compare-product-18">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
+                                </div>
+                                <div class="product-price">
+                                    <h4>2499.99 PLN</h4>
+                                    <button>Sprawdź</button>
+                                </div>
+                            </div>
+                            <div class="bg-product"></div>
+                            <div class="product-button">
+                                <button>Sprawdź</button>
+                            </div>
+                </div>
+                <div class="bike-product-card" style="z-index: 6;">
+                    <div class="compare-checkbox">
+                                <input type="checkbox" name="compare-product" id="compare-product-19">
+                                <label for="compare-product-19">Porównaj</label>
+                            </div>
+                            <input type="text" name="wheel-size" value="19”" style="display: none;">
+                            <input type="text" name="product-color" value="black" style="display: none;">
+                            <div class="top-product-panel">
+                                <img src="img/new_product1.png" alt="x csross 4.0" class="image-responsive bike-image--active" width="320" height="194" data-color="black">
+                            </div>
+                            <div class="bottom-product-panel">
+                                <p>INDIANA</p>
+                                <h3>X-CROSS 4.0</h3>
+                                <div class="sizes-info">
+                                    <div class="product-size product-size--active">19”</div>
+                                    <div class="product-size">21”</div>
+                                    <div class="product-size">23”</div>
+                                </div>
+                                <div class="product-color">
+                                    <div class="color-circle color-circle--active" data-color="black"></div>
                                 </div>
                                 <div class="product-price">
                                     <h4>2499.99 PLN</h4>
@@ -1394,13 +1643,13 @@
             </div>
             <div class="products-border-line"></div>
             <div class="products-pagination-container">
-                <button class="btn-pag-active">1</button>
-                <button>2</button>
-                <button>3</button>
+                <button class="pagination-btn btn-pag-active" data-page="page-1">1</button>
+                <button class="pagination-btn" data-page="page-2">2</button>
+                <button class="pagination-btn" data-page="page-3">3</button>
                 <button>...</button>
-                <button>8</button>
-                <button>9</button>
-                <button>10</button>
+                <button class="pagination-btn" data-page="page-8">8</button>
+                <button class="pagination-btn" data-page="page-9">9</button>
+                <button class="pagination-btn" data-page="page-10">10</button>
             </div>
         </div>
         <div class="find-banner">

@@ -239,7 +239,23 @@ body {
             user-select: none;
         }
 
+        .filter-desc {
+            opacity: 0;
+            transition: 0.1s ease-in-out;
+        }
+
+        .filters-count {
+            position: absolute;
+            opacity: 0;
+            transition: 0.1s ease-in-out;
+        }
+
+        .filter--active {
+            opacity: 1;
+        }
+
         svg {
+            margin: 0 0 0 auto;
             transition: 0.1s ease-in-out;
         }
 
@@ -515,6 +531,50 @@ body {
         position: relative;
         background-color: white;
         z-index: 9;
+
+        .bottom-product-panel {
+            .sizes-info {
+                div {
+                    background-color: $hover-color;
+                    color: $blue;
+                    margin: 0;
+                    font-weight: $font-medium;
+                    line-height: 20px;
+                    letter-spacing: -1.2%;
+                    font-size: 0.9rem;
+                }
+
+                .product-size {
+                    cursor: pointer;
+
+                    &--active {
+                        background-color: $blue !important;
+                        color: white !important;
+                    }
+                }
+            }
+
+            .product-color {
+                gap: 10px;
+                
+                .color-circle {
+                    cursor: pointer;
+                    border: 4px solid white;
+    
+                    &--active {
+                        border: 4px solid $blue;
+                    }
+    
+                    &--red {
+                        background-color: #d15858;
+                    }
+    
+                    &--blue {
+                        background-color: #5970cf;
+                    }
+                }
+            }
+        }
 
         .bg-product {
             position: absolute;

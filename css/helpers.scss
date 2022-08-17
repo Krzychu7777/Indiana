@@ -307,12 +307,17 @@ $font-light: 300;
         }
 
         .product-color {
+            @extend .flex-row, .flex-center;
             margin: 14px auto 0;
-            width: 30px;
-            height: 30px;
-            background-color: black;
-            border: 4px solid $blue;
-            border-radius: 50%;
+            gap: 14px;
+            
+            div {
+                width: 30px;
+                height: 30px;
+                background-color: black;
+                border: 4px solid $blue;
+                border-radius: 50%;
+            }
         }
         
         .product-price {

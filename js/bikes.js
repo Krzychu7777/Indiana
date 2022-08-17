@@ -11,6 +11,9 @@ const selectFilterInput = document.querySelectorAll('.filter-input'),
     sortText = document.getElementById('sort-type'),
     sortValue = document.getElementById('sort-type-value'),
     sortItemText = document.querySelectorAll('.sorting-list li p'),
+    bikeProductCard = document.querySelectorAll('.bike-product-card'),
+    bikePageCotainers = document.querySelectorAll('.bike-cards-container'),
+    paginationButtons = document.querySelectorAll('.pagination-btn'),
     urlLink = window.location.search,
     urlParams = new URLSearchParams(urlLink);
 
@@ -73,13 +76,13 @@ const changeUrlValue = () => {
 
     const newUrl = new URL(window.location.href);
        
-    sortItemText.forEach((item) => {
+    sortItemText.forEach((item, index) => {
         if(item.classList.contains('current-sort-type')) {
-                // newUrl.searchParams.append('sort', changeCharacters(item.dataset.sort.toLowerCase()));
+            if(sortingListItem[index].dataset.sort !== "sortowanie-domyślne") {
+                newUrl.searchParams.append('sort', changeCharacters(sortingListItem[index].dataset.sort.toLowerCase()));
+            }
         }
-        console.log(item.classList.contains('current-sort-type'));
     });
-    
     
     const checkedFilters = [...selectFilterListCheckbox].filter((checkbox) => {
         return checkbox.checked;
@@ -93,6 +96,28 @@ const changeUrlValue = () => {
 }
 
 //add and clear fliter block
+
+// const countSelectedFilters = (e) => {
+//     const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode;
+//     const mainFilterDesc = currentFilterText.querySelector('.filter-desc');
+//     const filterCountText = currentFilterText.querySelector('.filters-count');
+//     const currentListCheckboxs = currentFilterText.querySelectorAll('.filters-list input[type="checkbox"]');
+//     const selectedFiltersCount = currentFilterText.querySelector('.count-checkbox');
+
+//     const checkboxChecked = [...currentListCheckboxs].filter((item) => {
+//         return item.checked;
+//     });
+
+//     selectedFiltersCount.innerHTML = checkboxChecked.length;
+
+//     if(checkboxChecked.length != '') {
+//         mainFilterDesc.classList.remove('filter--active');
+//         filterCountText.classList.add('filter--active');
+//     } else {
+//         mainFilterDesc.classList.add('filter--active');
+//         filterCountText.classList.remove('filter--active');
+//     }
+// }
 
 const addFilterBlock = () => {
     const actualFiltersContainer = document.querySelector('.category-filter-container');
@@ -180,15 +205,21 @@ const removeFilter = e => {
 };
 
 const clearFilters = () => {
-    const checkedFilters = [...selectFilterListCheckbox].filter((item) => {
-        return item.checked;
-    });
+    actualFilters = [];
 
-    checkedFilters.forEach((item) => {
+     selectFilterListCheckbox.forEach((item) => {
         item.checked = false;
     });
 
+    changeUrlValue();
+
+    bikeCategoryButtons.forEach((button) => {
+        button.classList.remove('bicycle-category--active');
+    });
+
     addFilterBlock();
+
+    clearFiltersBtn.style.display = "none";
 };
 
 const chooseBikeType = (item) => {
@@ -221,23 +252,14 @@ removeFilterButton.addEventListener('click', (e) => {
     changeUrlValue();
 });
 
-clearFiltersBtn.addEventListener('click', () => {
-    actualFilters = [];
-
-    window.history.replaceState(null, null, window.location.pathname);
-
-    bikeCategoryButtons.forEach((button) => {
-        button.classList.remove('bicycle-category--active');
-    });
-    
-    clearFilters();
-
-    clearFiltersBtn.style.display = "none";
-});
+clearFiltersBtn.addEventListener('click', clearFilters);
 
 window.addEventListener('load', () => {
     actualFilters.splice(1, actualFilters.length);
-    clearFilters();
+
+    selectFilterListCheckbox.forEach((item) => {
+        item.checked = false;
+    });
 });
 
 bikeCategoryButtons.forEach((item) => {
@@ -271,6 +293,7 @@ selectFilterListCheckbox.forEach((item) => {
     item.addEventListener('change', (e) => {
         renderFilter(e);
         changeUrlValue();
+        countSelectedFilters(e);
     });
 });
 
@@ -324,6 +347,77 @@ function changeCharacters(character) {
     .replace('+', '');
 }
 
+// choose product color
+
+bikeProductCard.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        const currentCardItem = e.target,
+            currentCard = e.currentTarget,
+            colorCircles = currentCard.querySelectorAll('.color-circle'),
+            bikeImages = currentCard.querySelectorAll('.top-product-panel img'),
+            sizeCircle = currentCard.querySelectorAll('.product-size'),
+            wheelSizeValue = currentCard.querySelector('input[name="wheel-size"]'),
+            productColorvalue = currentCard.querySelector('input[name="product-color"]');
+
+        if(currentCardItem.classList.contains('color-circle')) {
+            colorCircles.forEach((circle) => {
+                circle.classList.remove('color-circle--active');
+            });
+            currentCardItem.classList.add('color-circle--active');
+
+            bikeImages.forEach((image) => {
+                image.style.display = "none";
+
+                if(currentCardItem.classList.contains('color-circle--active')) {
+                    if(image.dataset.color === currentCardItem.dataset.color) {
+                        image.style.display = "block";
+                    }
+                }
+            });
+
+            if(currentCardItem.classList.contains('color-circle--active')) {
+                productColorvalue.value = currentCardItem.dataset.color;
+            }
+        }
+
+        if(currentCardItem.classList.contains('product-size')) {
+            sizeCircle.forEach((size) => {
+                size.classList.remove('product-size--active');
+            })
+
+            currentCardItem.classList.add('product-size--active');
+
+            if(currentCardItem.classList.contains('product-size--active')) {
+                wheelSizeValue.value = currentCardItem.textContent;
+            }
+        }
+    });
+});
+
+
+//page pagination
+
+paginationButtons.forEach((item) => {
+    item.addEventListener('click', () => {
+        
+        paginationButtons.forEach((button) => {
+            button.classList.remove('btn-pag-active');
+        });
+
+        item.classList.add('btn-pag-active');
+        
+        
+        bikePageCotainers.forEach((page) => {
+            page.style.display = "none";
+
+            if(item.dataset.page === page.id) {
+                page.style.display = "grid";
+            }
+        });
+    });
+});
+
+
 // const setScrolCenter = () => {
 //     const bikeCategoryScroll = document.querySelector('.scroll-wrapper');
 
@@ -352,6 +446,5 @@ main.addEventListener('click', (e) => {
         }
     });
 });
-
 
 
