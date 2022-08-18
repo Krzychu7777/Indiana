@@ -14,6 +14,7 @@ const selectFilterInput = document.querySelectorAll('.filter-input'),
     bikeProductCard = document.querySelectorAll('.bike-product-card'),
     bikePageCotainers = document.querySelectorAll('.bike-cards-container'),
     paginationButtons = document.querySelectorAll('.pagination-btn'),
+    findPage = document.querySelector('.find-page'),
     urlLink = window.location.search,
     urlParams = new URLSearchParams(urlLink);
 
@@ -44,6 +45,38 @@ const assignUrlFilters = () => {
                 currentItemText.classList.add('current-sort-type');
             }
         });
+
+        paginationButtons.forEach((button) => {
+            if(key[0].toLowerCase() === "page") {
+                button.classList.remove('btn-pag-active');
+            }
+
+            if(key[1] === button.dataset.page) {
+                button.classList.add('btn-pag-active');
+            }
+        });
+
+        if(key[0] === 'page') {
+            bikeProductCard.forEach((card, index) => {
+                card.style.display = "none";
+
+                if(key[1] == "1") {
+            
+                    if(index < 6) card.style.display = "flex";
+                        
+                } else if(key[1] == "2") {
+            
+                    if(index > 5 && index < 12) card.style.display = "flex";
+            
+                } else if(key[1] == "3") {
+            
+                    if(index > 11 && index < 18) card.style.display = "flex";
+
+                } else {
+                    findPage.style.display = "block"; 
+                }
+            });
+        }
     }
 }
 
@@ -75,6 +108,12 @@ const changeUrlValue = () => {
     window.history.replaceState(null, null, window.location.pathname);
 
     const newUrl = new URL(window.location.href);
+
+    paginationButtons.forEach((button) => {
+        if(button.classList.contains('btn-pag-active')) {
+            newUrl.searchParams.append('page', button.dataset.page);
+        }
+    });
        
     sortItemText.forEach((item, index) => {
         if(item.classList.contains('current-sort-type')) {
@@ -97,27 +136,27 @@ const changeUrlValue = () => {
 
 //add and clear fliter block
 
-// const countSelectedFilters = (e) => {
-//     const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode;
-//     const mainFilterDesc = currentFilterText.querySelector('.filter-desc');
-//     const filterCountText = currentFilterText.querySelector('.filters-count');
-//     const currentListCheckboxs = currentFilterText.querySelectorAll('.filters-list input[type="checkbox"]');
-//     const selectedFiltersCount = currentFilterText.querySelector('.count-checkbox');
+const countSelectedFilters = (e) => {
+    const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode,
+        mainFilterDesc = currentFilterText.querySelector('.filter-desc'),
+        filterCountText = currentFilterText.querySelector('.filters-count'),
+        currentListCheckboxs = currentFilterText.querySelectorAll('.filters-list input[type="checkbox"]'),
+        selectedFiltersCount = currentFilterText.querySelector('.count-checkbox');
 
-//     const checkboxChecked = [...currentListCheckboxs].filter((item) => {
-//         return item.checked;
-//     });
+    const checkboxChecked = [...currentListCheckboxs].filter((item) => {
+        return item.checked;
+    });
 
-//     selectedFiltersCount.innerHTML = checkboxChecked.length;
+    selectedFiltersCount.innerHTML = checkboxChecked.length;
 
-//     if(checkboxChecked.length != '') {
-//         mainFilterDesc.classList.remove('filter--active');
-//         filterCountText.classList.add('filter--active');
-//     } else {
-//         mainFilterDesc.classList.add('filter--active');
-//         filterCountText.classList.remove('filter--active');
-//     }
-// }
+    if(checkboxChecked.length != '') {
+        mainFilterDesc.classList.remove('filter--active');
+        filterCountText.classList.add('filter--active');
+    } else {
+        mainFilterDesc.classList.add('filter--active');
+        filterCountText.classList.remove('filter--active');
+    }
+}
 
 const addFilterBlock = () => {
     const actualFiltersContainer = document.querySelector('.category-filter-container');
@@ -188,13 +227,33 @@ const removeFilter = e => {
                 return index !== actualBtnIndex;
         });
 
-        allDisplayFilter.forEach((item) => {
+       
             selectFilterListCheckbox.forEach((checkbox) => {
                     if(currentItem.parentNode.parentNode.dataset.name === checkbox.dataset.filter) {
                         checkbox.checked = false;
+
+                        const filterInputElement = checkbox.parentNode.parentNode.parentNode,
+                            currentListCheckboxs = checkbox.parentNode.parentNode.querySelectorAll('input[type="checkbox"]'),
+                            coutCheckbox = filterInputElement.querySelector('.count-checkbox'),
+                            mainFilterDesc = filterInputElement.querySelector('.filter-desc'),
+                            filterCountText = filterInputElement.querySelector('.filters-count');
+
+                        const currentCheckboxChecked = [...currentListCheckboxs].filter((item) => {
+                            return item.checked;
+                        });
+
+                        coutCheckbox.innerHTML = currentCheckboxChecked.length;
+
+                        if(currentCheckboxChecked.length != '') {
+                            mainFilterDesc.classList.remove('filter--active');
+                            filterCountText.classList.add('filter--active');
+                        } else {
+                            mainFilterDesc.classList.add('filter--active');
+                            filterCountText.classList.remove('filter--active');
+                        }
                     } 
                 })
-        });
+       
 
         if(actualFilters.length === 0) {
             clearFiltersBtn.style.display = "none";
@@ -205,6 +264,15 @@ const removeFilter = e => {
 };
 
 const clearFilters = () => {
+    const mainDescTexts = document.querySelectorAll('.filter-desc'),
+        filterCountTexts = document.querySelectorAll('.filters-count');
+
+
+    mainDescTexts.forEach((item, index) => {
+        filterCountTexts[index].classList.remove('filter--active');
+        item.classList.add('filter--active');
+    });
+
     actualFilters = [];
 
      selectFilterListCheckbox.forEach((item) => {
@@ -240,8 +308,6 @@ const chooseBikeType = (item) => {
 
     actualFilters.push(newCategory);
 
-    console.log(actualFilters);
-
     addFilterBlock();
 
     clearFiltersBtn.style.display = "block";
@@ -271,6 +337,12 @@ bikeCategoryButtons.forEach((item) => {
 //checked url checkbox
 
 window.addEventListener('load', () => {
+    bikeProductCard.forEach((card, index) => {
+        card.style.display = "none";
+
+        if(index < 6) card.style.display = "flex";
+    });
+
     assignUrlFilters();
 
     selectFilterListCheckbox.forEach((item) => {
@@ -397,37 +469,56 @@ bikeProductCard.forEach((item) => {
 
 //page pagination
 
+const divideCards = e => {
+    const currentPagBtn = e.currentTarget;
+
+    const siema =  bikeProductCard[0].dataset['frame'].split(',');
+
+        console.log(siema);
+
+    bikeProductCard.forEach((card, index) => {
+        card.style.display = "none";
+
+        if(currentPagBtn.dataset.page === "1") {
+
+            if(index < 6) card.style.display = "flex";
+            
+        } else if(currentPagBtn.dataset.page === "2") {
+
+            if(index > 5 && index < 12) card.style.display = "flex";
+
+        } else if(currentPagBtn.dataset.page === "3") {
+
+            if(index > 11 && index < 18) card.style.display = "flex";
+        }
+    });
+
+    paginationButtons.forEach((button) => {
+        button.classList.remove('btn-pag-active');
+    });
+
+    currentPagBtn.classList.add('btn-pag-active');
+};
+
 paginationButtons.forEach((item) => {
-    item.addEventListener('click', () => {
-        
-        paginationButtons.forEach((button) => {
-            button.classList.remove('btn-pag-active');
-        });
-
-        item.classList.add('btn-pag-active');
-        
-        
-        bikePageCotainers.forEach((page) => {
-            page.style.display = "none";
-
-            if(item.dataset.page === page.id) {
-                page.style.display = "grid";
-            }
-        });
+    item.addEventListener('click', (e) => {
+        divideCards(e);
+        changeUrlValue();
+        findPage.style.display = "none";
     });
 });
 
+const setScrolCenter = () => {
+    const bikeCategoryScroll = document.querySelector('.scroll-wrapper');
 
-// const setScrolCenter = () => {
-//     const bikeCategoryScroll = document.querySelector('.scroll-wrapper');
+    const scrollCenterValue = (bikeCategoryScroll.scrollWidth - bikeCategoryScroll.clientWidth) / 2;
 
-//     const scrollCenterValue = bikeCategoryScroll.offsetLeft + (766 / 4);
+    bikeCategoryScroll.scrollLeft = scrollCenterValue;
+}
 
-//     bikeCategoryScroll.scrollLeft = scrollCenterValue;
-
-//     console.log(scrollCenterValue);
-    
-// }
+window.addEventListener('load', () => {
+    setScrolCenter();
+});
 
 //close by body 
 

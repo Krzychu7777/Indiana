@@ -270,9 +270,24 @@ body {
         .filters-list {
             @extend .options-list-style;
             z-index: 99;
+            overflow-y: scroll;
+            scrollbar-color: $blue transparent;
+            scrollbar-width: thin !important;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: $blue;
+            }
 
                 &--active {
-                    max-height: 280px
+                    max-height: 240px
                 }
         }
 
@@ -520,10 +535,14 @@ body {
 }
 
 .bike-cards-container {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 32px 0 0;
     gap: 32px;
+
+    &--active {
+        display: grid;
+    }
 
     .bike-product-card {
         @extend .product-card-style;
@@ -559,7 +578,7 @@ body {
                 
                 .color-circle {
                     cursor: pointer;
-                    border: 4px solid white;
+                    border: 1px solid #D0D5DD;
     
                     &--active {
                         border: 4px solid $blue;
@@ -571,6 +590,18 @@ body {
     
                     &--blue {
                         background-color: #5970cf;
+                    }
+
+                    &--white {
+                        background-color: white;
+                    }
+
+                    &--green {
+                        background-color: #00BE50;
+                    }
+
+                    &--orange {
+                        background-color: #df8156;
                     }
                 }
             }
@@ -677,6 +708,28 @@ body {
         &:hover {
             color: white;
         }
+    }
+}
+
+.find-page {
+    text-align: center;
+    padding: 40px 0;
+
+    h2 {
+        @extend .headers-typo-style;
+    }
+
+    p {
+        margin: 16px 0 0;
+        color: $blue;
+        font-weight: $font-medium;
+        font-size: 1.1rem;
+        line-height: 32px;
+    }
+
+    svg {
+        margin: 32px 0 0;
+        stroke: $blue;
     }
 }
 
