@@ -546,6 +546,7 @@ body {
 
     .bike-product-card {
         @extend .product-card-style;
+        display: none;
         width: 100%;
         position: relative;
         background-color: white;
@@ -636,6 +637,10 @@ body {
             .product-button {
                 top: 100%;
             }
+        }
+
+        &--active {
+            display: flex;
         }
     }
 }

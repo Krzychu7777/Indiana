@@ -828,6 +828,7 @@ body {
   display: grid;
 }
 .bike-cards-container .bike-product-card {
+  display: none;
   width: 100%;
   position: relative;
   background-color: white;
@@ -896,6 +897,9 @@ body {
 }
 .bike-cards-container .bike-product-card:hover .product-button {
   top: 100%;
+}
+.bike-cards-container .bike-product-card--active {
+  display: flex;
 }
 
 .products-border-line {

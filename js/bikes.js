@@ -25,6 +25,116 @@ let actualFilters = [
     },
 ];
 
+//let activeBikeProducts = document.querySelectorAll('.bike-product-card--active');
+
+//filters
+
+// let pageFilters = {
+//     color: [],
+//     type: [],
+//     frame: [],
+//     wheel: []
+// };
+
+// selectFilterListCheckbox.forEach((checkbox) => {
+//     checkbox.addEventListener('change', (e) => {
+
+//         const currentList = e.currentTarget.parentNode.parentNode;
+//         const currentListCheckbox = currentList.querySelectorAll('input[type="checkbox"]');
+
+//         pageFilters[currentList.id] = [];
+
+//         const currentCheckboxChecked = [...currentListCheckbox].filter((item) => {
+//             return item.checked;
+//         });
+
+
+//         currentCheckboxChecked.forEach((item) => {
+//             for(key in pageFilters) {
+//                 if(currentList.id === key) {
+//                     pageFilters[key].push(item.dataset[`${key}`]);
+//                 }
+//             }
+//         });
+
+//         bikeProductCard.forEach((bike) => {
+//             bike.classList.add('bike-product-card--active');
+            
+//             let productFilters = {
+//                 color: bike.dataset['color'].split(','),
+//                 type: bike.dataset['type'].split(','),
+//                 frame: bike.dataset['frame'].split(','),
+//                 wheel: bike.dataset['wheel'].split(',')
+//             }
+
+//             // console.log(pageFilters.wheel);
+//             console.log(productFilters.wheel);
+
+//             for(key in productFilters) {
+//                 productFilters[key].forEach((item) => {
+//                     pageFilters[key].forEach((filter) => {
+//                         console.log(item, filter);
+
+//                          if(filter != item) {
+//                             bike.classList.remove('bike-product-card--active');
+//                         }
+//                     });
+//                 })
+//             }
+
+//             // const activeProducts = [...bikeProductCard].filter((item) => {
+//             //     return item.classList.contains('bike-product-card--active');
+//             // });
+
+//             // activeBikeProducts = activeProducts;
+//         });
+//     })
+    
+// });
+
+
+
+
+selectFilterListCheckbox.forEach((checkbox) => {
+    checkbox.addEventListener('change', (e) => {
+
+        let activeFilters = [];
+
+        const chooseFilters = [...selectFilterListCheckbox].filter((item) => {
+            return item.checked;
+        });
+
+        if(chooseFilters == '') {
+            bikeProductCard.forEach((card) => {
+                card.classList.add('bike-product-card--active');
+            });
+        }
+
+        chooseFilters.forEach((item) => {
+            activeFilters.push(item.dataset.color);
+            activeFilters = activeFilters.push(item.dataset.type);
+        });
+
+        bikeProductCard.forEach((card) => {
+            card.classList.remove('siema');
+            const dataFilters = card.dataset['color'].split(',');
+
+            dataFilters.forEach((item) => {
+                if(activeFilters.includes(item)) {
+                    card.classList.add('siema');
+                }
+            });
+
+        });
+
+        console.log(activeFilters);
+
+    })
+})
+
+
+
+
 const assignUrlFilters = () => {
     const urlValues = urlParams.entries();
 
@@ -32,7 +142,13 @@ const assignUrlFilters = () => {
         selectFilterListCheckbox.forEach((checkbox) => {
                 if(changeCharacters(checkbox.name.toLowerCase()) === changeCharacters(key[0].toLowerCase()) && changeCharacters(checkbox.dataset.filter.toLowerCase()) === changeCharacters(key[1].toLowerCase())) {
                     checkbox.checked = true;
+                    
+                    const currentInput = checkbox.parentNode.parentNode.parentNode;
+
+                    countSelectedFilters(currentInput);
                 }
+
+                
             });
 
         sortingListItem.forEach((item) => {
@@ -46,37 +162,39 @@ const assignUrlFilters = () => {
             }
         });
 
-        paginationButtons.forEach((button) => {
-            if(key[0].toLowerCase() === "page") {
-                button.classList.remove('btn-pag-active');
-            }
+        // paginationButtons.forEach((button) => {
+        //     if(key[0].toLowerCase() === "page") {
+        //         button.classList.remove('btn-pag-active');
+        //     }
 
-            if(key[1] === button.dataset.page) {
-                button.classList.add('btn-pag-active');
-            }
-        });
+        //     if(key[1] === button.dataset.page) {
+        //         button.classList.add('btn-pag-active');
+        //     }
+        // });
 
-        if(key[0] === 'page') {
-            bikeProductCard.forEach((card, index) => {
-                card.style.display = "none";
+        // if(key[0] === 'page') {
+        //     bikeProductCard.forEach((card, index) => {
+        //         card.style.display = "none";
 
-                if(key[1] == "1") {
+        //         if(key[1] == "1") {
             
-                    if(index < 6) card.style.display = "flex";
+        //             if(index < 6) card.style.display = "flex";
                         
-                } else if(key[1] == "2") {
+        //         } else if(key[1] == "2") {
             
-                    if(index > 5 && index < 12) card.style.display = "flex";
+        //             if(index > 5 && index < 12) card.style.display = "flex";
             
-                } else if(key[1] == "3") {
+        //         } else if(key[1] == "3") {
             
-                    if(index > 11 && index < 18) card.style.display = "flex";
+        //             if(index > 11 && index < 18) card.style.display = "flex";
 
-                } else {
-                    findPage.style.display = "block"; 
-                }
-            });
-        }
+        //         } else {
+        //             findPage.style.display = "block"; 
+        //         }
+        //     });
+        // }
+
+
     }
 }
 
@@ -136,12 +254,11 @@ const changeUrlValue = () => {
 
 //add and clear fliter block
 
-const countSelectedFilters = (e) => {
-    const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode,
-        mainFilterDesc = currentFilterText.querySelector('.filter-desc'),
-        filterCountText = currentFilterText.querySelector('.filters-count'),
-        currentListCheckboxs = currentFilterText.querySelectorAll('.filters-list input[type="checkbox"]'),
-        selectedFiltersCount = currentFilterText.querySelector('.count-checkbox');
+const countSelectedFilters = (currentFilterText) => {
+        const mainFilterDesc = currentFilterText.querySelector('.filter-desc'),
+            filterCountText = currentFilterText.querySelector('.filters-count'),
+            currentListCheckboxs = currentFilterText.querySelectorAll('.filters-list input[type="checkbox"]'),
+            selectedFiltersCount = currentFilterText.querySelector('.count-checkbox');
 
     const checkboxChecked = [...currentListCheckboxs].filter((item) => {
         return item.checked;
@@ -338,9 +455,9 @@ bikeCategoryButtons.forEach((item) => {
 
 window.addEventListener('load', () => {
     bikeProductCard.forEach((card, index) => {
-        card.style.display = "none";
+        // card.style.display = "none";
 
-        if(index < 6) card.style.display = "flex";
+        // if(index < 6) card.style.display = "flex";
     });
 
     assignUrlFilters();
@@ -363,9 +480,11 @@ window.addEventListener('load', () => {
 
 selectFilterListCheckbox.forEach((item) => {
     item.addEventListener('change', (e) => {
+        const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode;
+
         renderFilter(e);
         changeUrlValue();
-        countSelectedFilters(e);
+        countSelectedFilters(currentFilterText);
     });
 });
 
@@ -474,8 +593,6 @@ const divideCards = e => {
 
     const siema =  bikeProductCard[0].dataset['frame'].split(',');
 
-        console.log(siema);
-
     bikeProductCard.forEach((card, index) => {
         card.style.display = "none";
 
@@ -502,7 +619,7 @@ const divideCards = e => {
 
 paginationButtons.forEach((item) => {
     item.addEventListener('click', (e) => {
-        divideCards(e);
+        //divideCards(e);
         changeUrlValue();
         findPage.style.display = "none";
     });

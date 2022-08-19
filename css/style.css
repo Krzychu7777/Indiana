@@ -239,7 +239,6 @@
   height: 40px;
   border-radius: 50%;
   background-color: #178BCA;
-  border: 1px solid #D0D5DD;
 }
 .product-card-style .bottom-product-panel .sizes-info div p, .news-item-container .new-product .bottom-product-panel .sizes-info div p {
   color: white;

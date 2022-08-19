@@ -910,14 +910,14 @@
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <ul class="filters-list color-list">
+                    <ul class="filters-list color-list" id="color">
                         <li>
                             <label for="color-filter-1"></label>
                             <div class="filter-text-container">
                                 <div class="color-circle"></div>
                                 <p>Fioletowy</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-1" data-filter="fioletowy">
+                            <input type="checkbox" name="color[]" id="color-filter-1" data-filter="fioletowy" data-color="fioletowy">
                         </li>
                         <li>
                             <label for="color-filter-2"></label>
@@ -925,7 +925,7 @@
                                 <div class="color-circle color-circle--white"></div>
                                 <p>Biały</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-2" data-filter="Biały">
+                            <input type="checkbox" name="color[]" id="color-filter-2" data-filter="Biały" data-color="biały">
                         </li>
                         <li>
                             <label for="color-filter-3"></label>
@@ -933,15 +933,15 @@
                                 <div class="color-circle color-circle--green"></div>
                                 <p>Zielony</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-3" data-filter="zielony">
+                            <input type="checkbox" name="color[]" id="color-filter-3" data-filter="zielony" data-color="zielony">
                         </li>
                         <li>
                             <label for="color-filter-4"></label>
                             <div class="filter-text-container">
                                 <div class="color-circle color-circle--pink"></div>
-                                <p>Różowy</p>
+                                <p>Niebieski</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-4" data-filter="Różowy">
+                            <input type="checkbox" name="color[]" id="color-filter-4" data-filter="Różowy" data-color="niebieski">
                         </li>
                         <li>
                             <label for="color-filter-5"></label>
@@ -949,7 +949,7 @@
                                 <div class="color-circle color-circle--black"></div>
                                 <p>Czarny</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-5" data-filter="czarny">
+                            <input type="checkbox" name="color[]" id="color-filter-5" data-filter="czarny" data-color="czarny">
                         </li>
                     </ul>                        
                 </div>
@@ -959,20 +959,20 @@
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <ul class="filters-list">
+                    <ul class="filters-list" id="type">
                         <li>
                             <label for="type-filter-1"></label>
                             <div class="filter-text-container">
                                 <p>Męski</p>
                             </div>
-                            <input type="checkbox" name="type[]" id="type-filter-1" data-filter="man">
+                            <input type="checkbox" name="type[]" id="type-filter-1" data-filter="man" data-type="męski">
                         </li>
                         <li>
                             <label for="type-filter-2"></label>
                             <div class="filter-text-container">
                                 <p>Damski</p>
                             </div>
-                            <input type="checkbox" name="type[]" id="type-filter-2" data-filter="woman">
+                            <input type="checkbox" name="type[]" id="type-filter-2" data-filter="woman" data-type="damski">
                         </li>
                     </ul>                        
                 </div>
@@ -982,62 +982,62 @@
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <ul class="filters-list">
+                    <ul class="filters-list" id="frame">
                         <li>
                             <label for="frame-size-filter-1"></label>
                             <div class="filter-text-container">
                                 <p>8</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-1" data-filter="8">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-1" data-filter="8" data-frame="8">
                         </li>
                         <li>
                             <label for="frame-size-filter-2"></label>
                             <div class="filter-text-container">
                                 <p>10</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-2" data-filter="10">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-2" data-filter="10" data-frame="10">
                         </li>
                         <li>
                             <label for="frame-size-filter-3"></label>
                             <div class="filter-text-container">
                                 <p>14</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-3" data-filter="14">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-3" data-filter="14" data-frame="14">
                         </li>
                         <li>
                             <label for="frame-size-filter-4"></label>
                             <div class="filter-text-container">
-                                <p>16</p>
+                                <p>15</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-4" data-filter="16">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-4" data-filter="16" data-frame="15">
                         </li>
                         <li>
                             <label for="frame-size-filter-5"></label>
                             <div class="filter-text-container">
                                 <p>18</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-5" data-filter="18">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-5" data-filter="18" data-frame="18">
                         </li>
                         <li>
                             <label for="frame-size-filter-6"></label>
                             <div class="filter-text-container">
                                 <p>19</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-6" data-filter="19">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-6" data-filter="19" data-frame="19">
                         </li>
                         <li>
                             <label for="frame-size-filter-7"></label>
                             <div class="filter-text-container">
                                 <p>21</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-7" data-filter="21">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-7" data-filter="21" data-frame="21">
                         </li>
                         <li>
                             <label for="frame-size-filter-8"></label>
                             <div class="filter-text-container">
                                 <p>23</p>
                             </div>
-                            <input type="checkbox" name="frame-size[]" id="frame-size-filter-8" data-filter="23">
+                            <input type="checkbox" name="frame[]" id="frame-size-filter-8" data-filter="23" data-frame="23">
                         </li>
                     </ul>                      
                 </div>
@@ -1047,62 +1047,62 @@
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1.5L6 6.5L11 1.5" stroke="#667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <ul class="filters-list">
+                    <ul class="filters-list" id="wheel">
                         <li>
                             <label for="wheel-size-filter-1"></label>
                             <div class="filter-text-container">
                                 <p>12</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-1" data-filter="12">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-1" data-filter="12" data-wheel="12">
                         </li>
                         <li>
                             <label for="wheel-size-filter-2"></label>
                             <div class="filter-text-container">
                                 <p>16</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-2" data-filter="16">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-2" data-filter="16" data-wheel="16">
                         </li>
                         <li>
                             <label for="wheel-size-filter-3"></label>
                             <div class="filter-text-container">
                                 <p>20</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-3" data-filter="20">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-3" data-filter="20" data-wheel="20">
                         </li>
                         <li>
                             <label for="wheel-size-filter-4"></label>
                             <div class="filter-text-container">
                                 <p>24</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-4" data-filter="24">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-4" data-filter="24" data-wheel="24">
                         </li>
                         <li>
                             <label for="wheel-size-filter-5"></label>
                             <div class="filter-text-container">
                                 <p>26</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-5" data-filter="26">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-5" data-filter="26" data-wheel="26">
                         </li>
                         <li>
                             <label for="wheel-size-filter-6"></label>
                             <div class="filter-text-container">
                                 <p>27</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-6" data-filter="27">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-6" data-filter="27" data-wheel="27">
                         </li>
                         <li>
                             <label for="wheel-size-filter-7"></label>
                             <div class="filter-text-container">
                                 <p>28</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-7" data-filter="28">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-7" data-filter="28" data-wheel="28">
                         </li>
                         <li>
                             <label for="wheel-size-filter-8"></label>
                             <div class="filter-text-container">
                                 <p>29</p>
                             </div>
-                            <input type="checkbox" name="wheel-size[]" id="wheel-size-filter-8" data-filter="29">
+                            <input type="checkbox" name="wheel[]" id="wheel-size-filter-8" data-filter="29" data-wheel="29">
                         </li>
                     </ul>                        
                 </div>
@@ -1155,7 +1155,7 @@
                 </div>
             </div>
             <div class="bike-cards-container bike-cards-container--active" id="page">
-                <div class="bike-product-card" style="z-index: 13;" data-color="czarny,czerwony,niebieski" data-type="męski" data-frame="19,21,23" data-wheel="24,26">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 13;" data-color="czarny,czerwony,niebieski" data-type="męski" data-frame="19,21,23" data-wheel="24,26">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-9">
                                 <label for="compare-product-9">Porównaj</label>
@@ -1254,7 +1254,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 10;" data-color="biały" data-type="damski" data-frame="14" data-wheel="16">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 10;" data-color="biały" data-type="damski" data-frame="14" data-wheel="16">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-6">
                                 <label for="compare-product-6">Porównaj</label>
@@ -1283,7 +1283,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 9;" data-color="czarny" data-type="męski,damski" data-frame="19,21,23" data-wheel="16,20,24">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 9;" data-color="czarny" data-type="męski,damski" data-frame="19,21,23" data-wheel="16,20,24">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-5">
                                 <label for="compare-product-5">Porównaj</label>
@@ -1314,7 +1314,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 8;" data-color="zielony" data-type="męski" data-frame="14" data-wheel="12">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 8;" data-color="zielony" data-type="męski" data-frame="14" data-wheel="12">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-4">
                                 <label for="compare-product-4">Porównaj</label>
@@ -1343,7 +1343,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 9;" data-color="czerwony" data-type="męski" data-frame="19,21" data-wheel="20,24">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 9;" data-color="czerwony" data-type="męski" data-frame="19,21" data-wheel="20,24">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-10">
                                 <label for="compare-product-10">Porównaj</label>
@@ -1373,7 +1373,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 8;" data-color="pomarańcz" data-type="męski,damski" data-frame="8" data-wheel="12">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 8;" data-color="pomarańcz" data-type="męski,damski" data-frame="8" data-wheel="12">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-11">
                                 <label for="compare-product-11">Porównaj</label>
@@ -1402,7 +1402,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 7;" data-color="niebieski" data-type="męski,damski" data-frame="8" data-wheel="12">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 7;" data-color="niebieski" data-type="męski,damski" data-frame="8" data-wheel="12">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-12">
                                 <label for="compare-product-12">Porównaj</label>
@@ -1431,7 +1431,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 6;" data-color="czarny" data-type="męski" data-frame="18" data-wheel="28,29">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 6;" data-color="czarny" data-type="męski" data-frame="18" data-wheel="28,29">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-13">
                                 <label for="compare-product-13">Porównaj</label>
@@ -1460,7 +1460,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 5;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 5;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-14">
                                 <label for="compare-product-14">Porównaj</label>
@@ -1490,7 +1490,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 4;">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 4;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-15">
                                 <label for="compare-product-15">Porównaj</label>
@@ -1521,7 +1521,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 9;">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 9;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-16">
                                 <label for="compare-product-16">Porównaj</label>
@@ -1552,7 +1552,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 8;">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 8;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-17">
                                 <label for="compare-product-17">Porównaj</label>
@@ -1583,7 +1583,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 7;">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 7;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-18">
                                 <label for="compare-product-18">Porównaj</label>
@@ -1614,7 +1614,7 @@
                                 <button>Sprawdź</button>
                             </div>
                 </div>
-                <div class="bike-product-card" style="z-index: 6;">
+                <div class="bike-product-card bike-product-card--active" style="z-index: 6;" data-color="niebieski" data-type="męski" data-frame="19,21" data-wheel="24,28">
                     <div class="compare-checkbox">
                                 <input type="checkbox" name="compare-product" id="compare-product-19">
                                 <label for="compare-product-19">Porównaj</label>
