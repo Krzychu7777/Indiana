@@ -25,112 +25,94 @@ let actualFilters = [
     },
 ];
 
-//let activeBikeProducts = document.querySelectorAll('.bike-product-card--active');
+
 
 //filters
 
-// let pageFilters = {
-//     color: [],
-//     type: [],
-//     frame: [],
-//     wheel: []
-// };
-
-// selectFilterListCheckbox.forEach((checkbox) => {
-//     checkbox.addEventListener('change', (e) => {
-
-//         const currentList = e.currentTarget.parentNode.parentNode;
-//         const currentListCheckbox = currentList.querySelectorAll('input[type="checkbox"]');
-
-//         pageFilters[currentList.id] = [];
-
-//         const currentCheckboxChecked = [...currentListCheckbox].filter((item) => {
-//             return item.checked;
-//         });
-
-
-//         currentCheckboxChecked.forEach((item) => {
-//             for(key in pageFilters) {
-//                 if(currentList.id === key) {
-//                     pageFilters[key].push(item.dataset[`${key}`]);
-//                 }
-//             }
-//         });
-
-//         bikeProductCard.forEach((bike) => {
-//             bike.classList.add('bike-product-card--active');
-            
-//             let productFilters = {
-//                 color: bike.dataset['color'].split(','),
-//                 type: bike.dataset['type'].split(','),
-//                 frame: bike.dataset['frame'].split(','),
-//                 wheel: bike.dataset['wheel'].split(',')
-//             }
-
-//             // console.log(pageFilters.wheel);
-//             console.log(productFilters.wheel);
-
-//             for(key in productFilters) {
-//                 productFilters[key].forEach((item) => {
-//                     pageFilters[key].forEach((filter) => {
-//                         console.log(item, filter);
-
-//                          if(filter != item) {
-//                             bike.classList.remove('bike-product-card--active');
-//                         }
-//                     });
-//                 })
-//             }
-
-//             // const activeProducts = [...bikeProductCard].filter((item) => {
-//             //     return item.classList.contains('bike-product-card--active');
-//             // });
-
-//             // activeBikeProducts = activeProducts;
-//         });
-//     })
-    
-// });
-
-
-
+let pageFilters = [];
 
 selectFilterListCheckbox.forEach((checkbox) => {
     checkbox.addEventListener('change', (e) => {
 
-        let activeFilters = [];
+        const currentList = e.currentTarget.parentNode.parentNode;
+        const currentListCheckbox = currentList.querySelectorAll('input[type="checkbox"]');
 
-        const chooseFilters = [...selectFilterListCheckbox].filter((item) => {
+        pageFilters = [];
+
+        const currentCheckboxChecked = [...currentListCheckbox].filter((item) => {
             return item.checked;
         });
 
-        if(chooseFilters == '') {
-            bikeProductCard.forEach((card) => {
-                card.classList.add('bike-product-card--active');
-            });
-        }
+        // const currentCheckboxChecked = [...selectFilterListCheckbox].filter((item) => {
+        //     return item.checked;
+        // });
 
-        chooseFilters.forEach((item) => {
-            activeFilters.push(item.dataset.color);
-            activeFilters = activeFilters.push(item.dataset.type);
+        let currentDataset =  e.currentTarget.name.slice(0, -2);
+
+        currentCheckboxChecked.forEach((item) => {
+            pageFilters.push(item.dataset[`${currentDataset}`]);
         });
+
+        console.log(pageFilters);
 
         bikeProductCard.forEach((card) => {
-            card.classList.remove('siema');
-            const dataFilters = card.dataset['color'].split(',');
+            let dataFilters = card.dataset[`${currentDataset}`].split(',');
 
+            card.dataset.active = 0;
+    
             dataFilters.forEach((item) => {
-                if(activeFilters.includes(item)) {
-                    card.classList.add('siema');
+                if(pageFilters.includes(item)) {
+                    card.dataset.active = 1;
                 }
             });
-
-        });
-
-        console.log(activeFilters);
-
+           
     })
-})
+    
+});
+});
+
+
+// let activeFilters = [];
+
+// selectFilterListCheckbox.forEach((checkbox) => {
+//     checkbox.addEventListener('change', (e) => {
+
+//         const chooseFilters = [...selectFilterListCheckbox].filter((item) => {
+//             return item.checked;
+//         });
+
+//         if(chooseFilters == '') {
+//             bikeProductCard.forEach((card) => {
+//                 card.classList.add('bike-product-card--active');
+//             });
+//         }
+
+//         activeFilters = [];
+
+//         let currentDataset = e.currentTarget.name.slice(0, -2);
+
+//         chooseFilters.forEach((item) => {
+//             activeFilters.push(item.dataset[`${currentDataset}`]);
+//         });
+
+//         console.log(activeFilters);
+
+//         bikeProductCard.forEach((card) => {
+//             card.classList.remove('siema');
+//             const dataFilters = card.dataset['color'].split(',');
+
+//             dataFilters.forEach((item) => {
+//                 if(activeFilters.includes(item)) {
+//                     card.classList.add('siema');
+//                 }
+//             });
+
+//         });
+
+//         console.log(activeFilters);
+
+//     })
+// })
 
 
 
