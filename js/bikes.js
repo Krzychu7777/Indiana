@@ -137,15 +137,15 @@ const assignUrlFilters = () => {
 
                 if(key[1] == "1") {
             
-                    if(index < 6) card.style.display = "flex";
+                    if(index < 6) card.style.display = "";
                         
                 } else if(key[1] == "2") {
             
-                    if(index > 5 && index < 12) card.style.display = "flex";
+                    if(index > 5 && index < 12) card.style.display = "";
             
                 } else if(key[1] == "3") {
             
-                    if(index > 11 && index < 18) card.style.display = "flex";
+                    if(index > 11 && index < 18) card.style.display = "";
 
                 } else {
                     findPage.style.display = "block"; 
