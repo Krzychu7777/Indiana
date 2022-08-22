@@ -917,7 +917,7 @@
                                 <div class="color-circle"></div>
                                 <p>Fioletowy</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-1" data-filter="fioletowy" data-color="fioletowy">
+                            <input type="checkbox" name="color[]" id="color-filter-1" data-filter="fioletowy" data-color="fioletowy" data-filtr="color">
                         </li>
                         <li>
                             <label for="color-filter-2"></label>
@@ -925,7 +925,7 @@
                                 <div class="color-circle color-circle--white"></div>
                                 <p>Biały</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-2" data-filter="Biały" data-color="biały">
+                            <input type="checkbox" name="color[]" id="color-filter-2" data-filter="biały" data-color="biały" data-filtr="color">
                         </li>
                         <li>
                             <label for="color-filter-3"></label>
@@ -933,7 +933,7 @@
                                 <div class="color-circle color-circle--green"></div>
                                 <p>Zielony</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-3" data-filter="zielony" data-color="zielony">
+                            <input type="checkbox" name="color[]" id="color-filter-3" data-filter="zielony" data-color="zielony" data-filtr="color">
                         </li>
                         <li>
                             <label for="color-filter-4"></label>
@@ -941,7 +941,7 @@
                                 <div class="color-circle color-circle--pink"></div>
                                 <p>Niebieski</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-4" data-filter="Różowy" data-color="niebieski">
+                            <input type="checkbox" name="color[]" id="color-filter-4" data-filter="niebieski" data-color="niebieski" data-filtr="color">
                         </li>
                         <li>
                             <label for="color-filter-5"></label>
@@ -949,7 +949,7 @@
                                 <div class="color-circle color-circle--black"></div>
                                 <p>Czarny</p>
                             </div>
-                            <input type="checkbox" name="color[]" id="color-filter-5" data-filter="czarny" data-color="czarny">
+                            <input type="checkbox" name="color[]" id="color-filter-5" data-filter="czarny" data-color="czarny" data-filtr="color">
                         </li>
                     </ul>                        
                 </div>
@@ -965,14 +965,14 @@
                             <div class="filter-text-container">
                                 <p>Męski</p>
                             </div>
-                            <input type="checkbox" name="type[]" id="type-filter-1" data-filter="man" data-type="męski">
+                            <input type="checkbox" name="type[]" id="type-filter-1" data-filter="męski" data-type="męski">
                         </li>
                         <li>
                             <label for="type-filter-2"></label>
                             <div class="filter-text-container">
                                 <p>Damski</p>
                             </div>
-                            <input type="checkbox" name="type[]" id="type-filter-2" data-filter="woman" data-type="damski">
+                            <input type="checkbox" name="type[]" id="type-filter-2" data-filter="damski" data-type="damski">
                         </li>
                     </ul>                        
                 </div>
@@ -1128,7 +1128,7 @@
     <section id="bike-products" class="bike-products-section">
         <div class="main-container products-container">
             <div class="bike-products-header">
-                <div class="products-amount-container"><h2>Produkty</h2> <p id="products-amount">124</p></div>
+                <div class="products-amount-container"><h2>Produkty</h2> <p id="products-amount">16</p></div>
                 <div class="sorting-input">
                     <input type="text" id="sort-type-value" value="" style="display: none;">
                     <p id="sort-type" data-default="Sortowanie domyślne">Sortowanie domyślne</p>
@@ -1652,6 +1652,9 @@
                 <svg width="20" height="16" viewBox="0 0 12 8" fill="none" stroke="#667085" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 1.5L6 6.5L11 1.5" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>                    
+            </div>
+            <div class="find-product" style="display: none;">
+                <h2>Nie znaleźliśmy produktu spełniającego aktualne <span>kryteria</span></h2>
             </div>
             <div class="products-border-line"></div>
             <div class="products-pagination-container">

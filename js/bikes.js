@@ -24,97 +24,74 @@ let actualFilters = [
         dataFilter: "Cross",
     },
 ];
-
-
-
 //filters
 
 let pageFilters = [];
 
-selectFilterListCheckbox.forEach((checkbox) => {
-    checkbox.addEventListener('change', (e) => {
+const cardFiltering = () => {
+    const productsAmount = document.getElementById('products-amount');
+        const findProduct = document.querySelector('.find-product');
 
-        const currentList = e.currentTarget.parentNode.parentNode;
-        const currentListCheckbox = currentList.querySelectorAll('input[type="checkbox"]');
+        let activeCards = document.querySelectorAll('.bike-product-card');
+
+        activeCards.forEach((item) => {
+            item.dataset.active = 1;
+            item.classList.add('bike-product-card--active');
+        }); 
 
         pageFilters = [];
 
-        const currentCheckboxChecked = [...currentListCheckbox].filter((item) => {
-            return item.checked;
+        selectFilterList.forEach((select) => {
+            activeCards = document.querySelectorAll('[data-active="1"]');
+
+            let activCheck = select.querySelectorAll('input[type="checkbox"]:checked');
+            let dataFilter = [];
+
+            if(activCheck.length) {
+                activCheck.forEach((checkbox) => {
+                    dataFilter.push(checkbox.dataset.filter);
+                });
+
+
+                activeCards.forEach((card) => {
+                    let dataFilters = card.dataset[`${select.id}`].split(',');
+
+                    card.dataset.active = 0;
+                    card.classList.remove('bike-product-card--active');
+            
+                    dataFilters.forEach((item) => {
+                        if(dataFilter.includes(item)) {
+                            card.dataset.active = 1;
+                            card.classList.add('bike-product-card--active');
+                            }
+                    });
+                });
+            }
+        });
+        findProduct.style.display = "none";
+
+        const activeProductsCount = [...bikeProductCard].filter((item) => {
+            return item.classList.contains('bike-product-card--active');
         });
 
-        // const currentCheckboxChecked = [...selectFilterListCheckbox].filter((item) => {
-        //     return item.checked;
-        // });
+        activeProductsCount.forEach((item, index) => {
+            item.style.display = "none";
 
-        let currentDataset =  e.currentTarget.name.slice(0, -2);
-
-        currentCheckboxChecked.forEach((item) => {
-            pageFilters.push(item.dataset[`${currentDataset}`]);
+            if(index < 6) {
+                item.style.display = "";
+            }
         });
 
-        console.log(pageFilters);
-
-        bikeProductCard.forEach((card) => {
-            let dataFilters = card.dataset[`${currentDataset}`].split(',');
-
-            card.dataset.active = 0;
+        if(activeProductsCount.length === 0) {
+            findProduct.style.display = "block";
+        }
     
-            dataFilters.forEach((item) => {
-                if(pageFilters.includes(item)) {
-                    card.dataset.active = 1;
-                }
-            });
-           
-    })
-    
+        productsAmount.innerHTML = activeProductsCount.length;
+}
+
+selectFilterListCheckbox.forEach((checkbox) => {
+    checkbox.addEventListener('change', cardFiltering);
 });
-});
-
-
-// let activeFilters = [];
-
-// selectFilterListCheckbox.forEach((checkbox) => {
-//     checkbox.addEventListener('change', (e) => {
-
-//         const chooseFilters = [...selectFilterListCheckbox].filter((item) => {
-//             return item.checked;
-//         });
-
-//         if(chooseFilters == '') {
-//             bikeProductCard.forEach((card) => {
-//                 card.classList.add('bike-product-card--active');
-//             });
-//         }
-
-//         activeFilters = [];
-
-//         let currentDataset = e.currentTarget.name.slice(0, -2);
-
-//         chooseFilters.forEach((item) => {
-//             activeFilters.push(item.dataset[`${currentDataset}`]);
-//         });
-
-//         console.log(activeFilters);
-
-//         bikeProductCard.forEach((card) => {
-//             card.classList.remove('siema');
-//             const dataFilters = card.dataset['color'].split(',');
-
-//             dataFilters.forEach((item) => {
-//                 if(activeFilters.includes(item)) {
-//                     card.classList.add('siema');
-//                 }
-//             });
-
-//         });
-
-//         console.log(activeFilters);
-
-//     })
-// })
-
-
 
 
 const assignUrlFilters = () => {
@@ -144,37 +121,37 @@ const assignUrlFilters = () => {
             }
         });
 
-        // paginationButtons.forEach((button) => {
-        //     if(key[0].toLowerCase() === "page") {
-        //         button.classList.remove('btn-pag-active');
-        //     }
+        paginationButtons.forEach((button) => {
+            if(key[0].toLowerCase() === "page") {
+                button.classList.remove('btn-pag-active');
+            }
 
-        //     if(key[1] === button.dataset.page) {
-        //         button.classList.add('btn-pag-active');
-        //     }
-        // });
+            if(key[1] === button.dataset.page) {
+                button.classList.add('btn-pag-active');
+            }
+        });
 
-        // if(key[0] === 'page') {
-        //     bikeProductCard.forEach((card, index) => {
-        //         card.style.display = "none";
+        if(key[0] === 'page') {
+            bikeProductCard.forEach((card, index) => {
+                card.style.display = "none";
 
-        //         if(key[1] == "1") {
+                if(key[1] == "1") {
             
-        //             if(index < 6) card.style.display = "flex";
+                    if(index < 6) card.style.display = "flex";
                         
-        //         } else if(key[1] == "2") {
+                } else if(key[1] == "2") {
             
-        //             if(index > 5 && index < 12) card.style.display = "flex";
+                    if(index > 5 && index < 12) card.style.display = "flex";
             
-        //         } else if(key[1] == "3") {
+                } else if(key[1] == "3") {
             
-        //             if(index > 11 && index < 18) card.style.display = "flex";
+                    if(index > 11 && index < 18) card.style.display = "flex";
 
-        //         } else {
-        //             findPage.style.display = "block"; 
-        //         }
-        //     });
-        // }
+                } else {
+                    findPage.style.display = "block"; 
+                }
+            });
+        }
 
 
     }
@@ -571,24 +548,23 @@ bikeProductCard.forEach((item) => {
 //page pagination
 
 const divideCards = e => {
+    const activeBikeCards = document.querySelectorAll('[data-active="1"]');
     const currentPagBtn = e.currentTarget;
 
-    const siema =  bikeProductCard[0].dataset['frame'].split(',');
-
-    bikeProductCard.forEach((card, index) => {
+    activeBikeCards.forEach((card, index) => {
         card.style.display = "none";
 
         if(currentPagBtn.dataset.page === "1") {
 
-            if(index < 6) card.style.display = "flex";
+            if(index < 6) card.style.display = "";
             
         } else if(currentPagBtn.dataset.page === "2") {
 
-            if(index > 5 && index < 12) card.style.display = "flex";
+            if(index > 5 && index < 12) card.style.display = "";
 
         } else if(currentPagBtn.dataset.page === "3") {
 
-            if(index > 11 && index < 18) card.style.display = "flex";
+            if(index > 11 && index < 18) card.style.display = "";
         }
     });
 
@@ -601,7 +577,7 @@ const divideCards = e => {
 
 paginationButtons.forEach((item) => {
     item.addEventListener('click', (e) => {
-        //divideCards(e);
+        divideCards(e);
         changeUrlValue();
         findPage.style.display = "none";
     });

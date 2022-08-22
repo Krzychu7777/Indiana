@@ -91,7 +91,7 @@
   background-color: #F9FAFB;
 }
 
-.headers-typo-style, .find-page h2, .find-banner h2 {
+.headers-typo-style, .find-product h2, .find-page h2, .find-banner h2 {
   margin: 0;
   font-family: "Sequel", sans-serif, Helvetica;
   font-weight: 400;
@@ -102,7 +102,7 @@
 }
 
 @media (max-width: 576px) {
-  .headers-typo-style, .find-page h2, .find-banner h2 {
+  .headers-typo-style, .find-product h2, .find-page h2, .find-banner h2 {
     font-size: 1.5rem;
     line-height: 24px;
   }
@@ -977,6 +977,16 @@ body {
 .find-page svg {
   margin: 32px 0 0;
   stroke: #178BCA;
+}
+
+.find-product {
+  text-align: center;
+}
+.find-product h2 {
+  font-size: 1.6rem;
+}
+.find-product span {
+  color: #178BCA;
 }
 
 @media (max-width: 1100px) {

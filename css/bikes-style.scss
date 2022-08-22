@@ -738,6 +738,19 @@ body {
     }
 }
 
+.find-product {
+    text-align: center;
+    
+    h2 {
+        @extend .headers-typo-style;
+        font-size: 1.6rem;
+    }
+
+    span {
+        color: $blue;
+    }
+}
+
 @media (max-width: 1100px) {
     .bike-cards-container{
         grid-template-columns: 1fr 1fr;
