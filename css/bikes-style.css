@@ -645,6 +645,12 @@ body {
 .filters-input-container .filter-input .color-list .filter-text-container .color-circle--black {
   background-color: black;
 }
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle--red {
+  background-color: #d15858;
+}
+.filters-input-container .filter-input .color-list .filter-text-container .color-circle--blue {
+  background-color: #5970cf;
+}
 
 .filters-info-container {
   margin: 33px 0 0;

@@ -15,6 +15,7 @@ const selectFilterInput = document.querySelectorAll('.filter-input'),
     bikePageCotainers = document.querySelectorAll('.bike-cards-container'),
     paginationButtons = document.querySelectorAll('.pagination-btn'),
     findPage = document.querySelector('.find-page'),
+    productCardSection = document.getElementById('bike-products');
     urlLink = window.location.search,
     urlParams = new URLSearchParams(urlLink);
 
@@ -26,11 +27,28 @@ let actualFilters = [
 ];
 //filters
 
+const hiddenPaginationBtn = (activeClass) => {
+    const pagBtn2 = document.querySelector('[data-page="2"]');
+    const pagBtn3 = document.querySelector('[data-page="3"]');
+
+    if(activeClass.length > 12) {
+        pagBtn3.style.display = "";
+    } else {
+        pagBtn3.style.display = "none";
+    }
+
+    if(activeClass.length > 6) {
+        pagBtn2.style.display = "";
+    } else {
+        pagBtn2.style.display = "none";
+    }
+};
+
 let pageFilters = [];
 
 const cardFiltering = () => {
     const productsAmount = document.getElementById('products-amount');
-        const findProduct = document.querySelector('.find-product');
+    const findProduct = document.querySelector('.find-product');
 
         let activeCards = document.querySelectorAll('.bike-product-card');
 
@@ -80,6 +98,9 @@ const cardFiltering = () => {
             if(index < 6) {
                 item.style.display = "";
             }
+
+            hiddenPaginationBtn(activeProductsCount);
+
         });
 
         if(activeProductsCount.length === 0) {
@@ -131,6 +152,10 @@ const assignUrlFilters = () => {
             }
         });
 
+        cardFiltering();
+
+        let activeCards = document.querySelectorAll('[data-active="1"]');
+        
         if(key[0] === 'page') {
             bikeProductCard.forEach((card, index) => {
                 card.style.display = "none";
@@ -150,9 +175,22 @@ const assignUrlFilters = () => {
                 } else {
                     findPage.style.display = "block"; 
                 }
+
+                hiddenPaginationBtn(activeCards);
+    
             });
         }
 
+
+        // activeCards.forEach((card) => {
+        //     selectFilterListCheckbox.forEach((checkbox) => {
+        //         if(key[0] === checkbox.name) {
+        //             if(pageFilters.includes(key[1]) === false) {
+        //                 card.classList.remove('bike-product-card--active');
+        //             }
+        //         }
+        //     })
+        // });
 
     }
 }
@@ -337,6 +375,7 @@ const removeFilter = e => {
     } 
 
     addFilterBlock();
+    cardFiltering();
 };
 
 const clearFilters = () => {
@@ -364,6 +403,8 @@ const clearFilters = () => {
     addFilterBlock();
 
     clearFiltersBtn.style.display = "none";
+
+    cardFiltering();
 };
 
 const chooseBikeType = (item) => {
@@ -459,7 +500,7 @@ const openSortList = () => {
     sortingInput.classList.toggle('sorting-input--active');
 };
 
-const changeSortValue = e => {
+const changeSortValue = (e) => {
     const currentSortType = e.currentTarget.querySelector('p');
 
     sortItemText.forEach((item) => {
@@ -566,6 +607,10 @@ const divideCards = e => {
 
             if(index > 11 && index < 18) card.style.display = "";
         }
+
+        hiddenPaginationBtn(activeBikeCards);
+
+        window.scrollTo(0, productCardSection.offsetTop);
     });
 
     paginationButtons.forEach((button) => {
