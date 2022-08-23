@@ -25,7 +25,11 @@ let actualFilters = [
         dataFilter: "Cross",
     },
 ];
+
+let pageFilters = [];
 //filters
+
+let activeArrayItems;
 
 const hiddenPaginationBtn = (activeClass) => {
     const pagBtn2 = document.querySelector('[data-page="2"]');
@@ -43,8 +47,6 @@ const hiddenPaginationBtn = (activeClass) => {
         pagBtn2.style.display = "none";
     }
 };
-
-let pageFilters = [];
 
 const cardFiltering = () => {
     const productsAmount = document.getElementById('products-amount');
@@ -92,16 +94,17 @@ const cardFiltering = () => {
             return item.classList.contains('bike-product-card--active');
         });
 
+        activeArrayItems = activeProductsCount;
+
         activeProductsCount.forEach((item, index) => {
             item.style.display = "none";
 
             if(index < 6) {
                 item.style.display = "";
             }
-
-            hiddenPaginationBtn(activeProductsCount);
-
         });
+
+        hiddenPaginationBtn(activeProductsCount);
 
         if(activeProductsCount.length === 0) {
             findProduct.style.display = "block";
@@ -113,6 +116,58 @@ const cardFiltering = () => {
 selectFilterListCheckbox.forEach((checkbox) => {
     checkbox.addEventListener('change', cardFiltering);
 });
+
+//sorting 
+
+const sortToLower = (array, dataset) => {
+    array.sort(function(a, b) {
+        return b.getAttribute(`data-${dataset}`) - a.getAttribute(`data-${dataset}`);
+    });
+};
+
+const sortToUpper = (array, dataset) => {
+    array.sort(function(a, b) {
+        return a.getAttribute(`data-${dataset}`) - b.getAttribute(`data-${dataset}`);
+    });
+};
+
+const changeSortValue = (e, item) => {
+    const currentSortType = e.currentTarget.querySelector('p');
+
+    sortItemText.forEach((item) => {
+        item.classList.remove('current-sort-type');
+    });
+
+    sortText.textContent = currentSortType.textContent;
+    sortValue.value = currentSortType.textContent;
+
+    currentSortType.classList.add('current-sort-type');
+
+
+    if(item.dataset.sort === "najdroższe") {
+        sortToLower(activeArrayItems, 'price');
+    } else if(item.dataset.sort === "najtańsze") {
+        sortToUpper(activeArrayItems, 'price');
+    }
+
+    activeArrayItems.forEach((item, index) => {
+        item.style.order = index;
+        item.style.zIndex = activeArrayItems.length - index;
+        item.style.display = "none";
+        if(index < 6) item.style.display = "";
+    });
+
+    // if(item.dataset.sort === "sortowanie-domyślne") {
+    //     bikeProductCard.forEach((item) => {
+    //         item.style.order = "";
+    //         item.style.display = "none"
+    //     });
+
+    //     activeArrayItems.forEach((item, index) => {
+    //         if(index < 6) item.style.display = "";
+    //     });
+    // }
+};
 
 
 const assignUrlFilters = () => {
@@ -181,16 +236,19 @@ const assignUrlFilters = () => {
             });
         }
 
+        
+    if(changeCharacters(key[1]) === changeCharacters("najdroższe")) {
+        sortToLower(activeArrayItems, 'price');
+    } else if(changeCharacters(key[1]) === changeCharacters("najtańsze")) {
+        sortToUpper(activeArrayItems, 'price');
+    }
 
-        // activeCards.forEach((card) => {
-        //     selectFilterListCheckbox.forEach((checkbox) => {
-        //         if(key[0] === checkbox.name) {
-        //             if(pageFilters.includes(key[1]) === false) {
-        //                 card.classList.remove('bike-product-card--active');
-        //             }
-        //         }
-        //     })
-        // });
+    activeArrayItems.forEach((item, index) => {
+        item.style.order = index;
+        item.style.zIndex = activeArrayItems.length - index;
+        item.style.display = "none";
+        if(index < 6) item.style.display = "";
+    });
 
     }
 }
@@ -500,24 +558,11 @@ const openSortList = () => {
     sortingInput.classList.toggle('sorting-input--active');
 };
 
-const changeSortValue = (e) => {
-    const currentSortType = e.currentTarget.querySelector('p');
-
-    sortItemText.forEach((item) => {
-        item.classList.remove('current-sort-type');
-    })
-
-    sortText.textContent = currentSortType.textContent;
-    sortValue.value = currentSortType.textContent;
-
-    currentSortType.classList.add('current-sort-type');
-};
-
 sortingInput.addEventListener('click', openSortList);
 
 sortingListItem.forEach((item) => {
     item.addEventListener('click', (e) => {
-        changeSortValue(e);
+        changeSortValue(e, item);
         changeUrlValue();
     });
 });
@@ -589,10 +634,10 @@ bikeProductCard.forEach((item) => {
 //page pagination
 
 const divideCards = e => {
-    const activeBikeCards = document.querySelectorAll('[data-active="1"]');
+    //const activeBikeCards = document.querySelectorAll('[data-active="1"]');
     const currentPagBtn = e.currentTarget;
 
-    activeBikeCards.forEach((card, index) => {
+    activeArrayItems.forEach((card, index) => {
         card.style.display = "none";
 
         if(currentPagBtn.dataset.page === "1") {
@@ -608,7 +653,7 @@ const divideCards = e => {
             if(index > 11 && index < 18) card.style.display = "";
         }
 
-        hiddenPaginationBtn(activeBikeCards);
+        hiddenPaginationBtn(activeArrayItems);
 
         window.scrollTo(0, productCardSection.offsetTop);
     });
