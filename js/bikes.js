@@ -16,6 +16,7 @@ const selectFilterInput = document.querySelectorAll('.filter-input'),
     paginationButtons = document.querySelectorAll('.pagination-btn'),
     findPage = document.querySelector('.find-page'),
     productCardSection = document.getElementById('bike-products');
+let activeArrayItems = document.querySelectorAll('[data-active="1"]'),
     urlLink = window.location.search,
     urlParams = new URLSearchParams(urlLink);
 
@@ -25,27 +26,19 @@ let actualFilters = [
         dataFilter: "Cross",
     },
 ];
-
 let pageFilters = [];
-//filters
 
-let activeArrayItems = document.querySelectorAll('[data-active="1"]');
+//functions
+
+//hide pagination buttons
 
 const hiddenPaginationBtn = (activeClass) => {
-    const pagBtn2 = document.querySelector('[data-page="2"]');
-    const pagBtn3 = document.querySelector('[data-page="3"]');
+    const pagBtn2 = document.querySelector('[data-page="2"]'),
+        pagBtn3 = document.querySelector('[data-page="3"]');
         
-        if(activeClass.length > 12) {
-            pagBtn3.style.display = "";
-        } else {
-            pagBtn3.style.display = "none";
-        }
+        activeClass.length > 12 ? pagBtn3.style.display = "" : pagBtn3.style.display = "none";
     
-        if(activeClass.length > 6) {
-            pagBtn2.style.display = "";
-        } else {
-            pagBtn2.style.display = "none";
-        }
+        activeClass.length > 6 ? pagBtn2.style.display = "" : pagBtn2.style.display = "none";
 
     paginationButtons.forEach((button) => {
          button.classList.remove('btn-pag-active');
@@ -54,9 +47,11 @@ const hiddenPaginationBtn = (activeClass) => {
     });
 };
 
+// filter product cards
+
 const cardFiltering = () => {
-    const productsAmount = document.getElementById('products-amount');
-    const findProduct = document.querySelector('.find-product');
+    const productsAmount = document.getElementById('products-amount'),
+        findProduct = document.querySelector('.find-product');
 
         let activeCards = document.querySelectorAll('.bike-product-card');
 
@@ -94,6 +89,7 @@ const cardFiltering = () => {
                 });
             }
         });
+
         findProduct.style.display = "none";
 
         const activeProductsCount = [...bikeProductCard].filter((item) => {
@@ -105,25 +101,17 @@ const cardFiltering = () => {
         activeProductsCount.forEach((item, index) => {
             item.style.display = "none";
 
-            if(index < 6) {
-                item.style.display = "";
-            }
+            if(index < 6) item.style.display = "";
         });
 
         hiddenPaginationBtn(activeProductsCount);
 
-        if(activeProductsCount.length === 0) {
-            findProduct.style.display = "block";
-        }
+        if(activeProductsCount.length === 0) findProduct.style.display = "block";
     
         productsAmount.innerHTML = activeProductsCount.length;
-}
+};
 
-selectFilterListCheckbox.forEach((checkbox) => {
-    checkbox.addEventListener('change', cardFiltering);
-});
-
-//sorting 
+// sorting product cards
 
 const sortToLower = (array, dataset) => {
     array.sort(function(a, b) {
@@ -136,6 +124,18 @@ const sortToUpper = (array, dataset) => {
         return a.getAttribute(`data-${dataset}`) - b.getAttribute(`data-${dataset}`);
     });
 };
+
+const sortAlfabetically = (array, dataset) => {
+    array.sort(function(a, b) {
+        return a.getAttribute(`data-${dataset}`).localeCompare(b.getAttribute(`data-${dataset}`));
+    });
+}
+
+const sortReverseAlfabetically = (array, dataset) => {
+    array.sort(function(a, b) {
+        return b.getAttribute(`data-${dataset}`).localeCompare(a.getAttribute(`data-${dataset}`));
+    });
+}
 
 const changeSortValue = (e, item) => {
     const currentSortType = e.currentTarget.querySelector('p');
@@ -153,6 +153,10 @@ const changeSortValue = (e, item) => {
         sortToLower(activeArrayItems, 'price');
     } else if(item.dataset.sort === "najtańsze") {
         sortToUpper(activeArrayItems, 'price');
+    } else if(item.dataset.sort.toLowerCase() === 'a-z') {
+        sortAlfabetically(activeArrayItems, 'letter');
+    } else if(item.dataset.sort.toLowerCase() === 'z-a') {
+        sortReverseAlfabetically(activeArrayItems, 'letter');
     }
 
     activeArrayItems.forEach((item, index) => {
@@ -177,6 +181,7 @@ const changeSortValue = (e, item) => {
     });
 };
 
+// url interactions
 
 const assignUrlFilters = () => {
     const urlValues = urlParams.entries();
@@ -205,16 +210,6 @@ const assignUrlFilters = () => {
             }
         });
 
-        paginationButtons.forEach((button) => {
-            if(key[0].toLowerCase() === "page") {
-                button.classList.remove('btn-pag-active');
-            }
-
-            if(key[1] === button.dataset.page) {
-                button.classList.add('btn-pag-active');
-            }
-        });
-
         cardFiltering();
 
         let activeCards = document.querySelectorAll('[data-active="1"]');
@@ -231,6 +226,8 @@ const assignUrlFilters = () => {
             item.style.display = "none";
             if(index < 6) item.style.display = "";
         });
+
+        hiddenPaginationBtn(activeCards);
         
         if(key[0] === 'page') {
             activeArrayItems.forEach((card, index) => {
@@ -249,42 +246,28 @@ const assignUrlFilters = () => {
                     if(index > 11 && index < 18) card.style.display = "";
 
                 } else {
-                    console.log('siema');
                     card.style.display = "none";
                     findPage.style.display = "block"; 
-                }
 
-                hiddenPaginationBtn(activeCards);
-    
+                    paginationButtons.forEach((button) => {
+                        button.classList.remove('btn-pag-active');
+                    });
+                }
             });
         }
 
-    }
-}
+        paginationButtons.forEach((button) => {
+            if(key[0].toLowerCase() === "page") {
+                button.classList.remove('btn-pag-active');
+            }
 
-//open select rectangle
-
-const openFiltersList = e => {
-    const currentSelect = e.currentTarget,
-            currentList = currentSelect.querySelector('.filters-list');
-
-            sortingList.classList.remove('sorting-list--active');
-            sortingInput.classList.remove('sorting-input--active');
-
-        selectFilterList.forEach((item, index) => {
-            if(currentList != item) item.classList.remove('filters-list--active');
-            if(currentSelect != selectFilterInput[index]) selectFilterInput[index].classList.remove('filter-input--active');
+            if(key[1] === button.dataset.page) {
+                button.classList.add('btn-pag-active');
+            }
         });
 
-        currentSelect.classList.toggle('filter-input--active');
-        currentList.classList.toggle('filters-list--active');
-}
-
-selectFilterInput.forEach((select) => {
-    select.addEventListener('click', openFiltersList);
-});
-
-//change value
+    }
+};
 
 const changeUrlValue = () => {
     window.history.replaceState(null, null, window.location.pathname);
@@ -314,7 +297,25 @@ const changeUrlValue = () => {
     });
 
     window.history.pushState(null, null, decodeURI(newUrl));
-}
+};
+
+//open select rectangle
+
+const openFiltersList = e => {
+    const currentSelect = e.currentTarget,
+            currentList = currentSelect.querySelector('.filters-list');
+
+            sortingList.classList.remove('sorting-list--active');
+            sortingInput.classList.remove('sorting-input--active');
+
+        selectFilterList.forEach((item, index) => {
+            if(currentList != item) item.classList.remove('filters-list--active');
+            if(currentSelect != selectFilterInput[index]) selectFilterInput[index].classList.remove('filter-input--active');
+        });
+
+        currentSelect.classList.toggle('filter-input--active');
+        currentList.classList.toggle('filters-list--active');
+};
 
 //add and clear fliter block
 
@@ -497,64 +498,6 @@ const chooseBikeType = (item) => {
     clearFiltersBtn.style.display = "block";
 };
 
-removeFilterButton.addEventListener('click', (e) => {
-    removeFilter(e);
-    changeUrlValue();
-});
-
-clearFiltersBtn.addEventListener('click', clearFilters);
-
-window.addEventListener('load', () => {
-    actualFilters.splice(1, actualFilters.length);
-
-    selectFilterListCheckbox.forEach((item) => {
-        item.checked = false;
-    });
-});
-
-bikeCategoryButtons.forEach((item) => {
-    item.addEventListener('click', () => {
-        chooseBikeType(item);
-    });
-});
-
-//checked url checkbox
-
-window.addEventListener('load', () => {
-    bikeProductCard.forEach((card, index) => {
-        card.style.display = "none";
-
-        if(index < 6) card.style.display = "";
-    });
-
-    assignUrlFilters();
-
-    selectFilterListCheckbox.forEach((item) => {
-        const currentCheckboxText = item.parentNode.querySelector('.filter-text-container p');
-
-        if(item.checked) {
-            const newFilter = {
-                filterName: currentCheckboxText.textContent,
-                dataFilter: item.dataset.filter,
-            };
-    
-            actualFilters.push(newFilter);
-        }
-    });
-
-    addFilterBlock();
-});
-
-selectFilterListCheckbox.forEach((item) => {
-    item.addEventListener('change', (e) => {
-        const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode;
-
-        renderFilter(e);
-        changeUrlValue();
-        countSelectedFilters(currentFilterText);
-    });
-});
-
 //sorting
 
 const openSortList = () => {
@@ -566,15 +509,6 @@ const openSortList = () => {
     sortingList.classList.toggle('sorting-list--active');
     sortingInput.classList.toggle('sorting-input--active');
 };
-
-sortingInput.addEventListener('click', openSortList);
-
-sortingListItem.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        changeSortValue(e, item);
-        changeUrlValue();
-    });
-});
 
 //change characters
 
@@ -594,9 +528,8 @@ function changeCharacters(character) {
 
 // choose product color
 
-bikeProductCard.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        const currentCardItem = e.target,
+const chooseProductOptions = e => {
+    const currentCardItem = e.target,
             currentCard = e.currentTarget,
             colorCircles = currentCard.querySelectorAll('.color-circle'),
             bikeImages = currentCard.querySelectorAll('.top-product-panel img'),
@@ -620,9 +553,7 @@ bikeProductCard.forEach((item) => {
                 }
             });
 
-            if(currentCardItem.classList.contains('color-circle--active')) {
-                productColorvalue.value = currentCardItem.dataset.color;
-            }
+            if(currentCardItem.classList.contains('color-circle--active')) productColorvalue.value = currentCardItem.dataset.color;
         }
 
         if(currentCardItem.classList.contains('product-size')) {
@@ -632,13 +563,9 @@ bikeProductCard.forEach((item) => {
 
             currentCardItem.classList.add('product-size--active');
 
-            if(currentCardItem.classList.contains('product-size--active')) {
-                wheelSizeValue.value = currentCardItem.textContent;
-            }
+            if(currentCardItem.classList.contains('product-size--active')) wheelSizeValue.value = currentCardItem.textContent;
         }
-    });
-});
-
+};
 
 //page pagination
 
@@ -674,13 +601,7 @@ const divideCards = e => {
     currentPagBtn.classList.add('btn-pag-active');
 };
 
-paginationButtons.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        divideCards(e);
-        changeUrlValue();
-        findPage.style.display = "none";
-    });
-});
+//set scroll center
 
 const setScrolCenter = () => {
     const bikeCategoryScroll = document.querySelector('.scroll-wrapper');
@@ -690,7 +611,88 @@ const setScrolCenter = () => {
     bikeCategoryScroll.scrollLeft = scrollCenterValue;
 }
 
+// events 
+
+selectFilterInput.forEach((select) => {
+    select.addEventListener('click', openFiltersList);
+});
+
+selectFilterListCheckbox.forEach((checkbox) => {
+    checkbox.addEventListener('change', (e) => {
+        const currentFilterText = e.currentTarget.parentNode.parentNode.parentNode;
+
+        cardFiltering();
+
+        renderFilter(e);
+        changeUrlValue();
+        countSelectedFilters(currentFilterText);
+    });
+});
+
+removeFilterButton.addEventListener('click', (e) => {
+    removeFilter(e);
+    changeUrlValue();
+});
+
+clearFiltersBtn.addEventListener('click', clearFilters);
+
+bikeCategoryButtons.forEach((item) => {
+    item.addEventListener('click', () => {
+        chooseBikeType(item);
+    });
+});
+
+sortingInput.addEventListener('click', openSortList);
+
+sortingListItem.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        changeSortValue(e, item);
+        changeUrlValue();
+    });
+});
+
+bikeProductCard.forEach((item) => {
+    item.addEventListener('click', chooseProductOptions);
+});
+
+paginationButtons.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        divideCards(e);
+        changeUrlValue();
+        findPage.style.display = "none";
+    });
+});
+
 window.addEventListener('load', () => {
+    actualFilters.splice(1, actualFilters.length);
+
+    selectFilterListCheckbox.forEach((item) => {
+        item.checked = false;
+    });
+
+    bikeProductCard.forEach((card, index) => {
+        card.style.display = "none";
+
+        if(index < 6) card.style.display = "";
+    });
+
+    assignUrlFilters();
+
+    selectFilterListCheckbox.forEach((item) => {
+        const currentCheckboxText = item.parentNode.querySelector('.filter-text-container p');
+
+        if(item.checked) {
+            const newFilter = {
+                filterName: currentCheckboxText.textContent,
+                dataFilter: item.dataset.filter,
+            };
+    
+            actualFilters.push(newFilter);
+        }
+    });
+
+    addFilterBlock();
+
     setScrolCenter();
 });
 
