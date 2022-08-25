@@ -129,13 +129,13 @@ const sortAlfabetically = (array, dataset) => {
     array.sort(function(a, b) {
         return a.getAttribute(`data-${dataset}`).localeCompare(b.getAttribute(`data-${dataset}`));
     });
-}
+};
 
 const sortReverseAlfabetically = (array, dataset) => {
     array.sort(function(a, b) {
         return b.getAttribute(`data-${dataset}`).localeCompare(a.getAttribute(`data-${dataset}`));
     });
-}
+};
 
 const changeSortValue = (e, item) => {
     const currentSortType = e.currentTarget.querySelector('p');
@@ -149,17 +149,19 @@ const changeSortValue = (e, item) => {
 
     currentSortType.classList.add('current-sort-type');
 
+    let activeCardsForSort = [...activeArrayItems];
+
     if(item.dataset.sort === "najdroższe") {
-        sortToLower(activeArrayItems, 'price');
+        sortToLower(activeCardsForSort, 'price');
     } else if(item.dataset.sort === "najtańsze") {
-        sortToUpper(activeArrayItems, 'price');
+        sortToUpper(activeCardsForSort, 'price');
     } else if(item.dataset.sort.toLowerCase() === 'a-z') {
-        sortAlfabetically(activeArrayItems, 'letter');
+        sortAlfabetically(activeCardsForSort, 'letter');
     } else if(item.dataset.sort.toLowerCase() === 'z-a') {
-        sortReverseAlfabetically(activeArrayItems, 'letter');
+        sortReverseAlfabetically(activeCardsForSort, 'letter');
     }
 
-    activeArrayItems.forEach((item, index) => {
+    activeCardsForSort.forEach((item, index) => {
         item.style.order = index;
         item.style.zIndex = activeArrayItems.length - index;
         item.style.display = "none";
@@ -227,7 +229,12 @@ const assignUrlFilters = () => {
             if(index < 6) item.style.display = "";
         });
 
-        hiddenPaginationBtn(activeCards);
+        paginationButtons.forEach((button) => {
+            button.style.display = ""; 
+            if(activeArrayItems.length === 0) button.style.display = "none";
+        });
+
+        hiddenPaginationBtn(activeArrayItems);
         
         if(key[0] === 'page') {
             activeArrayItems.forEach((card, index) => {
@@ -251,6 +258,7 @@ const assignUrlFilters = () => {
 
                     paginationButtons.forEach((button) => {
                         button.classList.remove('btn-pag-active');
+                        button.style.display = "none";
                     });
                 }
             });
@@ -434,13 +442,22 @@ const removeFilter = e => {
                             filterCountText.classList.remove('filter--active');
                         }
                     } 
-                })
+                });
        
 
         if(actualFilters.length === 0) {
             clearFiltersBtn.style.display = "none";
         }
     } 
+
+   setTimeout(() => {
+    paginationButtons.forEach((button) => {
+        button.style.display = ""; 
+        if(activeArrayItems.length === 0) button.style.display = "none";
+    });
+    
+    hiddenPaginationBtn(activeArrayItems);
+   });
 
     addFilterBlock();
     cardFiltering();
@@ -467,6 +484,15 @@ const clearFilters = () => {
     bikeCategoryButtons.forEach((button) => {
         button.classList.remove('bicycle-category--active');
     });
+
+    setTimeout(() => {
+        paginationButtons.forEach((button) => {
+            button.style.display = ""; 
+            if(activeArrayItems.length === 0) button.style.display = "none";
+        });
+        
+        hiddenPaginationBtn(activeArrayItems);
+       });
 
     addFilterBlock();
 
@@ -524,7 +550,7 @@ function changeCharacters(character) {
     .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
     .replace(/ź/g, 'z').replace(/Ź/g, 'Z')
     .replace('+', '');
-}
+};
 
 // choose product color
 
@@ -609,12 +635,21 @@ const setScrolCenter = () => {
     const scrollCenterValue = (bikeCategoryScroll.scrollWidth - bikeCategoryScroll.clientWidth) / 2;
 
     bikeCategoryScroll.scrollLeft = scrollCenterValue;
-}
+};
 
 // events 
 
 selectFilterInput.forEach((select) => {
     select.addEventListener('click', openFiltersList);
+});
+
+sortingInput.addEventListener('click', openSortList);
+
+sortingListItem.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        changeSortValue(e, item);
+        changeUrlValue();
+    });
 });
 
 selectFilterListCheckbox.forEach((checkbox) => {
@@ -626,6 +661,13 @@ selectFilterListCheckbox.forEach((checkbox) => {
         renderFilter(e);
         changeUrlValue();
         countSelectedFilters(currentFilterText);
+
+        paginationButtons.forEach((button) => {
+            button.style.display = ""; 
+            if(activeArrayItems.length === 0) button.style.display = "none";
+        });
+
+        hiddenPaginationBtn(activeArrayItems);
     });
 });
 
@@ -639,15 +681,6 @@ clearFiltersBtn.addEventListener('click', clearFilters);
 bikeCategoryButtons.forEach((item) => {
     item.addEventListener('click', () => {
         chooseBikeType(item);
-    });
-});
-
-sortingInput.addEventListener('click', openSortList);
-
-sortingListItem.forEach((item) => {
-    item.addEventListener('click', (e) => {
-        changeSortValue(e, item);
-        changeUrlValue();
     });
 });
 
